@@ -1,0 +1,20 @@
+@use "spaces.scss";
+@use "colors.scss";
+@use "fonts.scss";
+
+:root {
+  // Spaces
+  @each $name, $value in spaces.$spaces {
+    --pui-space-#{$name}: #{$value};
+  }
+
+  // Colors
+  @each $name, $value in colors.$colors {
+    --pui-color-#{$name}: #{$value};
+  }
+
+  // Font
+  @each $name, $value in fonts.$font-size {
+    --pui-font-size-#{$name}: #{$value};
+  }
+}
