@@ -1,0 +1,27 @@
+# Node
+node_modules/
+.pnpm/
+.pnpm-debug.log
+.npm/
+.npmrc
+
+# Sass
+*.css
+*.css.map
+
+# Dist
+dist/
+build/
+
+# Logs
+*.log
+yarn-error.log
+npm-debug.log
+pnpm-debug.log
+
+# Husky
+.husky/_
+
+# Env
+.env
+.env.*
