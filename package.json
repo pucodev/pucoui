@@ -1,24 +1,33 @@
 {
   "name": "pucoui",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/pucodev/pucoui#readme",
+  "bugs": {
+    "url": "https://github.com/pucodev/pucoui/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pucodev/pucoui.git"
   },
-  "keywords": [],
+  "license": "MIT",
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pucodev/pucoui/issues"
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/pucodev/pucoui#readme",
-  "description": "",
-  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912",
+  "lint-staged": {
+    "*.{js,ts,json,css,md,scss}": "prettier --write"
+  },
   "dependencies": {
     "sass": "^1.89.1"
-  }
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "prettier": "^3.5.3"
+  },
+  "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
 }
