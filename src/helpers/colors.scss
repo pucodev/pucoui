@@ -1,0 +1,12 @@
+@use "../variables/colors.scss";
+
+// Colors
+@each $name, $value in colors.$colors {
+  .is-bg-#{$name} {
+    background-color: var(--pui-color-#{$name}) !important;
+  }
+
+  .is-color-#{$name} {
+    color: var(--pui-color-#{$name}) !important;
+  }
+}
