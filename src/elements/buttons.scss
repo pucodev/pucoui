@@ -1,0 +1,112 @@
+@use "../variables/colors.scss" as colors;
+
+.btn {
+  // Variables
+  --pui-btn-bg: var(--pui-color-primary);
+  --pui-btn-color: var(--pui-color-white);
+  --pui-btn-px: var(--pui-space-4);
+  --pui-btn-py: var(--pui-space-2);
+  --pui-btn-border-color: transparent;
+  --pui-btn-hover-bg: #fff;
+  --pui-btn-border-radius: 5px;
+
+  position: relative;
+  background-color: var(--pui-btn-bg);
+  color: var(--pui-btn-color);
+  border: none;
+  border-radius: var(--pui-btn-border-radius);
+  border: solid 1px var(--pui-btn-border-color);
+  cursor: pointer;
+  justify-content: center;
+  padding-left: var(--pui-btn-px);
+  padding-right: var(--pui-btn-px);
+  padding-bottom: var(--pui-btn-py);
+  padding-top: var(--pui-btn-py);
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  line-height: inherit;
+
+  // *****
+  // Hover
+  // *****
+  // To generate hover effect
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--pui-btn-hover-bg);
+    opacity: 0;
+    z-index: -1;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 0.1;
+  }
+
+  // ********
+  // Outlined
+  // ********
+  &.is-outlined {
+    --pui-btn-outlined-bg: var(--pui-color-white);
+    --pui-btn-bg: var(--pui-btn-outlined-bg);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-border-color: var(--pui-color-primary);
+    --pui-btn-hover-bg: var(--pui-color-primary);
+  }
+
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-btn-bg: var(--pui-color-#{$name});
+    }
+
+    &.is-outlined.is-#{$name} {
+      --pui-btn-bg: var(--pui-btn-outlined-bg);
+      --pui-btn-color: var(--pui-color-#{$name});
+      --pui-btn-border-color: var(--pui-color-#{$name});
+      --pui-btn-hover-bg: var(--pui-color-#{$name});
+    }
+  }
+
+  // *****
+  // Tonal
+  // *****
+  &.is-tonal {
+    --pui-btn-bg: var(--pui-color-white);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-border-color: transparent;
+    --pui-btn-tonal-bg: var(--pui-color-primary);
+
+    &::before {
+      background-color: var(--pui-btn-tonal-bg);
+      opacity: 0.15;
+    }
+
+    &:hover::before {
+      opacity: 0.2;
+    }
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-btn-color: var(--pui-color-#{$name});
+        --pui-btn-tonal-bg: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  &.is-rounded {
+    --pui-btn-border-radius: 99999px;
+  }
+}
