@@ -13,8 +13,13 @@
     --pui-color-#{$name}: #{$value};
   }
 
-  // Font
+  // Font size
   @each $name, $value in fonts.$font-size {
     --pui-font-size-#{$name}: #{$value};
+  }
+
+  // Font weight
+  @each $name, $value in fonts.$font-weight {
+    --pui-font-weight-#{$name}: #{$value};
   }
 }

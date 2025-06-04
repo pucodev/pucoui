@@ -10,3 +10,18 @@
     font-size: var(--pui-font-size-#{$name}) !important;
   }
 }
+
+// Font weight
+@each $name, $value in fonts.$font-weight {
+  .is-font-#{$name} {
+    font-weight: var(--pui-font-weight-#{$name}) !important;
+  }
+}
+
+// Text align
+$text-aligns: ("center", "left", "right", "justify");
+@each $align in $text-aligns {
+  .is-text-#{$align} {
+    text-align: #{$align} !important;
+  }
+}
