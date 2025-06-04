@@ -1,0 +1,7 @@
+@use "../variables/spaces.scss" as spaces;
+
+@each $name, $value in spaces.$spaces {
+  .is-gap-#{$name} {
+    gap: var(--pui-space-#{$name}) !important;
+  }
+}
