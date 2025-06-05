@@ -9,13 +9,16 @@
   --pui-btn-border-color: transparent;
   --pui-btn-hover-bg: #fff;
   --pui-btn-border-radius: 5px;
+  --pui-btn-font-size: var(--pui-font-size-6);
+  --pui-btn-size: calc(var(--pui-btn-font-size) * 2.5);
+  --pui-btn-border-size: 1px;
 
   position: relative;
   background-color: var(--pui-btn-bg);
   color: var(--pui-btn-color);
   border: none;
   border-radius: var(--pui-btn-border-radius);
-  border: solid 1px var(--pui-btn-border-color);
+  border: solid var(--pui-btn-border-size) var(--pui-btn-border-color);
   cursor: pointer;
   justify-content: center;
   padding-left: var(--pui-btn-px);
@@ -32,6 +35,9 @@
   transition-duration: 0.15s;
   transition-timing-function: ease-in-out;
   line-height: inherit;
+  font-size: var(--pui-btn-font-size);
+  height: var(--pui-btn-size);
+  width: auto;
 
   // *****
   // Hover
@@ -108,5 +114,38 @@
 
   &.is-rounded {
     --pui-btn-border-radius: 99999px;
+  }
+
+  // ******
+  // Icon
+  // *****
+  .icon {
+    --pui-icon-size: var(--pui-btn-font-size);
+    --pui-btn-icon-margin-wrapper: calc(var(--pui-btn-px) * -0.4);
+
+    // Icon left
+    &:first-child:not(:last-child) {
+      margin-inline-end: var(--pui-space-1);
+      margin-inline-start: var(--pui-btn-icon-margin-wrapper);
+    }
+
+    // Icon right
+    &:last-child:not(:first-child) {
+      margin-inline-start: var(--pui-space-1);
+      margin-inline-end: var(--pui-btn-icon-margin-wrapper);
+    }
+
+    // Icon only, square button
+    &:first-child:last-child {
+      --pui-btn-icon-margin-wrapper: calc(
+        (
+            var(--pui-btn-border-size) + var(--pui-btn-px) -
+              ((var(--pui-btn-size) - var(--pui-icon-size)) / 2)
+          ) *
+          -1
+      );
+      margin-inline-start: var(--pui-btn-icon-margin-wrapper);
+      margin-inline-end: var(--pui-btn-icon-margin-wrapper);
+    }
   }
 }
