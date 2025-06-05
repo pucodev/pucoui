@@ -1,0 +1,131 @@
+@use "../variables/colors.scss" as colors;
+
+.badge {
+  --pui-badge-border-radius: 0.25rem;
+  --pui-badge-py: var(--pui-space-1);
+  --pui-badge-px: var(--pui-space-2);
+  --pui-badge-font-size: var(--pui-font-size-7);
+  --pui-badge-bg: var(--pui-color-primary);
+  --pui-badge-color: var(--pui-color-white);
+
+  display: inline-flex;
+  justify-content: center;
+  padding: var(--pui-badge-py) var(--pui-badge-px);
+  font-size: var(--pui-badge-font-size);
+  line-height: 1;
+  background-color: var(--pui-badge-bg);
+  text-align: center;
+  white-space: nowrap;
+  border-radius: var(--pui-badge-border-radius);
+  color: var(--pui-badge-color);
+  background-color: var(--pui-badge-bg);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-badge-bg: var(--pui-color-#{$name});
+    }
+  }
+
+  // *******
+  // Tonal
+  // ******
+  &.is-tonal {
+    --pui-badge-bg: var(--pui-color-white);
+    --pui-badge-color: var(--pui-color-primary);
+    --pui-badge-tonal-bg: var(--pui-color-primary);
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: var(--pui-badge-tonal-bg);
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-badge-color: var(--pui-color-#{$name});
+        --pui-badge-tonal-bg: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  // *********
+  // Outlined
+  // *********
+  &.is-outlined {
+    --pui-badge-bg: var(--pui-color-white);
+    --pui-badge-color: var(--pui-color-primary);
+    --pui-badge-outlined-border-size: 1px;
+    --pui-badge-outlined-border-color: var(--pui-color-primary);
+
+    border: solid var(--pui-badge-outlined-border-size)
+      var(--pui-badge-outlined-border-color);
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-badge-color: var(--pui-color-#{$name});
+        --pui-badge-outlined-border-color: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  //*******
+  // Sizes
+  //*******
+  &.is-md {
+    --pui-badge-font-size: var(--pui-font-size-6);
+  }
+
+  &.is-lg {
+    --pui-badge-font-size: var(--pui-font-size-5);
+  }
+
+  &.is-rounded {
+    --pui-badge-border-radius: 9999px;
+  }
+
+  &.is-circle {
+    --pui-badge-circle-size: var(--pui-space-3);
+
+    width: var(--pui-badge-circle-size);
+    height: var(--pui-badge-circle-size);
+    padding: 0px;
+    border-radius: 50%;
+
+    &.is-medium {
+      --pui-badge-circle-size: var(--pui-space-4);
+    }
+
+    &.is-large {
+      --pui-badge-circle-size: var(--pui-space-5);
+    }
+  }
+
+  // ********
+  // Icon
+  // ********
+  .icon {
+    --pui-icon-size: var(--pui-badge-font-size);
+    --pui-badge-icon-margin-wrapper: calc(var(--pui-badge-px) * -0.4);
+
+    // Icon left
+    &:first-child:not(:last-child) {
+      margin-inline-end: var(--pui-space-1);
+      margin-inline-start: var(--pui-badge-icon-margin-wrapper);
+    }
+
+    // Icon right
+    &:last-child:not(:first-child) {
+      margin-inline-start: var(--pui-space-1);
+      margin-inline-end: var(--pui-badge-icon-margin-wrapper);
+    }
+  }
+}

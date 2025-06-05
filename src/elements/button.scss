@@ -131,10 +131,11 @@
     --pui-btn-border-radius: 99999px;
   }
 
-  // ******
-  // Icon
-  // *****
-  .icon {
+  // ************
+  // Icon & badge
+  // ************
+  .icon,
+  .badge {
     --pui-icon-size: var(--pui-btn-font-size);
     --pui-btn-icon-margin-wrapper: calc(var(--pui-btn-px) * -0.4);
 
