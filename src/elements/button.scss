@@ -58,8 +58,23 @@
     transition-timing-function: ease-in-out;
   }
 
-  &:hover::before {
+  &:not([disabled]):hover::before {
     opacity: 0.1;
+  }
+
+  // ******
+  // Sizes
+  // ******
+  &.is-sm {
+    --pui-btn-font-size: var(--pui-font-size-7);
+  }
+
+  &.is-md {
+    --pui-btn-font-size: var(--pui-font-size-5);
+  }
+
+  &.is-lg {
+    --pui-btn-font-size: var(--pui-font-size-4);
   }
 
   // ********
@@ -147,5 +162,13 @@
       margin-inline-start: var(--pui-btn-icon-margin-wrapper);
       margin-inline-end: var(--pui-btn-icon-margin-wrapper);
     }
+  }
+
+  // *********
+  // Disabled
+  //**********
+  &[disabled] {
+    box-shadow: none;
+    opacity: 0.5;
   }
 }
