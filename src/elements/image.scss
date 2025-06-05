@@ -1,3 +1,5 @@
+@use "sass:list";
+
 .avatar,
 .image {
   $image-dimensions: 16, 24, 32, 48, 64, 96, 128;
@@ -57,9 +59,9 @@
     (1, 3)
   );
 
-  @each $ratio in $image-responsive {
-    &.is-#{nth($ratio, 1)}by#{nth($ratio, 2)} {
-      aspect-ratio: #{nth($ratio, 1)} / #{nth($ratio, 2)};
+  @each $w, $h in $image-responsive {
+    &.is-#{$w}by#{$h} {
+      aspect-ratio: list.slash($w, $h);
     }
   }
 }
