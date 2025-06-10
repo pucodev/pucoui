@@ -1,0 +1,43 @@
+.input,
+.textarea,
+.select {
+  --pui-input-px: var(--pui-space-3);
+  --pui-input-py: var(--pui-space-2);
+  --pui-input-border-color: var(--pui-ui-color-muted);
+  --pui-input-border-radius: var(--pui-space-1);
+  --pui-input-bg: var(--pui-color-white);
+
+  display: block;
+  width: 100%;
+  padding: var(--pui-input-py) var(--pui-input-px);
+  appearance: none;
+  background-color: var(--pui-input-bg);
+  background-clip: padding-box;
+  border: 1px solid var(--pui-input-border-color);
+  border-radius: var(--pui-input-border-radius);
+  box-shadow: inset 0px 0px var(--pui-input-border-color);
+  transition:
+    border-color,
+    box-shadow 0.2s ease;
+  outline: none;
+
+  &:active:not(:disabled),
+  &:focus:not(:disabled) {
+    --pui-input-border-color: var(--pui-color-primary);
+    box-shadow: var(--pui-input-border-color) 0px 0px 0px 1px inset;
+  }
+
+  &[disabled],
+  fieldset[disabled] {
+    --pui-input-bg: var(--pui-ui-color-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.textarea {
+  resize: vertical;
+
+  &:not([rows]) {
+    min-height: 6rem;
+  }
+}

@@ -1,12 +1,15 @@
 $colors: (
-  "primary": #e74646,
+  // "primary": #e74646,
+  "primary": #8760db,
   "info": #66d1ff,
   "success": #48c78e,
   "warning": #ffb70f,
   "error": #ff6685,
-  "white": #ffffff,
+  "white": #ffffff
 );
 
 $ui-colors: (
   "muted": #c8d7d2,
+  "text-muted": #4a5565,
+  "disabled": #f7f7f9,
 );

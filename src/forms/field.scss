@@ -1,0 +1,41 @@
+.field {
+  --pui-field-help-color: var(--pui-ui-color-text-muted);
+  --pui-field-state-color: var(--pui-color-primary);
+
+  & .label:not(:last-child) {
+    font-weight: var(--pui-font-weight-bold);
+    margin-bottom: var(--pui-space-1);
+  }
+
+  & .help {
+    margin-top: var(--pui-space-1);
+    color: var(--pui-field-help-color);
+    font-size: var(--pui-font-size-7);
+  }
+
+  &.is-valid,
+  &.is-invalid {
+    .input,
+    .textarea,
+    .select {
+      --pui-input-border-color: var(--pui-field-state-color);
+
+      &:active:not(:disabled),
+      &:focus:not(:disabled) {
+        --pui-input-border-color: var(--pui-field-state-color);
+      }
+    }
+
+    .help {
+      --pui-field-help-color: var(--pui-field-state-color);
+    }
+  }
+
+  &.is-valid {
+    --pui-field-state-color: var(--pui-color-success);
+  }
+
+  &.is-invalid {
+    --pui-field-state-color: var(--pui-color-error);
+  }
+}
