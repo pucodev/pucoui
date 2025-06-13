@@ -1,0 +1,16 @@
+.divider,
+.list-group {
+  --pui-divider-color: var(--pui-ui-color-muted);
+}
+
+.divider:not(.is-vertical) {
+  border-bottom: solid 1px var(--pui-divider-color);
+}
+
+.divider.is-vertical {
+  border-right: solid 1px var(--pui-divider-color);
+}
+
+.list-group.is-divider .list-item:not(:last-child) {
+  border-bottom: solid 1px var(--pui-divider-color);
+}

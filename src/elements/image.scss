@@ -7,6 +7,7 @@
   position: relative;
   height: fit-content;
   width: fit-content;
+  margin: 0px;
 
   @each $dimension in $image-dimensions {
     &.is-size-#{$dimension} {
