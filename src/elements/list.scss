@@ -1,0 +1,30 @@
+@use "./../variables/colors.scss" as colors;
+
+.list-group {
+  --pui-list-hover-bg: #000;
+
+  &.is-hoverable {
+    .list-item {
+      position: relative;
+
+      &:hover:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--pui-list-hover-bg);
+        z-index: -1;
+        opacity: 0.075;
+        border-radius: inherit;
+      }
+    }
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-list-hover-bg: var(--pui-color-#{$name});
+      }
+    }
+  }
+}
