@@ -78,6 +78,23 @@
   }
 
   // ********
+  // Ghost
+  // ********
+  &.is-ghost {
+    --pui-btn-bg: #fff;
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-hover-bg: var(--pui-color-primary);
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-btn-bg: #fff;
+        --pui-btn-hover-bg: var(--pui-color-#{$name});
+        --pui-btn-color: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  // ********
   // Outlined
   // ********
   &.is-outlined {
