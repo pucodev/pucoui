@@ -10,3 +10,7 @@
     color: var(--pui-color-#{$name}) !important;
   }
 }
+
+.is-text-muted {
+  color: var(--pui-ui-color-text-muted);
+}

@@ -2,6 +2,10 @@
   --pui-field-help-color: var(--pui-ui-color-text-muted);
   --pui-field-state-color: var(--pui-color-primary);
 
+  label {
+    display: block;
+  }
+
   & .label:not(:last-child) {
     font-weight: var(--pui-font-weight-bold);
     margin-bottom: var(--pui-space-1);
