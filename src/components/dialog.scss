@@ -1,0 +1,103 @@
+.dialog {
+  --pui-dialog-px: var(--pui-space-5);
+  --pui-dialog-py: var(--pui-space-5);
+  --pui-dialog-padding-elements: var(--pui-space-3);
+  --pui-dialog-bg-padding: var(--pui-space-3);
+  --pui-dialog-bg-opacity: 0.2;
+  --pui-dialog-border-radius: var(--pui-space-1);
+
+  align-items: center;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  z-index: 999;
+
+  &.is-active {
+    display: flex;
+  }
+
+  .dialog-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--pui-color-white);
+    margin: 0px auto;
+    width: 100%;
+    max-width: 640px;
+    width: calc(100% - 2 * var(--pui-dialog-bg-padding));
+    border-radius: var(--pui-dialog-border-radius);
+    max-height: calc(-40px + 100%);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dialog-header,
+  .dialog-body,
+  .dialog-footer {
+    padding-left: var(--pui-dialog-px);
+    padding-right: var(--pui-dialog-px);
+  }
+
+  .dialog-header {
+    padding-top: var(--pui-dialog-py);
+    padding-bottom: var(--pui-space-1);
+
+    .btn.is-close {
+      --pui-btn-font-size: var(--pui-font-size-7);
+      --pui-btn-bg: #fff;
+      --pui-btn-color: var(--pui-color-primary);
+      --pui-btn-hover-bg: var(--pui-color-primary);
+      --pui-btn-border-radius: 9999px;
+
+      position: absolute;
+      top: 4px;
+      right: 4px;
+    }
+  }
+
+  .dialog-body {
+    padding-top: var(--pui-dialog-py);
+    padding-bottom: var(--pui-dialog-padding-elements);
+    flex-grow: 1;
+    overflow: auto;
+  }
+
+  .dialog-header + .dialog-body {
+    padding-top: var(--pui-space-2);
+  }
+
+  .dialog-title {
+    font-size: var(--pui-font-size-5);
+    font-weight: var(--pui-font-weight-bold);
+  }
+
+  .dialog-header:has(> .dialog-title + .btn.is-close) > .dialog-title {
+    padding-right: 40px;
+  }
+
+  .dialog-footer {
+    display: flex;
+    padding-top: var(--pui-dialog-padding-elements);
+    padding-bottom: var(--pui-dialog-padding-elements);
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--pui-space-2);
+  }
+}
+
+.dialog,
+.dialog-bg {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.dialog-bg {
+  background-color: #000;
+  opacity: var(--pui-dialog-bg-opacity);
+  position: absolute;
+  z-index: 0;
+}
