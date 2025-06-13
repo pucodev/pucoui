@@ -1,0 +1,46 @@
+@use "./../variables/colors.scss" as colors;
+
+.surface {
+  --pui-surface-color: #000;
+  --pui-surface-bg-opacity: 0.05;
+
+  position: relative;
+
+  &:after {
+    content: " ";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: var(--pui-surface-bg-opacity);
+    background-color: var(--pui-surface-color);
+    border-radius: inherit;
+    z-index: -999;
+  }
+
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-surface-color: var(--pui-color-#{$name});
+    }
+  }
+
+  $surface-tones: (
+    "1": 0.05,
+    "2": 0.1,
+    "3": 0.15,
+    "4": 0.2,
+    "5": 0.25,
+    "6": 0.3,
+    "7": 0.35,
+    "8": 0.4,
+    "9": 0.45,
+    "10": 0.5,
+  );
+
+  @each $name, $value in $surface-tones {
+    &.is-tone-#{$name} {
+      --pui-surface-bg-opacity: #{$value};
+    }
+  }
+}
