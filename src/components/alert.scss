@@ -1,0 +1,72 @@
+@use "./../variables/colors.scss" as colors;
+
+.alert {
+  --pui-alert-color-border: var(--pui-ui-color-muted);
+  --pui-alert-border-radius: var(--pui-space-1);
+  --pui-alert-color: hsl(--pui-ui-color-text);
+  --pui-alert-gap: var(--pui-space-3);
+  --pui-alert-px: var(--pui-space-3);
+  --pui-alert-py: var(--pui-space-3);
+
+  display: flex;
+  gap: var(--pui-alert-gap);
+  border: solid 1px var(--pui-alert-color-border);
+  color: var(--pui-alert-color);
+  border-radius: var(--pui-alert-border-radius);
+  padding: var(--pui-alert-py) var(--pui-alert-px);
+  box-shadow: none;
+  background-color: #fff;
+  position: relative;
+  z-index: 1;
+
+  .icon {
+    --pui-icon-size: var(--pui-font-size-4);
+  }
+
+  &.is-tonal {
+    --pui-alert-tonal-opacity: 0.075;
+    --pui-alert-tonal-color: #000;
+
+    &:after {
+      content: " ";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      opacity: var(--pui-alert-tonal-opacity);
+      background-color: var(--pui-alert-tonal-color);
+      z-index: -999;
+      border-radius: inherit;
+    }
+  }
+
+  &.is-borderless {
+    border-color: transparent;
+  }
+
+  &.is-accent-border {
+    --pui-alert-accent-border-width: 4px;
+    --pui-alert-accent-border-color: var(--pui-alert-color-border);
+
+    border-inline-start-width: var(--pui-alert-accent-border-width);
+    border-inline-start-color: var(--pui-alert-accent-border-color);
+  }
+
+  .alert-header {
+    font-weight: var(--pui-font-weight-bold);
+    line-height: 1;
+    margin-bottom: var(--pui-space-1);
+  }
+
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-alert-color-border: var(--pui-color-#{$name});
+      --pui-alert-color: var(--pui-color-#{$name});
+    }
+
+    &.is-tonal.is-#{$name} {
+      --pui-alert-tonal-color: var(--pui-color-#{$name});
+    }
+  }
+}
