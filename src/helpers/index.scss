@@ -4,6 +4,17 @@
 @use "flex.scss";
 @use "gaps.scss";
 @use "borders.scss";
+@use "elevation.scss";
+
+*,
+::after,
+::before,
+::backdrop {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
 
 button[disabled],
 input[disabled],
@@ -13,4 +24,18 @@ fieldset[disabled],
 option[disabled],
 optgroup[disabled] {
   cursor: not-allowed;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
