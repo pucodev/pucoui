@@ -19,7 +19,6 @@ const config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
@@ -41,7 +40,7 @@ const config = {
     locales: ['es'],
   },
 
-  plugins: ['docusaurus-plugin-sass'],
+  plugins: ['docusaurus-plugin-sass', './src/plugins/generate-html'],
 
   presets: [
     [
@@ -61,6 +60,13 @@ const config = {
         },
       }),
     ],
+  ],
+
+  scripts: [
+    {
+      src: 'https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js',
+      async: true,
+    },
   ],
 
   themeConfig:
