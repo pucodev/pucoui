@@ -1,0 +1,98 @@
+import { fontWeights, fontAlignments } from '../../src/components/variables'
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+
+# Textos
+
+Configura los tamaños, alineaciones y otras propiedades de los textos
+
+## Headings
+
+Se tienen disponible los siguientes elementos:
+
+- `<h1>` al `<h7>`
+- Clase de `.h1` al `.h7`
+- Clase de `is-font-size-1` al `is-font-size-7`
+
+:::info
+
+Para ver los tamaños disponibles visitar la [documentacion de personalizar textos](../customize/fontsize)
+
+:::
+
+### Ejemplos
+
+<PreviewElement>
+  <h1>Título 1</h1>
+  <h2>Título 2</h2>
+  <div className="h3">Título 3</div>
+  <div className="is-font-size-4">Título 4</div>
+</PreviewElement>
+```html
+<h1>Título 1</h1>
+<h2>Título 2</h2>
+<div className="h3">Título 3</div>
+<div className="is-font-size-4">Título 4</div>
+```
+
+## Font weight
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Clase</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {fontWeights.map((item, idx) => (
+      <tr>
+        <td>{item.key}</td>
+        <td>
+          <CodeBlock>is-font-{item.key}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div className={`is-font-${item.key}`}>Lorem ipsum</div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Text align
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Clase</th>
+    </tr>
+  </thead>
+  <tbody>
+    {fontAlignments.map((item, idx) => (
+      <tr>
+        <td>{item}</td>
+        <td>
+          <CodeBlock>is-text-{item}</CodeBlock>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+### Ejemplo
+
+<PreviewElement>
+  <div className="is-text-center">Texto centrado</div>
+  <div className="is-text-right">Texto izquierda</div>
+  <div className="is-text-left">Texto derecha</div>
+</PreviewElement>
+
+```html
+<div class="is-text-center">Centered text</div>
+<div class="is-text-right">Texto izquierda</div>
+<div class="is-text-left">Texto derecha</div>
+```

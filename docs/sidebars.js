@@ -11,7 +11,13 @@ const sidebars = {
       type: 'category',
       label: 'Personalización',
       link: { type: 'doc', id: 'customize/index' },
-      items: ['customize/colors', 'customize/spacing', 'customize/fontsizes'],
+      items: ['customize/color', 'customize/spacing', 'customize/fontsize'],
+    },
+    {
+      type: 'category',
+      label: 'Helpers',
+      link: { type: 'doc', id: 'helper/index' },
+      items: ['helper/typography'],
     },
   ],
 }
