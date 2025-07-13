@@ -11,3 +11,44 @@ export const defaultDimen = 16
 export const spaces = [0, 0.25, 0.5, 0.75, 1, 1.5, 3]
 
 export const textSizes = [3, 2.5, 2, 1.5, 1.25, 1, 0.75]
+
+export const fontWeights = [
+  {
+    key: 'thin',
+    value: 100,
+  },
+  {
+    key: 'extra-light',
+    value: 200,
+  },
+  {
+    key: 'light',
+    value: 300,
+  },
+  {
+    key: 'normal',
+    value: 400,
+  },
+  {
+    key: 'medium',
+    value: 500,
+  },
+  {
+    key: 'semi-bold',
+    value: 600,
+  },
+  {
+    key: 'bold',
+    value: 700,
+  },
+  {
+    key: 'extra-bold',
+    value: 800,
+  },
+  {
+    key: 'black',
+    value: 900,
+  },
+]
+
+export const fontAlignments = ['left', 'center', 'right', 'justify']
