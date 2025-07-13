@@ -9,6 +9,10 @@
     flex-direction: column !important;
   }
 
+  &.is-flex-wrap {
+    flex-wrap: wrap !important;
+  }
+
   // *****************
   // justify-content
   // *****************

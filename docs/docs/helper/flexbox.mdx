@@ -1,0 +1,407 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+
+export function ItemDefault({ color, width, minHeight, content }) {
+  return (
+    <div
+      className={`is-bg-${color || 'primary'} p-3 is-rounded-2`}
+      style={{ width: width || 'fit-content', minHeight: minHeight || 'auto' }}
+    >
+      {content}
+    </div>
+  )
+}
+
+export function ItemPrimary({ content }) {
+  return (
+    <ItemDefault
+      color="primary"
+      width="20%"
+      minHeight="40px"
+      content={content}
+    />
+  )
+}
+
+export function ItemPrimaryFit({ content }) {
+  return <ItemDefault color="primary" content={content} />
+}
+
+export function ItemSecondary({ content }) {
+  return (
+    <ItemDefault color="info" width="12%" minHeight="40px" content={content} />
+  )
+}
+
+export function ItemSecondaryFit({ content }) {
+  return <ItemDefault color="info" content={content} />
+}
+
+export function DefaultRow() {
+  return (
+    <>
+      <ItemPrimaryFit content="Flex item 1" />
+      <ItemSecondaryFit content="Flex item 2" />
+      <ItemPrimaryFit content="Flex item 3" />
+      <ItemSecondaryFit content="..." />
+    </>
+  )
+}
+
+# Flex
+
+Clases para manejar flex items
+
+## Uso básico
+
+Para poder usar flex items usar la clase `is-flex`
+
+<PreviewElement>
+  <div className="is-flex is-color-white is-gap-3">
+    <DefaultRow />
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-gap-3">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>Flex item 3</div>
+  <div>...</div>
+</div>
+```
+
+## Flex direction
+
+### Row
+
+Usa `is-flex-row` para configurar la dirección horizontal
+
+<PreviewElement>
+  <div className="is-flex is-flex-row is-color-white is-gap-3">
+    <DefaultRow />
+  </div>
+</PreviewElement>
+
+:::tip
+
+Por defecto usando solo `is-flex` ya está configurado como flex row
+
+:::
+
+### Column
+
+Usa `is-flex-column` para configurar la dirección vertical
+
+<PreviewElement>
+  <div className="is-flex is-flex-column is-color-white is-gap-3">
+    <DefaultRow />
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-flex-column is-gap-3">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>Flex item 3</div>
+  <div>...</div>
+</div>
+```
+
+## Gap
+
+Usa `is-gap-{size}` para agregar espacio entre los elementos flexibles. El size es un valor entre `0` a `6`
+
+### Ejemplos
+
+#### is-gap-3
+
+<PreviewElement>
+  <div className="is-flex is-color-white is-gap-3">
+    <ItemPrimaryFit content="Flex item 1" />
+    <ItemSecondaryFit content="Flex item 2" />
+    <ItemPrimaryFit content="Flex item 3" />
+    <ItemSecondaryFit content="..." />
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-flex-column is-gap-3">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>Flex item 3</div>
+  <div>...</div>
+</div>
+```
+
+#### is-gap-1
+
+<PreviewElement>
+  <div className="is-flex is-color-white is-gap-1">
+    <ItemPrimaryFit content="Flex item 1" />
+    <ItemSecondaryFit content="Flex item 2" />
+    <ItemPrimaryFit content="Flex item 3" />
+    <ItemSecondaryFit content="..." />
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-flex-column is-gap-1">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>Flex item 3</div>
+  <div>...</div>
+</div>
+```
+
+## Justify content
+
+| Clase                                                   | Propiedad                        |
+| ------------------------------------------------------- | -------------------------------- |
+| <CodeBlock>is-justify-content-flex-start</CodeBlock>    | `justify-content: flex-start`    |
+| <CodeBlock>is-justify-content-flex-end</CodeBlock>      | `justify-content: flex-end`      |
+| <CodeBlock>is-justify-content-end</CodeBlock>           | `justify-content: center`        |
+| <CodeBlock>is-justify-content-space-between</CodeBlock> | `justify-content: space-between` |
+| <CodeBlock>is-justify-content-space-around</CodeBlock>  | `justify-content: space-around`  |
+| <CodeBlock>is-justify-content-space-evenly</CodeBlock>  | `justify-content: space-evenly`  |
+
+### Gráfica
+
+export function FlexJustifyRow({ title, className }) {
+  return (
+    <section className="is-flex is-flex-column is-gap-2">
+      <div className="is-flex is-justify-content-space-between is-align-items-center">
+        <h5 className="is-color-primary">{title}</h5>
+        <CodeBlock className="p-2">{className}</CodeBlock>
+      </div>
+      <div
+        className={`is-flex is-color-white is-bg-white is-gap-3 p-3 is-rounded-2 elevation-3 ${className}`}
+      >
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+      </div>
+    </section>
+  )
+}
+
+<PreviewElement>
+  <div className="is-flex is-flex-column is-gap-4">
+    <FlexJustifyRow
+      title="flex-start"
+      className="is-justify-content-flex-start"
+    />
+    <FlexJustifyRow title="flex-end" className="is-justify-content-flex-end" />
+    <FlexJustifyRow title="center" className="is-justify-content-center" />
+    <FlexJustifyRow
+      title="space-between"
+      className="is-justify-content-space-between"
+    />
+    <FlexJustifyRow
+      title="space-evenly"
+      className="is-justify-content-space-evenly"
+    />
+  </div>
+</PreviewElement>
+
+### Ejemplos
+
+**.is-justify-content-center**
+
+<PreviewElement>
+  <div className="is-flex p-3 bg-gray-100 is-justify-content-center is-color-white is-gap-3">
+    <div className="is-bg-primary p-3 is-rounded-2">Flex item 1</div>
+    <div className="is-bg-info p-3 is-rounded-2">Flex item 2</div>
+    <div className="is-bg-info p-3 is-rounded-2">...</div>
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-justify-content-center is-gap-3">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>...</div>
+</div>
+```
+
+**.is-justify-content-space-between**
+
+<PreviewElement>
+  <div className="is-flex p-3 bg-gray-100 is-justify-content-space-between is-color-white">
+    <DefaultRow />
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-justify-content-space-between">
+  <div>Flex item 1</div>
+  <div>Flex item 2</div>
+  <div>Flex item 3</div>
+  <div>...</div>
+</div>
+```
+
+## Align items
+
+| Clase                                            | Propiedad                 |
+| ------------------------------------------------ | ------------------------- |
+| <CodeBlock>is-align-items-flex-start</CodeBlock> | `align-items: flex-start` |
+| <CodeBlock>is-align-items-flex-end</CodeBlock>   | `align-items: flex-end`   |
+| <CodeBlock>is-align-items-center</CodeBlock>     | `align-items: center`     |
+| <CodeBlock>is-align-items-stretch</CodeBlock>    | `align-items: stretch`    |
+| <CodeBlock>is-align-items-baseline</CodeBlock>   | `align-items: baseline`   |
+
+### Gráfica
+
+export function FlexAlignItemsRow({ title, className }) {
+  return (
+    <section className="is-flex is-flex-column is-gap-2">
+      <div className="is-flex is-justify-content-space-between is-align-items-center">
+        <h5 className="is-color-primary">{title}</h5>
+        <CodeBlock className="p-2">{className}</CodeBlock>
+      </div>
+      <div
+        className={`is-flex is-color-white is-bg-white is-gap-3 p-3 is-rounded-2 elevation-3 ${className}`}
+        style={{ minHeight: '120px' }}
+      >
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+      </div>
+    </section>
+  )
+}
+
+<PreviewElement>
+  <div className="is-flex is-flex-column is-gap-4">
+    <FlexAlignItemsRow
+      title="flex-start"
+      className="is-align-items-flex-start"
+    />
+    <FlexAlignItemsRow title="flex-end" className="is-align-items-flex-end" />
+    <FlexAlignItemsRow title="center" className="is-align-items-center" />
+    <FlexAlignItemsRow title="stretch" className="is-align-items-stretch" />
+    <FlexAlignItemsRow title="baseline" className="is-align-items-baseline" />
+  </div>
+</PreviewElement>
+
+### Ejemplos
+
+**.is-align-items-center**
+
+<PreviewElement>
+  <div className="is-flex p-3 bg-gray-100 is-align-items-center is-color-white is-gap-3">
+    <div className="is-bg-primary p-3 is-rounded-2 py-2">Flex item 1</div>
+    <div className="is-bg-info p-3 is-rounded-2 py-10">Flex item 2</div>
+    <div className="is-bg-primary p-3 is-rounded-2 py-6">Flex item 3</div>
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-align-items-center is-gap-3">
+  <div class="py-2">Flex item 1</div>
+  <div class="py-10">Flex item 2</div>
+  <div class="py-6">Flex item 3</div>
+</div>
+```
+
+**.is-flex-column .is-align-items-center**
+
+<PreviewElement>
+  <div className="is-flex is-flex-column p-3 bg-gray-100 is-align-items-center is-color-white is-gap-3">
+    <div className="is-bg-primary p-3 is-rounded-2 px-2">Flex item 1</div>
+    <div className="is-bg-info p-3 is-rounded-2 px-10">Flex item 2</div>
+    <div className="is-bg-primary p-3 is-rounded-2 px-6">Flex item 3</div>
+  </div>
+</PreviewElement>
+
+```html
+<div class="is-flex is-flex-column is-align-items-center is-gap-3">
+  <div class="px-2">Flex item 1</div>
+  <div class="px-10">Flex item 2</div>
+  <div class="px-6">Flex item 3</div>
+</div>
+```
+
+## Align content
+
+:::info
+
+Es útil cuando se trabaja con contenedores flexibles que tienen múltiples líneas de elementos flexibles (es decir, cuando `flex-wrap` está configurado en `wrap` o `wrap-reverse`).
+
+:::
+
+| Clase                                                 | Propiedad                      |
+| ----------------------------------------------------- | ------------------------------ |
+| <CodeBlock>is-align-content-flex-start</CodeBlock>    | `align-content: flex-start`    |
+| <CodeBlock>is-align-content-flex-end</CodeBlock>      | `align-content: flex-end`      |
+| <CodeBlock>is-align-content-center</CodeBlock>        | `align-content: center`        |
+| <CodeBlock>is-align-content-space-between</CodeBlock> | `align-content: space-between` |
+| <CodeBlock>is-align-content-space-around</CodeBlock>  | `align-content: space-around`  |
+| <CodeBlock>is-align-content-space-evenly</CodeBlock>  | `align-content: space-evenly`  |
+| <CodeBlock>is-align-content-stretch</CodeBlock>       | `align-content: stretch`       |
+
+### Gráfica
+
+export function FlexAlignContentRow({ title, className }) {
+  return (
+    <section className="is-flex is-flex-column is-gap-2">
+      <div className="is-flex is-justify-content-space-between is-align-items-center">
+        <h5 className="is-color-primary">{title}</h5>
+        <CodeBlock className="p-2">{className}</CodeBlock>
+      </div>
+      <div
+        className={`is-flex is-color-white is-bg-white is-gap-3 p-3 is-rounded-2 elevation-3 is-flex-wrap ${className}`}
+        style={{ minHeight: '280px' }}
+      >
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+        <ItemSecondary />
+        <ItemPrimary />
+      </div>
+    </section>
+  )
+}
+
+<PreviewElement>
+  <div className="is-flex is-flex-column is-gap-4">
+    <FlexAlignContentRow
+      title="flex-start"
+      className="is-align-content-flex-start"
+    />
+    <FlexAlignContentRow
+      title="flex-end"
+      className="is-align-content-flex-end"
+    />
+    <FlexAlignContentRow title="center" className="is-align-content-center" />
+    <FlexAlignContentRow
+      title="space-between"
+      className="is-align-content-space-between"
+    />
+    <FlexAlignContentRow
+      title="space-around"
+      className="is-align-content-space-around"
+    />
+    <FlexAlignContentRow
+      title="space-evenly"
+      className="is-align-content-space-evenly"
+    />
+    <FlexAlignContentRow
+      title="space-stretch"
+      className="is-align-content-space-stretch"
+    />
+  </div>
+</PreviewElement>
