@@ -13,23 +13,30 @@
   },
   "license": "MIT",
   "author": "",
-  "main": "index.js",
+  "main": "dist/pucoui.css",
   "scripts": {
     "prepare": "husky",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass -w src/index.scss dist/pucoui.css"
+    "build:css": "sass src/index.scss dist/pucoui.css && postcss dist/pucoui.css --use autoprefixer cssnano --no-map -o dist/pucoui.min.css",
+    "watch:css": "sass --watch src/index.scss dist/pucoui.css",
+    "lint:css": "stylelint 'src/**/*.scss'"
   },
   "lint-staged": {
     "*.{js,ts,json,css,md,scss}": "prettier --write"
   },
   "dependencies": {
-    "modern-normalize": "^3.0.1",
-    "sass": "^1.89.1"
+    "modern-normalize": "^3.0.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.0.7",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
-    "prettier": "^3.5.3"
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "prettier": "^3.5.3",
+    "sass": "^1.89.1",
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard-scss": "^15.0.1"
   },
   "packageManager": "pnpm@10.11.1+sha512.e519b9f7639869dc8d5c3c5dfef73b3f091094b0a006d7317353c72b124e80e1afd429732e28705ad6bfa1ee879c1fce46c128ccebd3192101f43dd67c667912"
 }
