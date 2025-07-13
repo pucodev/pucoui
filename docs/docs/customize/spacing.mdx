@@ -1,0 +1,41 @@
+import { spaces, defaultDimen } from '../../src/components/variables'
+import CodeBlock from '@theme/CodeBlock'
+import PreviewElement from '../../src/components/PreviewElement'
+
+# Espaciado
+
+## Tabla de espacios
+
+Los calculos de los pixeles están sobre la base de <code>{defaultDimen}px</code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tamaño</th>
+      <th>Pixels</th>
+      <th>Variable</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {spaces.map((dimen, idx) => (
+      <tr>
+        <td>{idx}</td>
+        <td>{dimen}rem</td>
+        <td>{dimen * defaultDimen}px</td>
+        <td>
+          <CodeBlock>--pui-space-{idx}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div
+              className={`is-bg-primary`}
+              style={{ height: '1rem', borderRadius: '2px', width: `${dimen * defaultDimen}px` }}
+            ></div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
