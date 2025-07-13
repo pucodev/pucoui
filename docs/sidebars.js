@@ -17,7 +17,7 @@ const sidebars = {
       type: 'category',
       label: 'Helpers',
       link: { type: 'doc', id: 'helper/index' },
-      items: ['helper/typography', 'helper/color'],
+      items: ['helper/typography', 'helper/color', 'helper/spacing'],
     },
   ],
 }
