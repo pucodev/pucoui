@@ -1,0 +1,34 @@
+import { colors } from '../../src/components/variables'
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+
+# Colores
+
+Se maneja un conjunto de colores en variables css usando el patron `--pui-color-{color-name}`
+
+## Tabla de colores
+
+<table>
+<thead>
+  <tr>
+    <th>Color</th>
+    <th>Preview</th>
+    <th>Variable</th>
+  </tr>
+</thead>
+
+  <tbody>
+    {colors.map(color => (
+      <tr>
+        <td>{color}</td>
+        <td>
+          <PreviewElement>
+            <div style={{width: '80px', height: '80px', borderRadius: '4px'}} className={`is-bg-${color}`}></div>
+          </PreviewElement>
+        </td>
+        <td><CodeBlock>--pui-color-{color}</CodeBlock></td>
+      </tr>
+    ))}
+
+  </tbody>
+</table>

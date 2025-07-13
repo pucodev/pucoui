@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+.pucoui {
+  @include meta.load-css("./../../../dist/pucoui.css");
+}
