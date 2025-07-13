@@ -13,7 +13,6 @@
   padding: var(--pui-badge-py) var(--pui-badge-px);
   font-size: var(--pui-badge-font-size);
   line-height: 1;
-  background-color: var(--pui-badge-bg);
   text-align: center;
   white-space: nowrap;
   border-radius: var(--pui-badge-border-radius);
@@ -37,13 +36,10 @@
     --pui-badge-color: var(--pui-color-primary);
     --pui-badge-tonal-bg: var(--pui-color-primary);
 
-    &:before {
+    &::before {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
+      inset: 0;
       background-color: var(--pui-badge-tonal-bg);
       opacity: 0.1;
       z-index: -1;
@@ -77,9 +73,9 @@
     }
   }
 
-  //*******
+  // *******
   // Sizes
-  //*******
+  // *******
   &.is-md {
     --pui-badge-font-size: var(--pui-font-size-6);
   }
@@ -97,7 +93,7 @@
 
     width: var(--pui-badge-circle-size);
     height: var(--pui-badge-circle-size);
-    padding: 0px;
+    padding: 0;
     border-radius: 50%;
 
     &.is-medium {
@@ -118,14 +114,12 @@
 
     // Icon left
     &:first-child:not(:last-child) {
-      margin-inline-end: var(--pui-space-1);
-      margin-inline-start: var(--pui-badge-icon-margin-wrapper);
+      margin-inline: var(--pui-badge-icon-margin-wrapper) var(--pui-space-1);
     }
 
     // Icon right
     &:last-child:not(:first-child) {
-      margin-inline-start: var(--pui-space-1);
-      margin-inline-end: var(--pui-badge-icon-margin-wrapper);
+      margin-inline: var(--pui-space-1) var(--pui-badge-icon-margin-wrapper);
     }
   }
 }

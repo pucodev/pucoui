@@ -1,10 +1,10 @@
-@use "colors.scss";
-@use "spaces.scss";
-@use "fonts.scss";
-@use "flex.scss";
-@use "gaps.scss";
-@use "borders.scss";
-@use "elevation.scss";
+@use "colors";
+@use "spaces";
+@use "fonts";
+@use "flex";
+@use "gaps";
+@use "borders";
+@use "elevation";
 
 *,
 ::after,
@@ -30,8 +30,8 @@ ol,
 ul,
 menu {
   list-style: none;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
 }
 
 img,

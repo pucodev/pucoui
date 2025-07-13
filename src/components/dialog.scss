@@ -22,8 +22,7 @@
     position: relative;
     z-index: 1;
     background-color: var(--pui-color-white);
-    margin: 0px auto;
-    width: 100%;
+    margin: 0 auto;
     max-width: 640px;
     width: calc(100% - 2 * var(--pui-dialog-bg-padding));
     border-radius: var(--pui-dialog-border-radius);
@@ -89,10 +88,7 @@
 
 .dialog,
 .dialog-bg {
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
+  inset: 0;
 }
 
 .dialog-bg {

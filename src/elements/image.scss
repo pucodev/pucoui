@@ -3,11 +3,12 @@
 .avatar,
 .image {
   $image-dimensions: 16, 24, 32, 48, 64, 96, 128;
+
   overflow: hidden;
   position: relative;
   height: fit-content;
   width: fit-content;
-  margin: 0px;
+  margin: 0;
 
   @each $dimension in $image-dimensions {
     &.is-size-#{$dimension} {
@@ -32,10 +33,7 @@
   .fallback {
     z-index: 0;
     position: absolute;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;

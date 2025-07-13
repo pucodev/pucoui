@@ -9,14 +9,10 @@
   display: table;
   border-collapse: collapse;
 
-  th:not([align]) {
-    text-align: left;
-  }
-
   th,
   td {
     position: relative;
-    border: solid 0px var(--pui-table-border-color);
+    border: solid 0 var(--pui-table-border-color);
     border-bottom-width: var(--pui-table-border);
     padding: var(--pui-table-py) var(--pui-table-px);
   }
@@ -25,20 +21,24 @@
     border-bottom-width: var(--pui-table-border-header);
   }
 
+  th:not([align]) {
+    text-align: left;
+  }
+
   tr:last-child td {
-    border-bottom-width: 0px;
+    border-bottom-width: 0;
   }
 
   &.is-bordered {
     th,
-    td,
+    tr td,
     tr:last-child td {
       border-width: var(--pui-table-border);
     }
   }
 
-  &.is-striped tr:not(.is-active):nth-child(2n) > td:before,
-  &.is-hoverable tr:not(.is-active):hover > td:before {
+  &.is-striped tr:not(.is-active):nth-child(2n) > td::before,
+  &.is-hoverable tr:not(.is-active):hover > td::before {
     content: "";
     position: absolute;
     top: 0;
@@ -53,11 +53,11 @@
     --pui-table-bg-active: var(--pui-color-primary);
   }
 
-  &.is-striped tr:not(.is-active):nth-child(2n) > td:before {
+  &.is-striped tr:not(.is-active):nth-child(2n) > td::before {
     opacity: 0.04;
   }
 
-  &.is-hoverable tr:not(.is-active):hover > td:before {
+  &.is-hoverable tr:not(.is-active):hover > td::before {
     opacity: 0.075;
   }
 

@@ -41,6 +41,7 @@
     --pui-size-switch-handler: calc(
       var(--pui-switch-height) - var(--pui-size-switch-handler-gap) * 2
     );
+
     content: "";
     cursor: pointer;
     position: absolute;
@@ -57,6 +58,7 @@
 
   input[type="checkbox"]:checked + label.slider {
     --pui-size-switch-handler-gap: 4px;
+
     background-color: var(--pui-switch-selected-color-negative);
     left: calc(
       var(--pui-switch-width) - var(--pui-switch-height) +

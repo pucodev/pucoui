@@ -30,7 +30,7 @@
         margin-inline-end: var(--pui-space-1);
       }
 
-      & + :before {
+      & + ::before {
         content: "";
         display: block;
         height: var(--pui-breadcrumbs-size);

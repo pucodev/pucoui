@@ -5,6 +5,7 @@
 @mixin elevation($level) {
   @if map.has-key(spaces.$elevations, $level) {
     box-shadow: map.get(spaces.$elevations, $level);
+
     // box-shadow: #{list.join($shadows, comma)};
   } @else {
     @warn "Nivel de elevación #{$level} no definido en \$elevations.";

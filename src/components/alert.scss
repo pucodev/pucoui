@@ -27,12 +27,9 @@
     --pui-alert-tonal-opacity: 0.075;
     --pui-alert-tonal-color: #000;
 
-    &:after {
+    &::after {
       content: " ";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      inset: 0;
       position: absolute;
       opacity: var(--pui-alert-tonal-opacity);
       background-color: var(--pui-alert-tonal-color);

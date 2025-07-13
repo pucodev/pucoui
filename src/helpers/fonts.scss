@@ -20,6 +20,7 @@
 
 // Text align
 $text-aligns: ("center", "left", "right", "justify");
+
 @each $align in $text-aligns {
   .is-text-#{$align} {
     text-align: #{$align} !important;

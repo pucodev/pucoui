@@ -16,15 +16,12 @@
   position: relative;
   background-color: var(--pui-btn-bg);
   color: var(--pui-btn-color);
-  border: none;
   border-radius: var(--pui-btn-border-radius);
   border: solid var(--pui-btn-border-size) var(--pui-btn-border-color);
   cursor: pointer;
   justify-content: center;
-  padding-left: var(--pui-btn-px);
-  padding-right: var(--pui-btn-px);
-  padding-bottom: var(--pui-btn-py);
-  padding-top: var(--pui-btn-py);
+  padding: var(--pui-btn-py) var(--pui-btn-px) var(--pui-btn-py)
+    var(--pui-btn-px);
   text-align: center;
   white-space: nowrap;
   display: flex;
@@ -46,10 +43,7 @@
   &::before {
     content: "";
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    inset: 0;
     background-color: var(--pui-btn-hover-bg);
     opacity: 0;
     z-index: -1;
@@ -158,14 +152,12 @@
 
     // Icon left
     &:first-child:not(:last-child) {
-      margin-inline-end: var(--pui-space-1);
-      margin-inline-start: var(--pui-btn-icon-margin-wrapper);
+      margin-inline: var(--pui-btn-icon-margin-wrapper) var(--pui-space-1);
     }
 
     // Icon right
     &:last-child:not(:first-child) {
-      margin-inline-start: var(--pui-space-1);
-      margin-inline-end: var(--pui-btn-icon-margin-wrapper);
+      margin-inline: var(--pui-space-1) var(--pui-btn-icon-margin-wrapper);
     }
 
     // Icon only, square button
@@ -177,14 +169,15 @@
           ) *
           -1
       );
-      margin-inline-start: var(--pui-btn-icon-margin-wrapper);
-      margin-inline-end: var(--pui-btn-icon-margin-wrapper);
+
+      margin-inline: var(--pui-btn-icon-margin-wrapper)
+        var(--pui-btn-icon-margin-wrapper);
     }
   }
 
   // *********
   // Disabled
-  //**********
+  // **********
   &[disabled] {
     box-shadow: none;
     opacity: 0.5;
