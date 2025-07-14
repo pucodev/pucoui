@@ -40,7 +40,25 @@ const config = {
     locales: ['es'],
   },
 
-  plugins: ['docusaurus-plugin-sass', './src/plugins/generate-html'],
+  plugins: [
+    'docusaurus-plugin-sass',
+    () => ({
+      name: 'post-build-plugin',
+      configureWebpack() {
+        return {
+          module: {
+            rules: [
+              {
+                test: /\.html$/i,
+                resourceQuery: /raw/, // SOLO cuando el import lleva ?raw
+                type: 'asset/source', // Webpack 5: devuelve string
+              },
+            ],
+          },
+        }
+      },
+    }),
+  ],
 
   presets: [
     [

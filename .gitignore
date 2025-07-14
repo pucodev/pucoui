@@ -5,10 +5,6 @@ node_modules/
 .npm/
 .npmrc
 
-# Sass
-*.css
-*.css.map
-
 # Dist
 dist/
 build/
@@ -25,3 +21,6 @@ pnpm-debug.log
 # Env
 .env
 .env.*
+
+.trash
+docs/plugins/.tmp
