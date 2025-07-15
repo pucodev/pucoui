@@ -1,3 +1,8 @@
+/**
+ * Available colors
+ * @typedef {'primary' | 'info' | 'success' | 'warning' | 'error' | 'white'} Color
+ */
+
 export const colors = [
   'primary',
   'info',

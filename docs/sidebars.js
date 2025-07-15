@@ -28,7 +28,7 @@ const sidebars = {
       type: 'category',
       label: 'Elementos',
       link: { type: 'doc', id: 'element/index' },
-      items: ['element/alert'],
+      items: ['element/alert', 'element/button'],
     },
   ],
 }
