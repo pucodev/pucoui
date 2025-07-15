@@ -30,3 +30,8 @@ export function Button({
 export function ButtonIcon({ icon, ...props }) {
   return <iconify-icon className="icon" icon={icon} {...props}></iconify-icon>
 }
+
+export default {
+  Button,
+  ButtonIcon,
+}
