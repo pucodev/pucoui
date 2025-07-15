@@ -24,6 +24,12 @@ const sidebars = {
         'helper/flexbox',
       ],
     },
+    {
+      type: 'category',
+      label: 'Elementos',
+      link: { type: 'doc', id: 'element/index' },
+      items: ['element/alert'],
+    },
   ],
 }
 
