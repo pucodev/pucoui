@@ -73,8 +73,11 @@ const sub = await watcher.subscribe(BASE_DIR, async (err, events) => {
     return
   }
   for (const e of events) {
-    console.log(`📄 ${e.type.toUpperCase()} → ${e.path}`)
-    convertToHtml(e.path)
+    const eventType = e.type.toUpperCase()
+    if (['UPDATE'].includes(eventType)) {
+      console.log(`📄 ${e.type.toUpperCase()} → ${e.path}`)
+      convertToHtml(e.path)
+    }
   }
 })
 

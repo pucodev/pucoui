@@ -59,6 +59,19 @@ async function copyFile(src, dest) {
 }
 
 /**
+ * Replace React comments in the HTML string with HTML comments
+ * Convert `<span data-react-comment="true" hidden=""><!-- {COMMENT} --></span>` to `<!-- {COMMENT} -->`
+ * @param {string} rawHtml
+ * @returns Html string with React comments converted to HTML comments
+ */
+function renderComments(rawHtml) {
+  return rawHtml.replace(
+    /<span\s+data-react-comment="true"\s+hidden="">\s*<!--([\s\S]*?)-->\s*<\/span>/g,
+    '<!-- $1 -->',
+  )
+}
+
+/**
  * Dynamically import a React component, render it to static HTML, and save it to disk
  * @param {string} filePath - Path to a .jsx or .tsx file
  */
@@ -87,7 +100,17 @@ async function convertToHtml(filePath) {
   }
 
   await fs.mkdir(parentDir, { recursive: true }).catch(() => {})
-  const rawHtml = renderToStaticMarkup(React.createElement(mod.default))
+
+  let rawHtml = ''
+  try {
+    rawHtml = renderToStaticMarkup(React.createElement(mod.default))
+  } catch (error) {
+    console.log('⚠️ File is not a valid React Component', filePath)
+    return
+  }
+
+  rawHtml = renderComments(rawHtml)
+  console.log('🔍 Rendered HTML:', rawHtml)
   const html = await prettier.format(rawHtml, {
     parser: 'html',
     plugins: [parserHtml],
