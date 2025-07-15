@@ -39,7 +39,7 @@
   }
 
   &.is-borderless {
-    border-color: transparent;
+    border: none;
   }
 
   &.is-accent-border {
@@ -48,6 +48,7 @@
 
     border-inline-start-width: var(--pui-alert-accent-border-width);
     border-inline-start-color: var(--pui-alert-accent-border-color);
+    border-left-style: solid !important;
   }
 
   .alert-header {

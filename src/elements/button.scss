@@ -11,7 +11,7 @@
   --pui-btn-border-radius: 5px;
   --pui-btn-font-size: var(--pui-font-size-6);
   --pui-btn-size: calc(var(--pui-btn-font-size) * 2.5);
-  --pui-btn-border-size: 1px;
+  --pui-btn-border-size: 0px;
 
   position: relative;
   background-color: var(--pui-btn-bg);
@@ -34,7 +34,7 @@
   line-height: inherit;
   font-size: var(--pui-btn-font-size);
   height: var(--pui-btn-size);
-  width: auto;
+  width: fit-content;
 
   // *****
   // Hover
@@ -97,6 +97,7 @@
     --pui-btn-color: var(--pui-color-primary);
     --pui-btn-border-color: var(--pui-color-primary);
     --pui-btn-hover-bg: var(--pui-color-primary);
+    --pui-btn-border-size: 1px;
   }
 
   @each $name, $value in colors.$colors {
