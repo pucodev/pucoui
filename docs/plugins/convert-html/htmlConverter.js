@@ -115,6 +115,7 @@ async function convertToHtml(filePath) {
     parser: 'html',
     plugins: [parserHtml],
     printWidth: 80,
+    htmlWhitespaceSensitivity: 'ignore',
   })
 
   try {
