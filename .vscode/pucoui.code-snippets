@@ -1,0 +1,14 @@
+{
+  "PreviewElement": {
+    "scope": "markdown, mdx",
+    "prefix": "PreviewElement",
+    "body": ["<PreviewElement>", "$1", "</PreviewElement>"],
+    "description": "Creates a PreviewElement component for MDX.",
+  },
+  "CodeBlock": {
+    "scope": "markdown, mdx",
+    "prefix": "CodeBlock",
+    "body": ["<CodeBlock language=\"${1:html}\">", "$2", "</CodeBlock>"],
+    "description": "Creates a CodeBlock component for MDX.",
+  },
+}
