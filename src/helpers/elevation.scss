@@ -3,6 +3,6 @@
 
 @each $name, $value in spaces.$elevations {
   .elevation-#{$name} {
-    @include mixins.elevation($name);
+    @include mixins.elevation($name, true);
   }
 }

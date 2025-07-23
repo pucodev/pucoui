@@ -2,11 +2,13 @@
 @use "sass:map";
 @use "spaces.scss" as spaces;
 
-@mixin elevation($level) {
+@mixin elevation($level, $important: false) {
   @if map.has-key(spaces.$elevations, $level) {
-    box-shadow: map.get(spaces.$elevations, $level);
-
-    // box-shadow: #{list.join($shadows, comma)};
+    @if $important {
+      box-shadow: map.get(spaces.$elevations, $level) !important;
+    } @else {
+      box-shadow: map.get(spaces.$elevations, $level);
+    }
   } @else {
     @warn "Nivel de elevación #{$level} no definido en \$elevations.";
   }

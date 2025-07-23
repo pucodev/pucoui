@@ -13,8 +13,18 @@
   width: 100%;
   border-radius: var(--pui-card-border-radius);
   background-color: var(--pui-card-background-color);
+  border-style: none;
+  border-width: var(--pui-card-border-width);
+  border-color: var(--pui-card-border-color);
 
-  @include mixins.elevation(3);
+  &:not(.is-outlined) {
+    @include mixins.elevation(3);
+  }
+
+  &.is-outlined {
+    border-style: solid;
+    box-shadow: none;
+  }
 
   &,
   .card-body {
