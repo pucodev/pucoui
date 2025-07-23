@@ -1,0 +1,20 @@
+.is-stack,
+.is-vstack,
+.is-hstack {
+  display: flex;
+  gap: var(--pui-space-3);
+}
+
+.is-stack,
+.is-vstack {
+  flex-direction: column;
+}
+
+.is-hstack {
+  flex-direction: row;
+}
+
+.is-vstack,
+.is-hstack {
+  align-items: center;
+}
