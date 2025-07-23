@@ -1,0 +1,99 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import { spaces } from '../../src/components/variables'
+
+import StackBasic from '../../src/components/html/stack/StackBasic'
+import StackBasicCode from '@site/src/components/generated/stack/StackBasic.html?raw'
+
+import StackGap from '../../src/components/html/stack/StackGap'
+import StackGapCode from '@site/src/components/generated/stack/StackGap.html?raw'
+
+# Stack
+
+Stack es un componente de layout que facilita la organización vertical u horizontal de elementos aplicando un espacio consistente entre ellos. Su objetivo principal es simplificar la alineación de elementos en fila o columna sin necesidad de escribir estilos adicionales para el espaciado.
+
+## Uso básico
+
+Usar la clase `is-stack`. Automáticamente genera una organización vertical y espaciado de **_{spaces[2]} rem_**
+
+<PreviewElement>
+  <StackBasic />
+</PreviewElement>
+
+```html
+<div class="is-stack">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+## Direcciones
+
+Usa las siguientes clases para definir la dirección y los elementos siempre se alinean al centro.
+
+<table>
+  <thead>
+    <tr>
+      <td>Clase</td>
+      <td>Alineacion</td>
+      <td>Preview</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><CodeBlock>is-vstack</CodeBlock></td>
+      <td>Vertical</td>
+      <td>
+        <PreviewElement>
+          <div className="is-vstack is-color-white" style={{width: '200px'}}>
+            <div className="is-bg-primary p-3 is-rounded-2" style={{width: '80%'}}></div>
+            <div className="is-bg-info p-3 is-rounded-2" style={{width: '30%'}}></div>
+            <div className="is-bg-primary p-3 is-rounded-2" style={{width: '50%'}}></div>
+          </div>
+        </PreviewElement>
+      </td>
+    </tr>
+    <tr>
+      <td><CodeBlock>is-vstack</CodeBlock></td>
+      <td>Vertical</td>
+      <td>
+        <PreviewElement>
+          <div className="is-hstack is-color-white" style={{width: '200px', height: '120px'}}>
+            <div className="is-bg-primary p-3 is-rounded-2 w-100" style={{height: '100%'}}></div>
+            <div className="is-bg-info p-3 is-rounded-2 w-100" style={{height: '30%'}}></div>
+            <div className="is-bg-primary p-3 is-rounded-2 w-100" style={{height: '50%'}}></div>
+          </div>
+        </PreviewElement>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+:::tip
+Si necesitas que los elementos se alineen al inicio o al final puedes usar las clases [helper de flex](/docs/helper/flexbox#align-items)
+:::
+
+## Espaciado
+
+Usa `is-gap-{size}` para agregar espacio entre los elementos flexibles. El size es un valor entre `0` a `6`
+
+:::info
+Para más información de los valores de espaciado visita la documentación de [personalizar espaciados](../customize/spacing)
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <StackGap />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{StackGapCode}</CodeBlock>
+  </TabItem>
+</Tabs>
