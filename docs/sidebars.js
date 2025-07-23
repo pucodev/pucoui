@@ -29,13 +29,18 @@ const sidebars = {
       label: 'Elementos',
       link: { type: 'doc', id: 'element/index' },
       items: [
-        'element/alert',
         'element/badge',
         'element/button',
         'element/icon',
         'element/image',
         'element/stack',
       ],
+    },
+    {
+      type: 'category',
+      label: 'Componentes',
+      link: { type: 'doc', id: 'component/index' },
+      items: ['component/alert'],
     },
   ],
 }
