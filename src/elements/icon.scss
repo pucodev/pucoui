@@ -1,7 +1,31 @@
 .icon {
-  --pui-icon-size: var(--pui-space-4);
+  --pui-icon-size: var(--pui-font-size-6);
 
   width: var(--pui-icon-size);
   height: var(--pui-icon-size);
   font-size: var(--pui-icon-size);
+
+  &.is-md {
+    --pui-icon-size: var(--pui-font-size-5);
+  }
+
+  &.is-lg {
+    --pui-icon-size: var(--pui-font-size-3);
+  }
+}
+
+.icon-text {
+  --pui-icon-text-spacing: var(--pui-space-2);
+
+  align-items: center;
+  color: inherit;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--pui-icon-text-spacing);
+  vertical-align: top;
+
+  &,
+  &.icon {
+    line-height: inherit;
+  }
 }
