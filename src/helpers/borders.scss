@@ -5,3 +5,7 @@
     border-radius: #{$value};
   }
 }
+
+.is-rounded {
+  border-radius: 9999px;
+}
