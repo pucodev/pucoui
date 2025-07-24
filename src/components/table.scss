@@ -1,13 +1,50 @@
+@use "./../variables/colors.scss" as colors;
+@use "sass:map";
+
+$spacing-sizes: (
+  sm: (
+    px: var(--pui-space-2),
+    py: var(--pui-space-2),
+  ),
+  md: (
+    px: var(--pui-space-3),
+    py: var(--pui-space-3),
+  ),
+  lg: (
+    px: var(--pui-space-4),
+    py: var(--pui-space-3),
+  ),
+);
+
+@mixin pui-table-spacing($size: md) {
+  @if map.has-key($spacing-sizes, $size) {
+    $spacing: map.get($spacing-sizes, $size);
+    --pui-table-px: #{map.get($spacing, px)};
+    --pui-table-py: #{map.get($spacing, py)};
+  } @else {
+    @error "Invalid spacing size `#{$size}`. Must be one of: #{map.keys($spacing-sizes)}";
+  }
+}
+
 .table {
-  --pui-table-px: var(--pui-space-2);
-  --pui-table-py: var(--pui-space-3);
+  @include pui-table-spacing();
   --pui-table-border: 1px;
   --pui-table-border-header: 2px;
+  --pui-table-theader-bg-color: inherit;
   --pui-table-border-color: var(--pui-ui-color-muted);
-  --pui-table-bg-active: #000;
+  --pui-table-bg-active: #3c3c3c;
 
   display: table;
   border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    background-color: var(--pui-table-theader-bg-color);
+  }
+
+  tr:nth-child(2n) {
+    background-color: inherit;
+  }
 
   th,
   td {
@@ -15,6 +52,7 @@
     border: solid 0 var(--pui-table-border-color);
     border-bottom-width: var(--pui-table-border);
     padding: var(--pui-table-py) var(--pui-table-px);
+    z-index: 0;
   }
 
   th {
@@ -37,6 +75,10 @@
     }
   }
 
+  &.is-bordered th {
+    border-bottom-width: var(--pui-table-border-header);
+  }
+
   &.is-striped tr:not(.is-active):nth-child(2n) > td::before,
   &.is-hoverable tr:not(.is-active):hover > td::before {
     content: "";
@@ -49,8 +91,11 @@
     z-index: -1;
   }
 
-  &.is-table-color-primary {
-    --pui-table-bg-active: var(--pui-color-primary);
+  // COLORS
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-table-bg-active: var(--pui-color-#{$name});
+    }
   }
 
   &.is-striped tr:not(.is-active):nth-child(2n) > td::before {
@@ -58,16 +103,23 @@
   }
 
   &.is-hoverable tr:not(.is-active):hover > td::before {
-    opacity: 0.075;
+    opacity: 0.12;
   }
 
   &.is-fullwidth {
     width: 100%;
   }
 
-  &.is-condensed {
-    --pui-table-px: var(--pui-space-2);
-    --pui-table-py: var(--pui-space-1);
+  &.is-sm {
+    @include pui-table-spacing(sm);
+  }
+
+  &.is-md {
+    @include pui-table-spacing(md);
+  }
+
+  &.is-lg {
+    @include pui-table-spacing(lg);
   }
 }
 
