@@ -25,7 +25,7 @@ export default function CardBasic({
   className,
   title,
 }) {
-  const imgSrc = '/pucoui/img/pucoui-img-1.png'
+  const imgSrc = '/pucoui/img/pucoui-img-1-lg.jpeg'
   const Image = (
     <>
       <ReactComment text={'Card Image'} />

@@ -23,6 +23,7 @@ export default function ImageBase({
     '/pucoui/img/pucoui-img-1.png',
     '/pucoui/img/pucoui-img-2.png',
     '/pucoui/img/pucoui-img-3.png',
+    '/pucoui/img/pucoui-img-2-lg.jpeg',
   ]
   return (
     <Image
