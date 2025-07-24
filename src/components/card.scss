@@ -1,6 +1,7 @@
 @use "./../variables/mixins.scss" as mixins;
 
-.card {
+.card,
+.dialog-card {
   --pui-card-border-color: var(--pui-ui-color-muted);
   --pui-card-border-width: 1px;
   --pui-card-border-radius: var(--pui-space-2);

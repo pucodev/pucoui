@@ -1,35 +1,58 @@
 .dialog {
+  --pui-dialog-margin: 2.5rem;
+  --pui-dialog-max-width: 500px;
+  --pui-dialog-bg: var(--pui-color-white);
   --pui-dialog-px: var(--pui-space-5);
   --pui-dialog-py: var(--pui-space-5);
   --pui-dialog-padding-elements: var(--pui-space-3);
-  --pui-dialog-bg-padding: var(--pui-space-3);
-  --pui-dialog-bg-opacity: 0.2;
   --pui-dialog-border-radius: var(--pui-space-1);
+  --pui-dialog-overlay-bg-color: rgba(0, 0, 0, 0.275);
 
-  align-items: center;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
   position: fixed;
-  z-index: 999;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+  background-color: var(--pui-dialog-overlay-bg-color);
+  display: none;
 
   &.is-active {
     display: flex;
   }
 
-  .dialog-card {
+  .dialog-overlay {
     position: relative;
+    width: auto;
+    margin: var(--pui-dialog-margin);
+    pointer-events: none;
+    max-width: var(--pui-dialog-max-width);
+    margin-right: auto;
+    margin-left: auto;
     z-index: 1;
-    background-color: var(--pui-color-white);
-    margin: 0 auto;
-    max-width: 640px;
-    width: calc(100% - 2 * var(--pui-dialog-bg-padding));
-    border-radius: var(--pui-dialog-border-radius);
-    max-height: calc(-40px + 100%);
-    overflow: hidden;
+  }
+
+  .dialog-card {
+    pointer-events: auto;
+  }
+
+  &.dialog-centered .dialog-overlay {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    min-height: calc(100% - var(--pui-dialog-margin) * 2);
+  }
+
+  &.dialog-scrollable {
+    .dialog-overlay {
+      height: calc(100% - var(--pui-dialog-margin) * 2);
+    }
+    .dialog-card {
+      max-height: 100%;
+      overflow: hidden;
+    }
   }
 
   .dialog-header,
@@ -63,7 +86,7 @@
     overflow: auto;
   }
 
-  .dialog-header + .dialog-body {
+  & .dialog-card:has(> .dialog-header):has(> .dialog-body) > .dialog-body {
     padding-top: var(--pui-space-2);
   }
 
@@ -84,16 +107,4 @@
     justify-content: flex-end;
     gap: var(--pui-space-2);
   }
-}
-
-.dialog,
-.dialog-bg {
-  inset: 0;
-}
-
-.dialog-bg {
-  background-color: #000;
-  opacity: var(--pui-dialog-bg-opacity);
-  position: absolute;
-  z-index: 0;
 }
