@@ -45,6 +45,7 @@ const sidebars = {
         'component/card',
         'component/breadcrumb',
         'component/dialog',
+        'component/table',
       ],
     },
   ],

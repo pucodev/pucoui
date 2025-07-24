@@ -1,0 +1,205 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import TableBasic from '../../src/components/html/table/TableBasic'
+import TableBasicCode from '@site/src/components/generated/table/TableBasic.html?raw'
+
+import TableBordered from '../../src/components/html/table/TableBordered'
+import TableBorderedCode from '@site/src/components/generated/table/TableBordered.html?raw'
+
+import TableStripped from '../../src/components/html/table/TableStripped'
+import TableStrippedCode from '@site/src/components/generated/table/TableStripped.html?raw'
+
+import TableStrippedColor from '../../src/components/html/table/TableStrippedColor'
+import TableStrippedColorCode from '@site/src/components/generated/table/TableStrippedColor.html?raw'
+
+import TableHoverable from '../../src/components/html/table/TableHoverable'
+import TableHoverableCode from '@site/src/components/generated/table/TableHoverable.html?raw'
+
+import TableHoverableColor from '../../src/components/html/table/TableHoverableColor'
+import TableHoverableColorCode from '@site/src/components/generated/table/TableHoverableColor.html?raw'
+
+import TableSizes from '../../src/components/html/table/TableSizes'
+import TableSizesCode from '@site/src/components/generated/table/TableSizes.html?raw'
+
+# Tabla
+
+Muestra tu información ordenada en tablas
+
+## Estructura
+
+- `table`: Etiqueta contenedora
+  - `thead`: Cabecera de la tabla (opcional)
+  - `tbody`: Cuerpo de la tabla
+    - `tr`: Fila de la tabla
+      - `th`: Celda del tipo cabecera
+      - `td`: Celda general
+
+## Uso básico
+
+<PreviewElement>
+  <div className="dialog-preview">
+    <div className="is-bg-white">
+      <TableBasic />
+    </div>
+  </div>
+</PreviewElement>
+
+<CodeBlock language="html">{TableBasicCode}</CodeBlock>
+
+## Con bordes
+
+Muestra una tabla con todos los elementos con borde usando la clase `is-bordered` junto a la clase `table`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="is-bg-white">
+        <TableBordered />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableBorderedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Striped
+
+Para mostrar las filas impares con un color neutral usar la clase `is-striped`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="is-bg-white">
+        <TableStripped />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableStrippedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Colores
+
+Para mostrar con otro color el striped usa la clase `is-{COLOR}` donde `COLOR` es uno de los valores de colores. Para más información visita la [documentación de personalización de colores](../customize/color)
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TableStrippedColor />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableStrippedColorCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Highlight on Hover
+
+Para mostrar un color neutral cuando se pase el mouse (hover) puedes usar la clase `is-hoverable` junto a la clase `table`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="is-bg-white">
+        <TableHoverable />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableHoverableCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Colores
+
+Para mostrar con otro color la fila con estado hover usa la clase `is-{COLOR}` donde `COLOR` es uno de los valores de colores. Para más información visita la [documentación de personalización de colores](../customize/color)
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="is-bg-white">
+        <TableHoverableColor />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableHoverableColorCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Tamaños
+
+Muestra las tablas con diferentes paddings usando las clases `is-sm`, `is-md`(por defecto), `is-lg` junto con la clase `table`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TableSizes />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TableSizesCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Tabla responsiva
+
+Si deseas que la tabla tenga un scroll horizontal se tiene que agregar un contenedor con la clase `table-responsive`
+
+export const tableHeaders = Array.from({ length: 20 }, (x, index) => `Cabecera`)
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="table-responsive">
+        <table className="table is-bg-white">
+          <thead>
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <th key={index}>{header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <td key={index}>{`Celda ${index + 1}`}</td>
+              ))}
+            </tr>
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <td key={index}>{`Celda ${index + 1}`}</td>
+              ))}
+            </tr>
+            <tr>
+              {tableHeaders.map((header, index) => (
+                <td key={index}>{`Celda ${index + 1}`}</td>
+              ))}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">
+{`<div class="table-responsive">
+    <table class="table">
+      ...
+    </table>
+</div>`}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
