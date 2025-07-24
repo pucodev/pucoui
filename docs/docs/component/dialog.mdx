@@ -1,0 +1,129 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import DialogBasic from '../../src/components/html/dialog/DialogBasic'
+import DialogBasicCode from '@site/src/components/generated/dialog/DialogBasic.html?raw'
+
+import DialogScroll from '../../src/components/html/dialog/DialogScroll'
+import DialogScrollCode from '@site/src/components/generated/dialog/DialogScroll.html?raw'
+
+import DialogCentered from '../../src/components/html/dialog/DialogCentered'
+import DialogCenteredCode from '@site/src/components/generated/dialog/DialogCentered.html?raw'
+
+import DialogOutlined from '../../src/components/html/dialog/DialogOutlined'
+import DialogOutlinedCode from '@site/src/components/generated/dialog/DialogOutlined.html?raw'
+
+import DialogImage from '../../src/components/html/dialog/DialogImage'
+import DialogImageCode from '@site/src/components/generated/dialog/DialogImage.html?raw'
+
+# Dialog
+
+Muestra contenido superpuesto como formularios, mensajes o confirmaciones.
+
+## Estructura
+
+Un dialog está constituido por:
+
+- `dialog`: Contenedor
+  - `dialog-content`: Contenedor del dialog
+    - `dialog-card`: Card contenedor, puedes usar las clases de `card`. [Más info aquí](./card)
+      - `dialog-header`: Cabecera del dialog, donde va el título y el botón de cerrar
+      - `dialog-body`: Contenido del dialog
+      - `dialog-footer`: Zona de accion del dialog, puedes agregar botones
+
+## Uso básico
+
+Por defecto el dialog se muestra alineado a la parte superior
+
+:::info
+Para que el dialog se muestre se debe usar la clase `is-active`
+:::
+
+<PreviewElement>
+  <div className="dialog-preview">
+    <DialogBasic />
+  </div>
+</PreviewElement>
+
+<CodeBlock language="html">{DialogBasicCode}</CodeBlock>
+
+## Centrado
+
+Para centrar el dialog a la pantalla usar la clase `dialog-centered` en conjunto con la clase `dialog`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="dialog-preview" style={{height: '600px'}}>
+        <DialogCentered />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{DialogCenteredCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Cuerpo escrolleable
+
+Para convertir el cuerpo de un dialog en scrollable usar la clase `dialog-scrollable` en conjunto con la clase `dialog`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="dialog-preview" style={{height: '494px'}}>
+        <DialogScroll />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{DialogScrollCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Clases del card
+
+Puedes usar todas las clases del componente `card` en el `dialog-card` por ejemplo
+
+- `is-outlined`: Para que no tenga elevación y solo maneje bordeado
+- `elevation-{number}`: Para dar un efecto de elevación
+
+:::info
+Mas información visita el [componente card](./card)
+:::
+
+### Outlined
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="dialog-preview">
+        <DialogOutlined />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{DialogOutlinedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Image
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <div className="dialog-preview">
+        <DialogImage />
+      </div>
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{DialogImageCode}</CodeBlock>
+  </TabItem>
+</Tabs>

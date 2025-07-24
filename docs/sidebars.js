@@ -40,7 +40,12 @@ const sidebars = {
       type: 'category',
       label: 'Componentes',
       link: { type: 'doc', id: 'component/index' },
-      items: ['component/alert', 'component/card', 'component/breadcrumb'],
+      items: [
+        'component/alert',
+        'component/card',
+        'component/breadcrumb',
+        'component/dialog',
+      ],
     },
   ],
 }
