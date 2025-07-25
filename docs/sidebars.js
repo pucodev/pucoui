@@ -52,7 +52,7 @@ const sidebars = {
       type: 'category',
       label: 'Formularios',
       link: { type: 'doc', id: 'form/index' },
-      items: ['form/field', 'form/input', 'form/textarea'],
+      items: ['form/field', 'form/input', 'form/textarea', 'form/select'],
     },
   ],
 }
