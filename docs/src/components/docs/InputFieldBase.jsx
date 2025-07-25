@@ -1,4 +1,5 @@
-import { Field, FieldHelpText, FieldLabel, Input } from '../pucoui/Input'
+import { Field, FieldHelpText, FieldLabel } from '../pucoui/Field'
+import { Input } from '../pucoui/Input'
 
 /**
  *
