@@ -48,6 +48,12 @@ const sidebars = {
         'component/table',
       ],
     },
+    {
+      type: 'category',
+      label: 'Formularios',
+      link: { type: 'doc', id: 'form/index' },
+      items: ['form/input'],
+    },
   ],
 }
 

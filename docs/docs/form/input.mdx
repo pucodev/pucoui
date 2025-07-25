@@ -1,0 +1,98 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import InputBasic from '../../src/components/html/form/input/InputBasic'
+import InputBasicCode from '@site/src/components/generated/form/input/InputBasic.html?raw'
+
+import InputDisabled from '../../src/components/html/form/input/InputDisabled'
+import InputDisabledCode from '@site/src/components/generated/form/input/InputDisabled.html?raw'
+
+import InputField from '../../src/components/html/form/input/InputField'
+import InputFieldCode from '@site/src/components/generated/form/input/InputField.html?raw'
+
+import InputValid from '../../src/components/html/form/input/InputValid'
+import InputValidCode from '@site/src/components/generated/form/input/InputValid.html?raw'
+
+import InputInvalid from '../../src/components/html/form/input/InputInvalid'
+import InputInvalidCode from '@site/src/components/generated/form/input/InputInvalid.html?raw'
+
+# Input
+
+Componente de entrada que representa un campo de texto. Se utiliza para capturar datos escritos por el usuario, como nombres, correos electrónicos, contraseñas u otra información textual.
+
+## Uso básico
+
+<PreviewElement>
+  <InputBasic />
+</PreviewElement>
+
+<CodeBlock language="html">{InputBasicCode}</CodeBlock>
+
+## Disabled
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <InputDisabled />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{InputDisabledCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Field
+
+Usa el componente Field para componer un input con una etiqueta, texto de ayuda y mensaje de error
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <InputField />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{InputFieldCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Colores
+
+Para agregar color al field puedes usar las clases
+
+| Clase                             | Color | Variable                                   |
+| --------------------------------- | ----- | ------------------------------------------ |
+| <CodeBlock>is-valid</CodeBlock>   | Verde | <CodeBlock>--pui-color-success</CodeBlock> |
+| <CodeBlock>is-invalid</CodeBlock> | Rojo  | <CodeBlock>--pui-color-error</CodeBlock>   |
+
+#### is-valid
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <InputValid />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{InputValidCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+#### is-invalid
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <InputInvalid />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{InputInvalidCode}</CodeBlock>
+  </TabItem>
+</Tabs>
