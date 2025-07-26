@@ -1,0 +1,16 @@
+$grid-columns: 12;
+
+@mixin col-span($cols) {
+  grid-column: span $cols;
+}
+
+.is-grid {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+
+  @for $i from 1 through $grid-columns {
+    & .is-col-#{$i} {
+      @include col-span($i);
+    }
+  }
+}

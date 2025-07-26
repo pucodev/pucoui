@@ -61,3 +61,18 @@ $flex-wrap: "nowrap", "wrap", "wrap-reverse";
     flex-wrap: #{$value} !important;
   }
 }
+
+$total-flexs: 6;
+@for $i from 1 through $total-flexs {
+  .is-flex-#{$i} {
+    flex: #{$i};
+  }
+
+  .is-flex-grow-#{$i} {
+    flex-grow: #{$i};
+  }
+
+  .is-flex-shrink-#{$i} {
+    flex-shrink: #{$i};
+  }
+}
