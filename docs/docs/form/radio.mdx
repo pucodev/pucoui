@@ -1,0 +1,38 @@
+import PreviewElement from '../../src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import RadioBasic from '../../src/components/html/form/radio/RadioBasic'
+import RadioBasicCode from '@site/src/components/generated/form/radio/RadioBasic.html?raw'
+
+import RadioExample from '../../src/components/html/form/radio/RadioExample'
+import RadioExampleCode from '@site/src/components/generated/form/radio/RadioExample.html?raw'
+
+# Radio
+
+Componente de entrada que permite seleccionar una sola opción dentro de un grupo. Útil para elecciones excluyentes como métodos de pago, niveles de suscripción o preferencias.
+
+## Uso básico
+
+Para implementar radio usar el componente `input` y tipo `radio` además se debe utilizar las clases `field` y `radio` como clase contenedora.
+
+<PreviewElement>
+  <RadioBasic />
+</PreviewElement>
+
+<CodeBlock language="html">{RadioBasicCode}</CodeBlock>
+
+## Otros casos
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <RadioExample />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{RadioExampleCode}</CodeBlock>
+  </TabItem>
+</Tabs>

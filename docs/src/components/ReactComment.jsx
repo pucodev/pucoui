@@ -1,4 +1,4 @@
-export default function SimpleAlertBase({ text }) {
+export default function ReactComment({ text }) {
   return (
     <span
       data-react-comment
