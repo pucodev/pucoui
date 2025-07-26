@@ -11,7 +11,7 @@
  */
 export function Card({ children, className, ...props }) {
   return (
-    <div className={`card ${className}`} {...props}>
+    <div className={`card ${className || ''}`} {...props}>
       {children}
     </div>
   )
@@ -31,7 +31,7 @@ export function Card({ children, className, ...props }) {
  */
 export function CardImage({ src, alt, className, ...props }) {
   return (
-    <figure className={`image ${className}`} {...props}>
+    <figure className={`image ${className || ''}`} {...props}>
       <img src={src} alt={alt} />
     </figure>
   )
@@ -48,9 +48,9 @@ export function CardImage({ src, alt, className, ...props }) {
  * @param {React.HTMLAttributes<HTMLDivElement> & CardBodyProps} props
  * @returns {import("react").JSX.Element}
  */
-export function CardBody({ children, ...props }) {
+export function CardBody({ children, className, ...props }) {
   return (
-    <div className="card-body" {...props}>
+    <div className={`card-body ${className || ''}`} {...props}>
       {children}
     </div>
   )
@@ -67,9 +67,9 @@ export function CardBody({ children, ...props }) {
  * @param {React.HTMLAttributes<HTMLDivElement> & CardTitleProps} props
  * @returns {import("react").JSX.Element}
  */
-export function CardTitle({ children, ...props }) {
+export function CardTitle({ children, className, ...props }) {
   return (
-    <div className="card-title" {...props}>
+    <div className={`card-title ${className || ''}`} {...props}>
       {children}
     </div>
   )
@@ -86,9 +86,9 @@ export function CardTitle({ children, ...props }) {
  * @param {React.HTMLAttributes<HTMLDivElement> & CardContentProps} props
  * @returns {import("react").JSX.Element}
  */
-export function CardContent({ children, ...props }) {
+export function CardContent({ children, className, ...props }) {
   return (
-    <div className="card-content" {...props}>
+    <div className={`card-content ${className || ''}`} {...props}>
       {children}
     </div>
   )
@@ -105,9 +105,9 @@ export function CardContent({ children, ...props }) {
  * @param {React.HTMLAttributes<HTMLDivElement> & CardActionProps} props
  * @returns {import("react").JSX.Element}
  */
-export function CardActions({ children, ...props }) {
+export function CardActions({ children, className, ...props }) {
   return (
-    <div className="card-actions" {...props}>
+    <div className={`card-actions ${className || ''}`} {...props}>
       {children}
     </div>
   )

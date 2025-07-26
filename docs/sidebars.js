@@ -62,6 +62,12 @@ const sidebars = {
         'form/switch',
       ],
     },
+    {
+      type: 'category',
+      label: 'Demostraciones',
+      link: { type: 'doc', id: 'showcase/index' },
+      items: ['showcase/register'],
+    },
   ],
 }
 
