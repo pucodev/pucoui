@@ -1,3 +1,4 @@
+@use "../variables/spaces.scss" as spaces;
 $grid-columns: 12;
 
 @mixin col-span($cols) {
@@ -11,6 +12,17 @@ $grid-columns: 12;
   @for $i from 1 through $grid-columns {
     & .is-col-#{$i} {
       @include col-span($i);
+    }
+  }
+
+  // Responsive
+  @each $breakpoint, $size in spaces.$breakpoints {
+    @media (min-width: #{$size}) {
+      @for $i from 1 through $grid-columns {
+        & .#{$breakpoint}\:is-col-#{$i} {
+          @include col-span($i);
+        }
+      }
     }
   }
 }
