@@ -1,6 +1,8 @@
 @use "sass:list";
 @use "sass:map";
-@use "spaces.scss" as spaces;
+@use "spaces";
+@use "colors";
+@use "fonts";
 
 @mixin elevation($level, $important: false) {
   @if map.has-key(spaces.$elevations, $level) {
@@ -11,5 +13,32 @@
     }
   } @else {
     @warn "Nivel de elevación #{$level} no definido en \$elevations.";
+  }
+}
+
+@mixin generateRoot() {
+  // Spaces
+  @each $name, $value in spaces.$spaces {
+    --pui-space-#{$name}: #{$value};
+  }
+
+  // Colors
+  @each $name, $value in colors.$colors {
+    --pui-color-#{$name}: #{$value};
+  }
+
+  // UI colors
+  @each $name, $value in colors.$ui-colors {
+    --pui-ui-color-#{$name}: #{$value};
+  }
+
+  // Font size
+  @each $name, $value in fonts.$font-size {
+    --pui-font-size-#{$name}: #{$value};
+  }
+
+  // Font weight
+  @each $name, $value in fonts.$font-weight {
+    --pui-font-weight-#{$name}: #{$value};
   }
 }

@@ -1,5 +1,10 @@
 @use "sass:meta";
+@use "./../../../src/variables/mixins.scss" as mixins;
 
 .pucoui {
   @include meta.load-css("./../../../dist/pucoui.css");
+}
+
+.is-pui-initial-vars {
+  @include mixins.generateRoot();
 }
