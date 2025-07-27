@@ -20,3 +20,4 @@ yarn-debug.log*
 yarn-error.log*
 
 src/components/generated
+static/showcase/generated

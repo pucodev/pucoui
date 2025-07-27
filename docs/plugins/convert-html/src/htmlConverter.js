@@ -10,18 +10,6 @@ import * as parserHtml from 'prettier/plugins/html'
 
 globalThis.React = React
 
-// ********
-// Get variables from command line arguments
-// ********
-const fileToCompile = process.argv[2]
-const BASE_DIR = process.argv[3] || '.'
-const OUTPUT_DIR = process.argv[4] || '.'
-
-if (!fileToCompile) {
-  console.error('❌ No file path provided.')
-  process.exit(1)
-}
-
 // init global variables
 const PROJECT_DIR = process.cwd() // Absolute root of the project
 const VALID_EXT = ['.jsx', '.tsx'] // File extensions to watch and convert
@@ -34,12 +22,13 @@ const VALID_EXT = ['.jsx', '.tsx'] // File extensions to watch and convert
 const isValidFile = (filePath) => VALID_EXT.includes(path.extname(filePath))
 
 /**
- * Get relative path from BASE_DIR for a given absolute path
+ * Get relative path from basePath for a given absolute path
  * @param {string} absPath
+ * @param {string} basePath
  * @returns {string}
  */
-const toBaseRel = (absPath) =>
-  path.relative(path.join(PROJECT_DIR, BASE_DIR), absPath)
+const toBaseRel = (absPath, basePath) =>
+  path.relative(path.join(PROJECT_DIR, basePath), absPath)
 
 /**
  * Generate a short SHA256-based hash used to bust module cache
@@ -72,15 +61,32 @@ function renderComments(rawHtml) {
 }
 
 /**
+ * Ensures that the rendered HTML starts with a `<!DOCTYPE html>` declaration,
+ * but only if the content begins with an `<html>` tag.
+ *
+ * @param {string} rawHtml - The rendered HTML content.
+ * @returns {string} The HTML content with `<!DOCTYPE html>` prepended if applicable.
+ */
+function ensureDoctype(rawHtml) {
+  const trimmed = rawHtml.trimStart()
+  if (trimmed.startsWith('<html')) {
+    return `<!DOCTYPE html>\n${rawHtml}`
+  }
+  return rawHtml
+}
+
+/**
  * Dynamically import a React component, render it to static HTML, and save it to disk
  * @param {string} filePath - Path to a .jsx or .tsx file
+ * @param {string} basePath
+ * @param {string} outputPath
  */
-async function convertToHtml(filePath) {
+export async function convertToHtmlUtil(filePath, basePath, outputPath) {
   if (!isValidFile(filePath)) return
 
-  const relPath = toBaseRel(filePath)
+  const relPath = toBaseRel(filePath, basePath)
   const htmlPath = path
-    .join(PROJECT_DIR, OUTPUT_DIR, relPath)
+    .join(PROJECT_DIR, outputPath, relPath)
     .replace(path.extname(relPath), '.html')
   const parentDir = path.dirname(htmlPath)
 
@@ -110,7 +116,8 @@ async function convertToHtml(filePath) {
   }
 
   rawHtml = renderComments(rawHtml)
-  console.log('🔍 Rendered HTML:', rawHtml)
+  rawHtml = ensureDoctype(rawHtml)
+  // console.log('🔍 Rendered HTML:', rawHtml)
   const html = await prettier.format(rawHtml, {
     parser: 'html',
     plugins: [parserHtml],
@@ -125,5 +132,3 @@ async function convertToHtml(filePath) {
     console.error('❌ Failed to write file:', htmlPath, err)
   }
 }
-
-convertToHtml(path.resolve(fileToCompile))

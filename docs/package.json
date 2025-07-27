@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "concurrently -k -n PLUGINS,DOCU -p [{name}] --prefix-colors blue,greenBright 'npm:dev:p' 'npm:doc:start'",
+    "start": "npm run dev:p && npm run dev:showcases && concurrently -k -n PLUGINS,SHOWCASES,DOCU -p [{name}] --prefix-colors blue,greenBright 'npm:dev:p -- --watch-only' 'npm:dev:showcases -- --watch-only' 'npm:doc:start'",
     "docusaurus": "docusaurus",
     "doc:start": "docusaurus start",
     "doc:build": "docusaurus build",
@@ -13,7 +13,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "dev:p": "tsx plugins/convert-html/index.js"
+    "dev:p": "tsx plugins/convert-html/convertComponents.js",
+    "dev:showcases": "tsx plugins/convert-html/convertShowcases.js"
   },
   "dependencies": {
     "@babel/core": "^7.28.0",
@@ -35,7 +36,8 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/types": "3.8.1",
-    "gh-pages": "^6.3.0"
+    "gh-pages": "^6.3.0",
+    "yargs": "^18.0.0"
   },
   "browserslist": {
     "production": [

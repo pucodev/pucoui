@@ -17,7 +17,7 @@
   "scripts": {
     "prepare": "husky",
     "build:css": "sass src/index.scss dist/pucoui.css && postcss dist/pucoui.css --use autoprefixer cssnano --no-map -o dist/pucoui.min.css",
-    "watch:css": "sass --watch src/index.scss dist/pucoui.css",
+    "watch:css": "sass --watch src/index.scss:dist/pucoui.css src/index-docs.scss:docs/static/styles/pucoui.min.css",
     "lint:css": "stylelint 'src/**/*.scss'"
   },
   "lint-staged": {
