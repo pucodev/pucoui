@@ -1,13 +1,18 @@
 /**
  * Renders an image inside a figure element with optional size and aspect ratio classes.
  *
- * @param {Object} props - Component props.
- * @param {number} [props.size] - Optional size modifier for the image (e.g., 16, 24, 32, etc).
- * @param {string} [props.ratio] - Optional aspect ratio for the image (e.g., '16 9', '1 1').
- * @param {string} [props.src] - Source URL of the image.
- * @param {string} [props.alt] - Alternative text for the image.
- * @param {string} [props.className] - Alternative classnames
- * @param {React.ReactNode} [props.children] - Content of the figure - use for fallback
+ * @typedef {Object} ImageProps - Component props.
+ * @property {number} [props.size] - Optional size modifier for the image (e.g., 16, 24, 32, etc).
+ * @property {string} [props.ratio] - Optional aspect ratio for the image (e.g., '16 9', '1 1').
+ * @property {string} [props.src] - Source URL of the image.
+ * @property {string} [props.alt] - Alternative text for the image.
+ * @property {string} [props.className] - Alternative classnames
+ * @property {React.ReactNode} [props.children] - Content of the figure - use for fallback
+ */
+
+/**
+ * Image component
+ * @param {React.HTMLAttributes<HTMLElement> & ImageProps} props
  * @returns {import("react").JSX.Element} The rendered image component.
  */
 export function Image({

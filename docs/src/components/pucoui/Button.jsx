@@ -1,13 +1,18 @@
 /**
- *
- * @param {Object} props
- * @param {React.ReactNode} props.children - Content of the button
- * @param {import("../variables").Color} [props.color] - Color of the button
- * @param {boolean} [props.outlined] - Whether the button is outlined
- * @param {boolean} [props.tonal] - Whether the button is tonal
- * @param {'sm' | 'md' | 'lg'} [props.size] - Size of the button
- * @param {boolean} [props.rounded] - Whether the button has rounded corners
- * @returns
+ * @typedef {object} ButtonProps
+ * @property {string} [props.className] - Additional CSS classes.
+ * @property {React.ReactNode} props.children - Content of the button
+ * @property {import("../variables").Color} [props.color] - Color of the button
+ * @property {boolean} [props.outlined] - Whether the button is outlined
+ * @property {boolean} [props.tonal] - Whether the button is tonal
+ * @property {'sm' | 'md' | 'lg'} [props.size] - Size of the button
+ * @property {boolean} [props.rounded] - Whether the button has rounded corners
+ */
+
+/**
+ * Button component
+ * @param {React.ButtonHTMLAttributes<HTMLButtonElement> & ButtonProps} props
+ * @returns {import("react").JSX.Element}
  */
 export function Button({
   children,
@@ -16,11 +21,12 @@ export function Button({
   tonal,
   size,
   rounded,
+  className,
   ...props
 }) {
   return (
     <button
-      className={`btn ${color ? `is-${color}` : ''} ${tonal ? 'is-tonal' : ''} ${outlined ? 'is-outlined' : ''} ${size ? `is-${size}` : ''} ${rounded ? 'is-rounded' : ''}`}
+      className={`btn ${color ? `is-${color}` : ''} ${tonal ? 'is-tonal' : ''} ${outlined ? 'is-outlined' : ''} ${size ? `is-${size}` : ''} ${rounded ? 'is-rounded' : ''} ${className || ''}`}
     >
       {children}
     </button>
