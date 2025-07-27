@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="/pucoui/styles/pucoui.min.css" />
     <style>
+      /* SET FONT STYLES */
       html {
         font-family: 'Lato', sans-serif;
         font-style: normal;
@@ -20,11 +21,13 @@
         line-height: 1.25;
       }
 
+      /* INIT THEME VARIABLES */
       :root {
         --pui-color-primary: #000000;
         --pui-ui-color-text-muted: #71777a;
       }
 
+      /* PROJECT ELEMENTS */
       .blur-card {
         background-color: rgba(128, 128, 128, 0.2);
         backdrop-filter: blur(12px);
@@ -35,28 +38,16 @@
   <body>
     <div class="w-100 is-grid" style="height: 100vh">
       <!-- CONTENT -->
-      <div class="is-col-5 px-6">
+      <div class="is-col-12 md:is-col-5 px-6">
         <div class="is-flex is-flex-column h-100">
           <!-- HEADER -->
-          <div
-            class="py-5 is-flex is-justify-content-space-between is-align-items-center"
-          >
+          <div class="py-5 is-vstack">
             <img
-              src="/pucoui/showcase/register/tinyflora-logo.svg"
+              src="/pucoui/showcase/register/tinyflora/tinyflora-logo.svg"
               alt="Tinyflora logo"
               class="w-100"
               style="max-width: 160px"
             />
-
-            <button
-              class="btn is-outlined is-hstack is-gap-2 px-3 py-1 is-sm mb-3"
-              style="height: auto"
-            >
-              <figure class="image" style="width: 28px">
-                <img src="/pucoui/showcase/register/flag-pe.svg" alt="peru" />
-              </figure>
-              <div class="">PE</div>
-            </button>
           </div>
 
           <!-- CONTENT -->
@@ -65,7 +56,7 @@
             <div class="is-text-center is-vstack is-gap-2">
               <h1>Bienvenido</h1>
               <h6 class="is-font-normal is-text-muted">
-                Para iniciar sesión en tu cuenta, ingrese tu dirección de correo
+                Para iniciar sesión en tu cuenta, ingresa tu dirección de correo
                 electrónico y contraseña
               </h6>
             </div>
@@ -82,7 +73,7 @@
               </div>
 
               <div class="field">
-                <label class="label">Password</label>
+                <label class="label">contraseña</label>
                 <input
                   class="input"
                   type="password"
@@ -93,8 +84,8 @@
             </section>
 
             <!-- CONTENT FOOTER -->
-            <div class="is-vstack is-gap-1">
-              <div>No dude en ponerse en contacto con nosotros</div>
+            <div class="is-vstack is-gap-1 is-text-center">
+              <div>No dudes en ponerte en contacto con nosotros</div>
               <a href="#">support@pucoui.com</a>
             </div>
           </div>
@@ -108,9 +99,9 @@
 
       <!-- IMAGE -->
       <div
-        class="is-col-7 is-vstack is-justify-content-center px-5"
+        class="is-col-7 is-vstack is-justify-content-center px-5 is-hidden md:is-flex"
         style="
-          background-image: url(/pucoui/showcase/register/tinyflora-bg.png);
+          background-image: url(/pucoui/showcase/register/tinyflora/tinyflora-bg.png);
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -121,7 +112,7 @@
           style="max-width: 400px"
         >
           <img
-            src="/pucoui/showcase/register/tinyflora-icon-negative.svg"
+            src="/pucoui/showcase/register/tinyflora/tinyflora-icon-negative.svg"
             alt="Tinyflora"
             class="w-100"
             style="max-width: 60px"
