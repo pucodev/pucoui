@@ -8,14 +8,24 @@ import { Icon } from './pucoui/Icon'
  * @param {string} [props.title] - Título accesible del iframe.
  * @param {string|number} [props.height=300] - Altura del iframe.
  * @param {string|number} [props.width='100%'] - Ancho del iframe.
+ * @param {string|number} [props.maxWidth='100%'] - Maximo Ancho del iframe.
+ * @param {string|number} [props.minWidth] - Mínimo Ancho del iframe.
+ * @param {boolean} [props.isTablet] - Configura el ancho minimo en 800px
  * @returns {import('react').JSX.Element}
  */
 export default function PreviewIframe({
   src,
   title = 'Preview',
-  height = 300,
+  height = 800,
   width = '100%',
+  maxWidth = '100%',
+  minWidth,
+  isTablet,
 }) {
+  let computedMinWitdth = minWidth
+  if (isTablet) {
+    computedMinWitdth = '800px'
+  }
   return (
     <div className="docu-preview">
       <div className="docu-preview__bg"></div>
@@ -27,13 +37,17 @@ export default function PreviewIframe({
               <Icon icon="mdi:open-in-new" />
             </a>
           </div>
-          <iframe
-            src={src}
-            title={title}
-            height={height}
-            width={width}
-            loading="lazy"
-          />
+          <div style={{ display: 'block', margin: '0 auto', overflow: 'auto' }}>
+            <iframe
+              src={src}
+              title={title}
+              height={height}
+              width={width}
+              loading="lazy"
+              style={{ maxWidth, minWidth: computedMinWitdth }}
+              className="mx-auto is-block"
+            />
+          </div>
         </div>
       </div>
     </div>

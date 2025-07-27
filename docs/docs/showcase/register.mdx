@@ -4,6 +4,9 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 import Signup1 from '@site/static/showcase/generated/register/tinyflora.html?raw'
+import TinyfloraTheme from '@site/src/components/generated/showcase/register/tinyflora/TinyfloraTheme.html?raw'
+import TinyfloraFont from '@site/src/components/generated/showcase/register/tinyflora/TinyfloraFont.html?raw'
+import TinyfloraClass from '@site/src/components/generated/showcase/register/tinyflora/TinyfloraClass.html?raw'
 
 # Vistas de Registro
 
@@ -13,12 +16,47 @@ import Signup1 from '@site/static/showcase/generated/register/tinyflora.html?raw
 Para ver la página en pantalla completa ir al siguiente <a href="/pucoui/showcase/generated/register/tinyflora.html" target="_blank">link</a>
 :::
 
+### Preview
+
 <Tabs>
   <TabItem value="preview" label="Preview">
-    <PreviewIframe height={800} src="/pucoui/showcase/generated/register/tinyflora.html" />
+    <PreviewIframe isTablet src="/pucoui/showcase/generated/register/tinyflora.html" />
+  </TabItem>
+
+  <TabItem value="mobile" label="Mobile">
+    <PreviewIframe
+      src="/pucoui/showcase/generated/register/tinyflora.html"
+      maxWidth="500px"
+    />
+
   </TabItem>
 
   <TabItem value="code" label="Code">
     <CodeBlock language="html">{Signup1}</CodeBlock>
   </TabItem>
 </Tabs>
+
+### Como funciona
+
+<details>
+  <summary>Como functiona</summary>
+
+1. Actualizamos las variables según el estilo de la página
+
+<CodeBlock language="html">{TinyfloraTheme}</CodeBlock>
+
+2. Instalamos fuentes, para este caso vamos a usar la fuente `Lato` desde [Google Fonts](https://fonts.google.com/specimen/Lato)
+
+3. Agregamos la fuente al estilo del proyecto
+
+<CodeBlock language="html">{TinyfloraFont}</CodeBlock>
+
+4. Creamos clases propias del proyecto
+
+<CodeBlock language="html">{TinyfloraClass}</CodeBlock>
+
+5. La imágen que se muestra al lado derecho solo se debe mostrar cuando la pantalla es mayor a `md`, para lograr esto vamos a agregarle las clases `is-hidden md:is-flex` ocultando el elemento por defecto y volviendolo `flex` cuando la pantalla es mayor a `md`
+
+6. El contenedor principal que tiene el formulario debe ser también responsive, tomando todo el ancho en pantallas pequeñas y una proporcion de `5/12` cuando la pantalla es mayor a `md`. Para esto vamos a agregarle al contenedor padre la clase `is-grid` y al contenedor del formulario las clases `is-col-12 md:is-col-5`
+
+</details>

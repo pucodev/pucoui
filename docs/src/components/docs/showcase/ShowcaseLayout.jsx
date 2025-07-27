@@ -1,3 +1,5 @@
+import ReactComment from '../../ReactComment'
+
 /**
  *
  * @param {object} props
@@ -13,7 +15,6 @@ export default function ShowcaseLayout({ children, language, title, head }) {
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/pucoui.css" />
         <title>{title}</title>
         <link rel="stylesheet" href="/pucoui/styles/pucoui.min.css" />
         <link
@@ -35,6 +36,8 @@ export default function ShowcaseLayout({ children, language, title, head }) {
         />
         <meta name="apple-mobile-web-app-title" content="pucoui" />
         <link rel="manifest" href="/pucoui/favicon/site.webmanifest" />
+
+        {'\n\n'}
         {head}
       </head>
       <body>{children}</body>

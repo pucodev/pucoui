@@ -1,4 +1,7 @@
 import ShowcaseLayout from '../../docs/showcase/ShowcaseLayout'
+import { tinyfloraClasses } from '../../html/showcase/register/tinyflora/TinyfloraClass'
+import { tinyfloraFontStyles } from '../../html/showcase/register/tinyflora/TinyfloraFont'
+import { tinyfloraThemeStyle } from '../../html/showcase/register/tinyflora/TinyfloraTheme'
 import { Button } from '../../pucoui/Button'
 import { Field, FieldLabel } from '../../pucoui/Field'
 import { Image } from '../../pucoui/Image'
@@ -14,29 +17,11 @@ export default function () {
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet"
       />
-      <link rel="stylesheet" href="/pucoui/styles/pucoui.min.css" />
       <style>{`
-      /* SET FONT STYLES */
-      html {
-        font-family: 'Lato', sans-serif;
-        font-style: normal;
-        background-color: #fff;
-        line-height: 1.25;
-      }
-
-      /* INIT THEME VARIABLES */
-      :root {
-        --pui-color-primary: #000000;
-        --pui-ui-color-text-muted: #71777a;
-      }
-
-      /* PROJECT ELEMENTS */
-      .blur-card {
-        background-color: rgba(128, 128, 128, 0.2);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-    `}</style>
+        ${tinyfloraThemeStyle}
+        ${tinyfloraFontStyles}
+        ${tinyfloraClasses}
+      `}</style>
     </>
   )
   return (
@@ -55,12 +40,6 @@ export default function () {
                 className="w-100"
                 style={{ maxWidth: '160px' }}
               />
-              {/* <img
-                src="/pucoui/showcase/register/tinyflora/tinyflora-logo.svg"
-                alt="Tinyflora logo"
-                className="w-100"
-                style={{ maxWidth: '160px' }}
-              /> */}
             </div>
 
             {'\n\n'}
