@@ -5066,7 +5066,7 @@ a:not(.is-plain), a:hover,
 }
 
 a.btn {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .icon {
