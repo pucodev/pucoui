@@ -11,6 +11,7 @@ import { Icon } from './pucoui/Icon'
  * @param {string|number} [props.maxWidth='100%'] - Maximo Ancho del iframe.
  * @param {string|number} [props.minWidth] - Mínimo Ancho del iframe.
  * @param {boolean} [props.isTablet] - Configura el ancho minimo en 800px
+ * @param {boolean} [props.isLaptop] - Configura el ancho minimo en 1200px
  * @returns {import('react').JSX.Element}
  */
 export default function PreviewIframe({
@@ -21,10 +22,13 @@ export default function PreviewIframe({
   maxWidth = '100%',
   minWidth,
   isTablet,
+  isLaptop,
 }) {
   let computedMinWitdth = minWidth
   if (isTablet) {
     computedMinWitdth = '800px'
+  } else if (isLaptop) {
+    computedMinWitdth = '1200px'
   }
   return (
     <div className="docu-preview">
