@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      as="image"
+      href="/pucoui/showcase/register/gitfrog/pucoui-gitfrog-pet.png"
+    />
+    <title>PucoUI | Gitfrog Signup</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/pucoui/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/pucoui/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/pucoui/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/pucoui/favicon/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="pucoui" />
+    <link rel="manifest" href="/pucoui/favicon/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link rel="stylesheet" href="/pucoui/styles/pucoui.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html {
+        font-family: 'Inter', 'Roboto', sans-serif;
+        font-style: normal;
+        background-color: #fff;
+        line-height: 1.25;
+      }
+
+      .gitfrog-pet {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -48px;
+      }
+
+      @media (min-width: 48rem) {
+        .gitfrog-pet {
+          bottom: 156px;
+          opacity: 0.8;
+          z-index: 0;
+        }
+      }
+
+      .container {
+        width: 100%;
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="w-100 is-grid is-auto-rows-min md:is-auto-rows-fr"
+      style="min-height:100vh;height:100%"
+    >
+      <div
+        class="p-6 md:py-9 md:px-7 is-vstack is-col-12 md:is-col-6 is-color-white is-relative"
+        style="background-image:url(/pucoui/showcase/register/gitfrog/pucoui-gitfrog-bg.jpg);background-repeat:no-repeat;background-position:top;background-size:cover"
+      >
+        <div class="is-stack is-gap-4 pb-6 container">
+          <div class="is-block md:is-hidden">
+            ¿Ya tienes una cuenta?
+            <a href="#">Signin →</a>
+          </div>
+          <h1 class="h4">Crea una cuenta completamente gratis</h1>
+          <div>
+            Explora las funcionalidades que Gitfrog tiene para ti y las empresas
+          </div>
+          <details class="details">
+            <summary>Mira nuestras funcionalidades</summary>
+            <ul class="is-stack is-gap-4 mt-5">
+              <li class="is-flex is-gap-2">
+                <iconify-icon
+                  class="icon"
+                  icon="mdi:checkbox-marked-circle-auto-outline"
+                ></iconify-icon>
+                <div class="is-stack is-gap-1">
+                  <div class="is-font-medium">Asistente de código con IA</div>
+                  <div>
+                    Impulsa tu productividad con un copiloto inteligente que
+                    sugiere código mientras escribes.
+                  </div>
+                </div>
+              </li>
+              <li class="is-flex is-gap-2">
+                <iconify-icon
+                  class="icon"
+                  icon="mdi:checkbox-marked-circle-auto-outline"
+                ></iconify-icon>
+                <div class="is-stack is-gap-1">
+                  <div class="is-font-medium">Repos ilimitados</div>
+                  <div>
+                    Crea y colabora en proyectos públicos o privados sin
+                    restricciones, con seguridad desde el primer commit.
+                  </div>
+                </div>
+              </li>
+              <li class="is-flex is-gap-2">
+                <iconify-icon
+                  class="icon"
+                  icon="mdi:checkbox-marked-circle-auto-outline"
+                ></iconify-icon>
+                <div class="is-stack is-gap-1">
+                  <div class="is-font-medium">
+                    Revisiones de código integradas
+                  </div>
+                  <div>
+                    Mejora la calidad de tu software con herramientas de
+                    revisión colaborativas y fáciles de usar.
+                  </div>
+                </div>
+              </li>
+              <li class="is-flex is-gap-2">
+                <iconify-icon
+                  class="icon"
+                  icon="mdi:checkbox-marked-circle-auto-outline"
+                ></iconify-icon>
+                <div class="is-stack is-gap-1">
+                  <div class="is-font-medium">Comunidad global</div>
+                  <div>
+                    Comparte, aprende y colabora con devs de todo el mundo.
+                    Porque el código no se escribe solo (todavía).
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </details>
+        </div>
+        <figure class="image is-size-96 gitfrog-pet elevation-4 is-rounded">
+          <img
+            src="/pucoui/showcase/register/gitfrog/pucoui-gitfrog-pet.png"
+            alt=""
+          />
+        </figure>
+      </div>
+      <div class="is-vstack is-col-12 md:is-col-6 p-6 md:py-3 md:px-7">
+        <div class="container is-stack is-gap-4">
+          <div
+            class="is-hstack is-gap-2 is-justify-content-flex-end is-hidden md:is-flex"
+          >
+            <span>¿Ya tienes una cuenta?</span>
+            <a href="#">Signin →</a>
+          </div>
+          <h2 class="h3 mb-3 mt-4 md:mt-6">Registrate en Gitfrog</h2>
+          <div class="field">
+            <label class="label" for="email">Correo electrónico</label>
+            <input
+              class="input"
+              type="email"
+              placeholder="Ingresa tu correo electrónico"
+              id="email"
+            />
+          </div>
+          <div class="field">
+            <label class="label" for="password">Contraseña</label>
+            <input
+              class="input"
+              type="password"
+              placeholder="Ingresa tu contraseña"
+              id="password"
+            />
+            <span class="help">
+              La contraseña debe tener al menos 8 caracteres
+            </span>
+          </div>
+          <div class="field">
+            <label class="label" for="country">País</label>
+            <select class="select" id="country">
+              <option>Perú</option>
+              <option>Argentina</option>
+              <option>Bolivia</option>
+              <option>Brasil</option>
+              <option>Chile</option>
+              <option>Colombia</option>
+              <option>Ecuador</option>
+              <option>Estados Unidos</option>
+              <option>Mexico</option>
+              <option>Paraguay</option>
+              <option>Venezuela</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label">Preferencias de correo</label>
+            <div class="field checkbox">
+              <input type="checkbox" id="input2" />
+              <label for="input2">
+                Recibe ocacionalmente correos con nuevas funcionalidades de la
+                aplicación, no te preocupes no te enviaremos SPAM
+              </label>
+            </div>
+          </div>
+          <button class="btn is-md w-100 mt-4">Crea una cuenta</button>
+          <div class="is-text-muted">
+            Al crear una cuenta tu aceptas nuestros
+            <a href="#">Términos y condiciones</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
