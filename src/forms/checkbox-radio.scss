@@ -5,9 +5,14 @@
   --pui-choice-selected-color: var(--pui-color-primary);
   --pui-checkbox-border-radius: var(--pui-space-1);
 
-  display: flex;
+  display: inline-grid;
   gap: var(--pui-space-2);
-  align-items: baseline;
+  grid-template-columns: min-content auto;
+}
+
+label,
+.label {
+  cursor: pointer;
 }
 
 .field.checkbox {
@@ -38,6 +43,7 @@
   transition-duration: 0.2s;
   transition-timing-function: ease;
   border: solid 2px var(--pui-choice-border-color);
+  margin-top: 0.125rem;
 
   &:checked {
     --pui-choice-border-color: var(--pui-choice-selected-color);

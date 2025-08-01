@@ -1,54 +1,71 @@
 @use "../variables/spaces.scss" as spaces;
 
-@each $name, $value in spaces.$spaces {
+@mixin box-models($name, $screen-size: "") {
+  $screen-prefix: "";
+  @if $screen-size != "" {
+    $screen-prefix: #{$screen-size}\:;
+  }
+
   // Margins
-  .m-#{$name} {
+  .#{$screen-prefix}m-#{$name} {
     margin: var(--pui-space-#{$name}) !important;
   }
-  .mt-#{$name} {
+  .#{$screen-prefix}mt-#{$name} {
     margin-top: var(--pui-space-#{$name}) !important;
   }
-  .mr-#{$name} {
+  .#{$screen-prefix}mr-#{$name} {
     margin-right: var(--pui-space-#{$name}) !important;
   }
-  .mb-#{$name} {
+  .#{$screen-prefix}mb-#{$name} {
     margin-bottom: var(--pui-space-#{$name}) !important;
   }
-  .ml-#{$name} {
+  .#{$screen-prefix}ml-#{$name} {
     margin-left: var(--pui-space-#{$name}) !important;
   }
-  .mx-#{$name} {
+  .#{$screen-prefix}mx-#{$name} {
     margin-left: var(--pui-space-#{$name}) !important;
     margin-right: var(--pui-space-#{$name}) !important;
   }
-  .my-#{$name} {
+  .#{$screen-prefix}my-#{$name} {
     margin-top: var(--pui-space-#{$name}) !important;
     margin-bottom: var(--pui-space-#{$name}) !important;
   }
 
   // Paddings
-  .p-#{$name} {
+  .#{$screen-prefix}p-#{$name} {
     padding: var(--pui-space-#{$name}) !important;
   }
-  .pt-#{$name} {
+  .#{$screen-prefix}pt-#{$name} {
     padding-top: var(--pui-space-#{$name}) !important;
   }
-  .pr-#{$name} {
+  .#{$screen-prefix}pr-#{$name} {
     padding-right: var(--pui-space-#{$name}) !important;
   }
-  .pb-#{$name} {
+  .#{$screen-prefix}pb-#{$name} {
     padding-bottom: var(--pui-space-#{$name}) !important;
   }
-  .pl-#{$name} {
+  .#{$screen-prefix}pl-#{$name} {
     padding-left: var(--pui-space-#{$name}) !important;
   }
-  .px-#{$name} {
+  .#{$screen-prefix}px-#{$name} {
     padding-left: var(--pui-space-#{$name}) !important;
     padding-right: var(--pui-space-#{$name}) !important;
   }
-  .py-#{$name} {
+  .#{$screen-prefix}py-#{$name} {
     padding-top: var(--pui-space-#{$name}) !important;
     padding-bottom: var(--pui-space-#{$name}) !important;
+  }
+}
+
+@each $name, $value in spaces.$spaces {
+  @include box-models($name);
+}
+
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @each $name, $value in spaces.$spaces {
+      @include box-models($name, $breakpoint);
+    }
   }
 }
 

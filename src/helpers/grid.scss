@@ -15,12 +15,32 @@ $grid-columns: 12;
     }
   }
 
+  // Grid auto rows
+  $grid-auto-rows: (
+    "auto": auto,
+    "min": min-content,
+    "max": max-content,
+    "fr": minmax(0, 1fr),
+  );
+
+  @each $key, $value in $grid-auto-rows {
+    &.is-auto-rows-#{$key} {
+      grid-auto-rows: $value;
+    }
+  }
+
   // Responsive
   @each $breakpoint, $size in spaces.$breakpoints {
     @media (min-width: #{$size}) {
       @for $i from 1 through $grid-columns {
         & .#{$breakpoint}\:is-col-#{$i} {
           @include col-span($i);
+        }
+      }
+
+      @each $key, $value in $grid-auto-rows {
+        &.#{$breakpoint}\:is-auto-rows-#{$key} {
+          grid-auto-rows: $value;
         }
       }
     }

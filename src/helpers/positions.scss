@@ -1,0 +1,6 @@
+$positions: "relative", "absolute";
+@each $value in $positions {
+  .is-#{$value} {
+    position: #{$value} !important;
+  }
+}
