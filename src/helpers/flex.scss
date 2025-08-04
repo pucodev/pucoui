@@ -1,5 +1,15 @@
+@use "../variables/spaces.scss" as spaces;
+@use "sass:math";
+@use "sass:list";
+
 .is-flex-row {
   flex-direction: row !important;
+}
+
+.is-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .is-flex-column {
@@ -70,5 +80,48 @@ $total-flexs: 6;
 
   .is-flex-shrink-#{$i} {
     flex-shrink: #{$i};
+  }
+}
+
+.is-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$flex-columns: 12;
+@function flex-column-size($value) {
+  $percentage: math.div(100%, $flex-columns) * $value;
+  $gap-multiplier: list.slash(var(--pui-gap), 2);
+  @if $value == $flex-columns {
+    @return $percentage;
+  } @else {
+    @return calc($percentage - #{$gap-multiplier});
+  }
+}
+
+@for $i from 1 through $flex-columns {
+  .is-flex,
+  .is-stack,
+  .is-row {
+    .is-col-#{$i} {
+      flex: 0 0 flex-column-size($i);
+      max-width: flex-column-size($i);
+    }
+  }
+}
+
+// Responsive
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $flex-columns {
+      .is-flex,
+      .is-stack,
+      .is-row {
+        .#{$breakpoint}\:is-col-#{$i} {
+          flex: 0 0 flex-column-size($i);
+          max-width: flex-column-size($i);
+        }
+      }
+    }
   }
 }
