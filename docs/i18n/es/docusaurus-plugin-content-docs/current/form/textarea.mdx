@@ -1,0 +1,95 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import TextareaBasic from '@site/src/components/html/form/textarea/TextareaBasic'
+import TextareaBasicCode from '@site/src/components/generated/form/textarea/TextareaBasic.html?raw'
+
+import TextareaDisabled from '@site/src/components/html/form/textarea/TextareaDisabled'
+import TextareaDisabledCode from '@site/src/components/generated/form/textarea/TextareaDisabled.html?raw'
+
+import TextareaField from '@site/src/components/html/form/textarea/TextareaField'
+import TextareaFieldCode from '@site/src/components/generated/form/textarea/TextareaField.html?raw'
+
+import TextareaFieldValid from '@site/src/components/html/form/textarea/TextareaFieldValid'
+import TextareaFieldValidCode from '@site/src/components/generated/form/textarea/TextareaFieldValid.html?raw'
+
+import TextareaFieldInvalid from '@site/src/components/html/form/textarea/TextareaFieldInvalid'
+import TextareaFieldInvalidCode from '@site/src/components/generated/form/textarea/TextareaFieldInvalid.html?raw'
+
+# Textarea
+
+Componente de entrada que representa un área de texto multilínea. Se utiliza para capturar texto extenso escrito por el usuario, como comentarios, descripciones u observaciones.
+
+## Uso básico
+
+<PreviewElement>
+  <TextareaBasic />
+</PreviewElement>
+
+<CodeBlock language="html">{TextareaBasicCode}</CodeBlock>
+
+## Disabled
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TextareaDisabled />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TextareaDisabledCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Field
+
+Usa el componente Field para componer un textarea con una etiqueta, texto de ayuda y mensaje de error
+
+:::tip
+Para más información visita la [documentación de field](./field)
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TextareaField />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TextareaFieldCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Colores
+
+#### is-valid
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TextareaFieldValid />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TextareaFieldValidCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+#### is-invalid
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <TextareaFieldInvalid />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{TextareaFieldInvalidCode}</CodeBlock>
+  </TabItem>
+</Tabs>

@@ -1,4 +1,4 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -20,9 +20,9 @@ import AlertBorderlessCode from '@site/src/components/generated/alert/AlertBorde
 
 # Alert
 
-Muestra un mensaje de alerta
+Displays an alert message.
 
-## Estructura
+## Structure
 
 - alert
   - alert-icon
@@ -30,7 +30,7 @@ Muestra un mensaje de alerta
     - alert-header
     - alert-body
 
-### Ejemplo
+### Example
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -44,15 +44,15 @@ Muestra un mensaje de alerta
   </TabItem>
 </Tabs>
 
-## Colores
+## Colors
 
-Para cambiar el color de la alerta, puedes usar patron de clase `is-{color}`
+To change the alert color, you can use the `is-{color}` class pattern.
 
 :::info
-Para ver los colores disponibles, revisa la sección de [Colores](/docs/customize/color).
+To see the available colors, check the [Colors](/docs/customize/color) section.
 :::
 
-### Ejemplo
+### Example
 
 <PreviewElement>
   <AlertColors />
@@ -62,10 +62,10 @@ Para ver los colores disponibles, revisa la sección de [Colores](/docs/customiz
 
 ## Tonal
 
-Agrega un fondo tonal a la alerta, puedes usar patron de clase `is-tonal`.
+Adds a tonal background to the alert. You can use the `is-tonal` class pattern.
 
 :::tip
-Puedes combinarlo con los colores de alerta, por ejemplo: `is-tonal is-primary`, `is-tonal is-warning`, etc.
+You can combine it with alert colors, for example: `is-tonal is-primary`, `is-tonal is-warning`, etc.
 :::
 
 <Tabs>
@@ -80,9 +80,9 @@ Puedes combinarlo con los colores de alerta, por ejemplo: `is-tonal is-primary`,
   </TabItem>
 </Tabs>
 
-## Borde
+## Border
 
-Puedes agregar un borde a la alerta usando el patron de clase `is-accent-border`.
+You can add a border to the alert using the `is-accent-border` class pattern.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -96,9 +96,9 @@ Puedes agregar un borde a la alerta usando el patron de clase `is-accent-border`
   </TabItem>
 </Tabs>
 
-## Sin bordes
+## Borderless
 
-Puedes eliminar el borde de la alerta usando el patron de clase `is-borderless`.
+You can remove the alert's border using the `is-borderless` class pattern.
 
 <Tabs>
   <TabItem value="preview" label="Preview">

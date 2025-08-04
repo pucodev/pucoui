@@ -1,28 +1,28 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import CardBasic from '../../src/components/html/card/CardBasic'
+import CardBasic from '@site/src/components/html/card/CardBasic'
 import CardBasicCode from '@site/src/components/generated/card/CardBasic.html?raw'
 
-import CardImageStart from '../../src/components/html/card/CardImageStart'
+import CardImageStart from '@site/src/components/html/card/CardImageStart'
 import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
 
-import CardImageEnd from '../../src/components/html/card/CardImageEnd'
+import CardImageEnd from '@site/src/components/html/card/CardImageEnd'
 import CardImageEndCode from '@site/src/components/generated/card/CardImageEnd.html?raw'
 
-import CardElevation from '../../src/components/html/card/CardElevation'
+import CardElevation from '@site/src/components/html/card/CardElevation'
 import CardElevationCode from '@site/src/components/generated/card/CardElevation.html?raw'
 
-import CardOutlined from '../../src/components/html/card/CardOutlined'
+import CardOutlined from '@site/src/components/html/card/CardOutlined'
 import CardOutlinedCode from '@site/src/components/generated/card/CardOutlined.html?raw'
 
 # Card
 
-Muestra información con estilo de tarjetas con diferentes tipos de contenido y diseños.
+Displays information in a card style with different types of content and layouts.
 
-## Estructura
+## Structure
 
 - card
   - image
@@ -31,7 +31,7 @@ Muestra información con estilo de tarjetas con diferentes tipos de contenido y 
     - card-content
   - card-actions
 
-## Uso básico
+## Basic Usage
 
 <PreviewElement>
   <CardBasic />
@@ -39,11 +39,11 @@ Muestra información con estilo de tarjetas con diferentes tipos de contenido y 
 
 <CodeBlock language="html">{CardBasicCode}</CodeBlock>
 
-## Imágen
+## Image
 
-Puedes agregar una imagen a la tarjeta utilizando la etiqueta `img` posicionandola al inicio o al final de la tarjeta
+You can add an image to the card using the `img` tag, positioning it at the beginning or end of the card.
 
-### Imágen inicio
+### Image Start
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -57,7 +57,7 @@ Puedes agregar una imagen a la tarjeta utilizando la etiqueta `img` posicionando
   </TabItem>
 </Tabs>
 
-### Imágen final
+### Image End
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -71,9 +71,9 @@ Puedes agregar una imagen a la tarjeta utilizando la etiqueta `img` posicionando
   </TabItem>
 </Tabs>
 
-## Elevación
+## Elevation
 
-Puedes configurar el efecto de elevación usando la clase `elevation-{number}`, donde `number` es un valor de `1` al `5`
+You can set the elevation effect using the `elevation-{number}` class, where `number` is a value from `1` to `5`.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -87,9 +87,9 @@ Puedes configurar el efecto de elevación usando la clase `elevation-{number}`, 
   </TabItem>
 </Tabs>
 
-## Con borde
+## Outlined
 
-Para usar la variante con bordes usar la clase `is-outlined`
+To use the outlined variant, use the `is-outlined` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">

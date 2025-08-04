@@ -1,25 +1,25 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import { imageAspectRatios, imageSizes } from '../../src/components/variables'
-import ImageBase from '../../src/components/docs/ImageBase'
+import { imageAspectRatios, imageSizes } from '@site/src/components/variables'
+import ImageBase from '@site/src/components/docs/ImageBase'
 
-import ImageExample from '../../src/components/html/image/ImageExample'
+import ImageExample from '@site/src/components/html/image/ImageExample'
 import ImageExampleCode from '@site/src/components/generated/image/ImageExample.html?raw'
 
-import ImageRounded from '../../src/components/html/image/ImageRounded'
+import ImageRounded from '@site/src/components/html/image/ImageRounded'
 import ImageRoundedCode from '@site/src/components/generated/image/ImageRounded.html?raw'
 
-import ImageFallback from '../../src/components/html/image/ImageFallback'
+import ImageFallback from '@site/src/components/html/image/ImageFallback'
 import ImageFallbackCode from '@site/src/components/generated/image/ImageFallback.html?raw'
 
-# Imagen
+# Image
 
-Configura tamaños y aspect-ratio de tus imágenes
+Set sizes and aspect-ratios for your images.
 
-## Uso básico
+## Basic Usage
 
 <PreviewElement>
   <ImageExample />
@@ -27,15 +27,15 @@ Configura tamaños y aspect-ratio de tus imágenes
 
 <CodeBlock language="html">{ImageExampleCode}</CodeBlock>
 
-## Tamaños
+## Sizes
 
-Tamaños disponibles
+Available sizes:
 
 <table>
   <thead>
     <tr>
-      <th>Clase</th>
-      <th>Tamaño</th>
+      <th>Class</th>
+      <th>Size</th>
       <th>Preview</th>
     </tr>
   </thead>
@@ -58,13 +58,13 @@ Tamaños disponibles
   </tbody>
 </table>
 
-## Redondeado
+## Rounded
 
-Para redondear las imágenes puedes usar el helper de dimensiones para ello usa las clases `is-rounded-*`
+To round images, you can use the dimension helpers with the `is-rounded-*` classes.
 
-Donde `*` puede ser del 0 al 6
+Where `*` can be from 0 to 6.
 
-En caso se requiera que este completamente redondeado puedes usar la clase `is-rounded`
+If you need the image to be completely rounded, you can use the `is-rounded` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -80,7 +80,7 @@ En caso se requiera que este completamente redondeado puedes usar la clase `is-r
 
 ## Fallback
 
-Muestra un texto debajo de tu imágen mientras se descarga, por ejemplo lo puedes usar para colocar las iniciales del usuario
+Displays text below your image while it loads. For example, you can use it to place the user's initials.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -94,15 +94,15 @@ Muestra un texto debajo de tu imágen mientras se descarga, por ejemplo lo puede
   </TabItem>
 </Tabs>
 
-## Relación de aspecto
+## Aspect Ratio
 
-Usa estas clases para configurar la relación de aspecto de una imágen, estas clases son responsivas es decir siempre van a mantener la relación de aspecto aunque la pantalla sea pequeña o grande
+Use these classes to set the aspect ratio of an image. These classes are responsive, meaning they will always maintain the aspect ratio even if the screen is small or large.
 
 <table>
   <thead>
     <tr>
-      <th>Clase</th>
-      <th>Tamaño</th>
+      <th>Class</th>
+      <th>Size</th>
       <th>Preview</th>
     </tr>
   </thead>

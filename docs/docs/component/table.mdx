@@ -1,43 +1,43 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import TableBasic from '../../src/components/html/table/TableBasic'
+import TableBasic from '@site/src/components/html/table/TableBasic'
 import TableBasicCode from '@site/src/components/generated/table/TableBasic.html?raw'
 
-import TableBordered from '../../src/components/html/table/TableBordered'
+import TableBordered from '@site/src/components/html/table/TableBordered'
 import TableBorderedCode from '@site/src/components/generated/table/TableBordered.html?raw'
 
-import TableStripped from '../../src/components/html/table/TableStripped'
+import TableStripped from '@site/src/components/html/table/TableStripped'
 import TableStrippedCode from '@site/src/components/generated/table/TableStripped.html?raw'
 
-import TableStrippedColor from '../../src/components/html/table/TableStrippedColor'
+import TableStrippedColor from '@site/src/components/html/table/TableStrippedColor'
 import TableStrippedColorCode from '@site/src/components/generated/table/TableStrippedColor.html?raw'
 
-import TableHoverable from '../../src/components/html/table/TableHoverable'
+import TableHoverable from '@site/src/components/html/table/TableHoverable'
 import TableHoverableCode from '@site/src/components/generated/table/TableHoverable.html?raw'
 
-import TableHoverableColor from '../../src/components/html/table/TableHoverableColor'
+import TableHoverableColor from '@site/src/components/html/table/TableHoverableColor'
 import TableHoverableColorCode from '@site/src/components/generated/table/TableHoverableColor.html?raw'
 
-import TableSizes from '../../src/components/html/table/TableSizes'
+import TableSizes from '@site/src/components/html/table/TableSizes'
 import TableSizesCode from '@site/src/components/generated/table/TableSizes.html?raw'
 
-# Tabla
+# Table
 
-Muestra tu información ordenada en tablas
+Displays your information sorted in tables.
 
-## Estructura
+## Structure
 
-- `table`: Etiqueta contenedora
-  - `thead`: Cabecera de la tabla (opcional)
-  - `tbody`: Cuerpo de la tabla
-    - `tr`: Fila de la tabla
-      - `th`: Celda del tipo cabecera
-      - `td`: Celda general
+- `table`: Container tag
+  - `thead`: Table header (optional)
+  - `tbody`: Table body
+    - `tr`: Table row
+      - `th`: Header cell
+      - `td`: General cell
 
-## Uso básico
+## Basic Usage
 
 <PreviewElement>
   <div className="dialog-preview">
@@ -49,9 +49,9 @@ Muestra tu información ordenada en tablas
 
 <CodeBlock language="html">{TableBasicCode}</CodeBlock>
 
-## Con bordes
+## Bordered
 
-Muestra una tabla con todos los elementos con borde usando la clase `is-bordered` junto a la clase `table`
+Displays a table with all elements bordered using the `is-bordered` class along with the `table` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -69,7 +69,7 @@ Muestra una tabla con todos los elementos con borde usando la clase `is-bordered
 
 ## Striped
 
-Para mostrar las filas impares con un color neutral usar la clase `is-striped`
+To display odd rows with a neutral color, use the `is-striped` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -85,9 +85,9 @@ Para mostrar las filas impares con un color neutral usar la clase `is-striped`
   </TabItem>
 </Tabs>
 
-### Colores
+### Colors
 
-Para mostrar con otro color el striped usa la clase `is-{COLOR}` donde `COLOR` es uno de los valores de colores. Para más información visita la [documentación de personalización de colores](../customize/color)
+To display the striped rows with another color, use the `is-{COLOR}` class, where `COLOR` is one of the color values. For more information, visit the [color customization documentation](../customize/color).
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -103,7 +103,7 @@ Para mostrar con otro color el striped usa la clase `is-{COLOR}` donde `COLOR` e
 
 ## Highlight on Hover
 
-Para mostrar un color neutral cuando se pase el mouse (hover) puedes usar la clase `is-hoverable` junto a la clase `table`
+To display a neutral color when hovering over a row, you can use the `is-hoverable` class along with the `table` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -119,9 +119,9 @@ Para mostrar un color neutral cuando se pase el mouse (hover) puedes usar la cla
   </TabItem>
 </Tabs>
 
-### Colores
+### Colors
 
-Para mostrar con otro color la fila con estado hover usa la clase `is-{COLOR}` donde `COLOR` es uno de los valores de colores. Para más información visita la [documentación de personalización de colores](../customize/color)
+To display the row with another color on hover, use the `is-{COLOR}` class, where `COLOR` is one of the color values. For more information, visit the [color customization documentation](../customize/color).
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -137,9 +137,9 @@ Para mostrar con otro color la fila con estado hover usa la clase `is-{COLOR}` d
   </TabItem>
 </Tabs>
 
-## Tamaños
+## Sizes
 
-Muestra las tablas con diferentes paddings usando las clases `is-sm`, `is-md`(por defecto), `is-lg` junto con la clase `table`
+Displays tables with different paddings using the `is-sm`, `is-md` (default), and `is-lg` classes along with the `table` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -153,11 +153,11 @@ Muestra las tablas con diferentes paddings usando las clases `is-sm`, `is-md`(po
   </TabItem>
 </Tabs>
 
-## Tabla responsiva
+## Responsive Table
 
-Si deseas que la tabla tenga un scroll horizontal se tiene que agregar un contenedor con la clase `table-responsive`
+If you want the table to have a horizontal scroll, you need to add a container with the `table-responsive` class.
 
-export const tableHeaders = Array.from({ length: 20 }, (x, index) => `Cabecera`)
+export const tableHeaders = Array.from({ length: 20 }, (x, index) => `Header`)
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -174,17 +174,17 @@ export const tableHeaders = Array.from({ length: 20 }, (x, index) => `Cabecera`)
           <tbody>
             <tr>
               {tableHeaders.map((header, index) => (
-                <td key={index}>{`Celda ${index + 1}`}</td>
+                <td key={index}>{`Cell ${index + 1}`}</td>
               ))}
             </tr>
             <tr>
               {tableHeaders.map((header, index) => (
-                <td key={index}>{`Celda ${index + 1}`}</td>
+                <td key={index}>{`Cell ${index + 1}`}</td>
               ))}
             </tr>
             <tr>
               {tableHeaders.map((header, index) => (
-                <td key={index}>{`Celda ${index + 1}`}</td>
+                <td key={index}>{`Cell ${index + 1}`}</td>
               ))}
             </tr>
           </tbody>

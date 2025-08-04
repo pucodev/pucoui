@@ -1,29 +1,29 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import { spaces } from '../../src/components/variables'
+import { spaces } from '@site/src/components/variables'
 
-import StackBasic from '../../src/components/html/stack/StackBasic'
+import StackBasic from '@site/src/components/html/stack/StackBasic'
 import StackBasicCode from '@site/src/components/generated/stack/StackBasic.html?raw'
 
-import StackVertical from '../../src/components/html/stack/StackVertical'
+import StackVertical from '@site/src/components/html/stack/StackVertical'
 import StackVerticalCode from '@site/src/components/generated/stack/StackVertical.html?raw'
 
-import StackHorizontal from '../../src/components/html/stack/StackHorizontal'
+import StackHorizontal from '@site/src/components/html/stack/StackHorizontal'
 import StackHorizontalCode from '@site/src/components/generated/stack/StackHorizontal.html?raw'
 
-import StackGap from '../../src/components/html/stack/StackGap'
+import StackGap from '@site/src/components/html/stack/StackGap'
 import StackGapCode from '@site/src/components/generated/stack/StackGap.html?raw'
 
 # Stack
 
-Stack es un componente de layout que facilita la organización vertical u horizontal de elementos aplicando un espacio consistente entre ellos. Su objetivo principal es simplificar la alineación de elementos en fila o columna sin necesidad de escribir estilos adicionales para el espaciado.
+Stack is a layout component that facilitates the vertical or horizontal organization of elements by applying consistent spacing between them. Its main goal is to simplify the alignment of items in a row or column without needing to write additional styles for spacing.
 
-## Uso básico
+## Basic Usage
 
-Usar la clase `is-stack`. Automáticamente genera una organización vertical y espaciado de **_{spaces[2]} rem_**
+Use the `is-stack` class. It automatically generates a vertical organization and a spacing of **_{spaces[2]} rem_**.
 
 <PreviewElement>
   <StackBasic />
@@ -37,17 +37,17 @@ Usar la clase `is-stack`. Automáticamente genera una organización vertical y e
 </div>
 ```
 
-## Direcciones
+## Directions
 
-Usa las siguientes clases para definir la dirección y los elementos siempre se alinean al centro.
+Use the following classes to define the direction, and the elements will always align to the center.
 
 :::tip
-Si necesitas que los elementos se alineen al inicio o al final puedes usar las clases [helper de flex](/docs/helper/flexbox#align-items)
+If you need the elements to align to the start or end, you can use the [flex helper classes](/docs/helper/flexbox#align-items).
 :::
 
 ### Vertical
 
-Usa la clase `is-vstack` para organizar los elementos verticalmente
+Use the `is-vstack` class to organize elements vertically.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -63,7 +63,7 @@ Usa la clase `is-vstack` para organizar los elementos verticalmente
 
 ### Horizontal
 
-Usa la clase `is-hstack` para organizar los elementos horizontalmente
+Use the `is-hstack` class to organize elements horizontally.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -77,12 +77,12 @@ Usa la clase `is-hstack` para organizar los elementos horizontalmente
   </TabItem>
 </Tabs>
 
-## Espaciado
+## Spacing
 
-Usa `is-gap-{size}` para agregar espacio entre los elementos flexibles. El size es un valor entre `0` a `6`
+Use `is-gap-{size}` to add space between flex items. The size is a value between `0` and `6`.
 
 :::info
-Para más información de los valores de espaciado visita la documentación de [personalizar espaciados](../customize/spacing)
+For more information on spacing values, visit the [customize spacing documentation](../customize/spacing).
 :::
 
 <Tabs>

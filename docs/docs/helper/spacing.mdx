@@ -1,23 +1,23 @@
-import { spaces, defaultDimen } from '../../src/components/variables'
+import { spaces, defaultDimen } from '@site/src/components/variables'
 import BreakpointSpace from '@site/docs/helper/_breakpoint-space.mdx'
 
-# Espaciado
+# Spacing
 
-Configura los espacios entre los elementos de tu aplicación.
+Configure the spacing between elements in your application.
 
 :::info
 
-Para ver los tamaños disponibles visitar la [documentacion de personalizar espacios](../customize/spacing)
+To see the available sizes, visit the [customize spacing documentation](../customize/spacing).
 
 :::
 
-## Paddings y margins
+## Paddings and Margins
 
-Usando los valores de la tabla anterior se pueden usar para agregar **padding** y **margins** usando la clase `p*` y `m*` respectivamente.
+Using the values from the table above, you can add **padding** and **margins** using the `p*` and `m*` classes, respectively.
 
-Además se puden personalizar con las siguientes direcciones
+Additionally, you can customize them with the following directions:
 
-| Clase | Dirección      |
+| Class | Direction      |
 | ----- | -------------- |
 | `*t`  | top            |
 | `*r`  | right          |
@@ -26,21 +26,21 @@ Además se puden personalizar con las siguientes direcciones
 | `*x`  | left and right |
 | `*y`  | top and bottom |
 
-Seguidamente se debe agregar el tamaño del espaciado que puede ser del `0` al `7`
+Next, you must add the spacing size, which can be from `0` to `7`.
 
-### Ejemplos
+### Examples
 
-| Ejemplo | Style                                                                  |
+| Example | Style                                                                  |
 | ------- | ---------------------------------------------------------------------- |
 | `pt-0`  | <code>padding-top: {spaces[0]}rem </code>                              |
 | `mb-3`  | <code>margin-bottom: {spaces[3]}rem</code>                             |
 | `mx-2`  | <code>margin-left: {spaces[2]}rem; margin-right: {spaces[2]}rem</code> |
 
-### Adicionales
+### Additional
 
-Tambien se pueden usar los atributos `*auto` lo cual asignará el **padding** o **margin** a `auto`
+You can also use the `*auto` attributes, which will set the **padding** or **margin** to `auto`.
 
-#### Ejemplo de adicionales
+#### Additional Examples
 
 - `px-auto`
 - `mx-auto`
@@ -48,7 +48,7 @@ Tambien se pueden usar los atributos `*auto` lo cual asignará el **padding** o 
 ## Responsive
 
 :::tip
-Para más detalle visita la documentación de [ breakpoints ](/docs/helper/breakpoint)
+For more details, visit the [breakpoints documentation](/docs/helper/breakpoint).
 :::
 
 <BreakpointSpace />

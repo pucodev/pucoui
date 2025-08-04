@@ -1,4 +1,4 @@
-import PreviewIframe from '../../src/components/PreviewIframe'
+import PreviewIframe from '@site/src/components/PreviewIframe'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
@@ -12,12 +12,12 @@ import TinyfloraClass from '@site/src/components/generated/showcase/register/tin
 {/* GITFROG */}
 import Gitfrog from '@site/static/showcase/generated/register/Gitfrog.html?raw'
 
-# Vistas de Registro
+# Register Views
 
 ## Tinyflora
 
 :::tip
-Para ver la página en pantalla completa ir al siguiente <a href="/pucoui/showcase/generated/register/tinyflora.html" target="_blank">link</a>
+To view the page in full screen, go to the following <a href="/pucoui/showcase/generated/register/tinyflora.html" target="_blank">link</a>
 :::
 
 ### Preview
@@ -42,35 +42,35 @@ Para ver la página en pantalla completa ir al siguiente <a href="/pucoui/showca
   </TabItem>
 </Tabs>
 
-### Como funciona
+### How it works
 
 <details>
-  <summary>Como funciona</summary>
+  <summary>How it works</summary>
 
-1. Actualizamos las variables según el estilo de la página
+1. We update the variables according to the page's style.
 
 <CodeBlock language="html">{TinyfloraTheme}</CodeBlock>
 
-2. Instalamos fuentes, para este caso vamos a usar la fuente `Lato` desde [Google Fonts](https://fonts.google.com/specimen/Lato)
+2. We install fonts, in this case we will use the `Lato` font from [Google Fonts](https://fonts.google.com/specimen/Lato).
 
-3. Agregamos la fuente al estilo del proyecto
+3. We add the font to the project's styles.
 
 <CodeBlock language="html">{TinyfloraFont}</CodeBlock>
 
-4. Creamos clases propias del proyecto
+4. We create custom classes for the project.
 
 <CodeBlock language="html">{TinyfloraClass}</CodeBlock>
 
-5. La imágen que se muestra al lado derecho solo se debe mostrar cuando la pantalla es mayor a `md`, para lograr esto vamos a agregarle las clases `is-hidden md:is-flex` ocultando el elemento por defecto y volviendolo `flex` cuando la pantalla es mayor a `md`
+5. The image shown on the right side should only be displayed when the screen is larger than `md`. To achieve this, we will add the classes `is-hidden md:is-flex` to it, hiding the element by default and making it a `flex` container when the screen is larger than `md`.
 
-6. El contenedor principal que tiene el formulario debe ser también responsive, tomando todo el ancho en pantallas pequeñas y una proporcion de `5/12` cuando la pantalla es mayor a `md`. Para esto vamos a agregarle al contenedor padre la clase `is-grid` y al contenedor del formulario las clases `is-col-12 md:is-col-5`
+6. The main container holding the form must also be responsive, taking the full width on small screens and a proportion of `5/12` when the screen is larger than `md`. For this, we will add the `is-grid` class to the parent container and the `is-col-12 md:is-col-5` classes to the form container.
 
 </details>
 
 ## Gitfrog
 
 :::tip
-Para ver la página en pantalla completa ir al siguiente <a href="/pucoui/showcase/generated/register/Gitfrog.html" target="_blank">link</a>
+To view the page in full screen, go to the following <a href="/pucoui/showcase/generated/register/Gitfrog.html" target="_blank">link</a>
 :::
 
 ### Preview

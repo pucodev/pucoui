@@ -1,0 +1,120 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import ButtonBase from '@site/src/components/html/button/ButtonBase'
+import ButtonBaseCode from '@site/src/components/generated/button/ButtonBase.html?raw'
+
+import ButtonColors from '@site/src/components/html/button/ButtonColors'
+import ButtonColorsCode from '@site/src/components/generated/button/ButtonColors.html?raw'
+
+import ButtonTonals from '@site/src/components/html/button/ButtonTonals'
+import ButtonTonalsCode from '@site/src/components/generated/button/ButtonTonals.html?raw'
+
+import ButtonOutlined from '@site/src/components/html/button/ButtonOutlined'
+import ButtonOutlinedCode from '@site/src/components/generated/button/ButtonOutlined.html?raw'
+
+import ButtonRounded from '@site/src/components/html/button/ButtonRounded'
+import ButtonRoundedCode from '@site/src/components/generated/button/ButtonRounded.html?raw'
+
+import ButtonIcons from '@site/src/components/html/button/ButtonIcons'
+import ButtonIconsCode from '@site/src/components/generated/button/ButtonIcons.html?raw'
+
+# Botón
+
+Botón para realizar acciones con diferentes estilos y colores.
+
+## Base
+
+<PreviewElement>
+  <ButtonBase />
+</PreviewElement>
+
+<CodeBlock language="html">{ButtonBaseCode}</CodeBlock>
+
+## Colores
+
+Configura el color del botón usando la clase `is-{color}`
+
+:::info
+Para ver los colores disponibles, revisa la sección de [Colores](/docs/customize/color).
+:::
+
+<PreviewElement>
+  <ButtonColors />
+</PreviewElement>
+
+<CodeBlock language="html">{ButtonColorsCode}</CodeBlock>
+
+## Tonal
+
+Agrega un fondo tonal al botón usando la clase `is-tonal`.
+
+:::tip
+Puedes combinarlo con colores, por ejemplo: `is-tonal is-primary`, `is-tonal is-warning`, etc.
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ButtonTonals />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ButtonTonalsCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Outlined
+
+Puedes configurar el botón con bordes y fondo blanco usando la clase `is-outlined`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ButtonOutlined />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ButtonOutlinedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Rounded
+
+Puedes configurar el botón con bordes redondeados usando la clase `is-rounded`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ButtonRounded />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ButtonRoundedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Íconos
+
+Puedes agregar íconos al botón usando el componente `<iconify-icon>`.
+
+:::tip
+Para más información sobre cómo usar íconos, revisa la sección de [Iconos](/docs/element/icon).
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ButtonIcons />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ButtonIconsCode}</CodeBlock>
+  </TabItem>
+</Tabs>

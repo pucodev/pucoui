@@ -1,40 +1,39 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import IconSizes from '../../src/components/html/icon/IconSizes'
+import IconSizes from '@site/src/components/html/icon/IconSizes'
 import IconSizesCode from '@site/src/components/generated/icon/IconSizes.html?raw'
 
-import IconText from '../../src/components/html/icon/IconText'
+import IconText from '@site/src/components/html/icon/IconText'
 import IconTextCode from '@site/src/components/generated/icon/IconText.html?raw'
 
-# Íconos
+# Icons
 
-Agrega íconos a tu proyecto para mejorar la usabilidad y estética de tu aplicación.
+Add icons to your project to improve the usability and aesthetics of your application.
 
-Para la iconografía se recomienda usar [iconify](https://iconify.design/)
+For iconography, it is recommended to use [iconify](https://iconify.design/).
 
 ## Iconify
 
-### Instalación
+### Installation
 
-Iconify cuenta con varias formas de instalación: _mediante css, html, on demand_.
+Iconify has several installation methods: _via CSS, HTML, on-demand_.
 
-Recomendamos usar la versión **on demand**, para conocer más sobre las ventajas y desventajas
-de usar este metodo visitar su [documentación](https://iconify.design/docs/usage/#icons-on-demand)
+We recommend using the **on-demand** version. To learn more about the advantages and disadvantages of using this method, visit their [documentation](https://iconify.design/docs/usage/#icons-on-demand).
 
-#### On demand
+#### On-demand
 
-Agrega el siguiente script a tu html, para más información visita su [documentación](https://iconify.design/docs/iconify-icon/#registering-the-web-component)
+Add the following script to your HTML. For more information, visit their [documentation](https://iconify.design/docs/iconify-icon/#registering-the-web-component).
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
 ```
 
-## Uso básico
+## Basic Usage
 
-Para usar íconos usar la clase `icon`
+To use icons, use the `icon` class.
 
 <PreviewElement>
   <IconSizes />
@@ -42,7 +41,7 @@ Para usar íconos usar la clase `icon`
 
 <CodeBlock language="html">{IconSizesCode}</CodeBlock>
 
-## Texto con ícono
+## Text with Icon
 
 <PreviewElement>
   <IconText />

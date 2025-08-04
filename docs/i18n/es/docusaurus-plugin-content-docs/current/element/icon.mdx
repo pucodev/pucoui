@@ -1,0 +1,51 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import IconSizes from '@site/src/components/html/icon/IconSizes'
+import IconSizesCode from '@site/src/components/generated/icon/IconSizes.html?raw'
+
+import IconText from '@site/src/components/html/icon/IconText'
+import IconTextCode from '@site/src/components/generated/icon/IconText.html?raw'
+
+# Íconos
+
+Agrega íconos a tu proyecto para mejorar la usabilidad y estética de tu aplicación.
+
+Para la iconografía se recomienda usar [iconify](https://iconify.design/)
+
+## Iconify
+
+### Instalación
+
+Iconify cuenta con varias formas de instalación: _mediante css, html, on demand_.
+
+Recomendamos usar la versión **on demand**, para conocer más sobre las ventajas y desventajas
+de usar este metodo visitar su [documentación](https://iconify.design/docs/usage/#icons-on-demand)
+
+#### On demand
+
+Agrega el siguiente script a tu html, para más información visita su [documentación](https://iconify.design/docs/iconify-icon/#registering-the-web-component)
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/iconify-icon@3.0.0/dist/iconify-icon.min.js"></script>
+```
+
+## Uso básico
+
+Para usar íconos usar la clase `icon`
+
+<PreviewElement>
+  <IconSizes />
+</PreviewElement>
+
+<CodeBlock language="html">{IconSizesCode}</CodeBlock>
+
+## Texto con ícono
+
+<PreviewElement>
+  <IconText />
+</PreviewElement>
+
+<CodeBlock language="html">{IconTextCode}</CodeBlock>

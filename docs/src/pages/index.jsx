@@ -1,3 +1,4 @@
+import Translate, { translate } from '@docusaurus/Translate'
 import clsx from 'clsx'
 import Link from '@docusaurus/Link'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
@@ -7,25 +8,25 @@ import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
 import Heading from '@theme/Heading'
-import styles from './index.module.css'
-import { Button } from '../components/pucoui/Button'
-import { Image } from '../components/pucoui/Image'
+import styles from '@site/src/css/index.module.css'
+import { Button } from '@site/src/components/pucoui/Button'
+import { Image } from '@site/src/components/pucoui/Image'
 import {
   Card,
   CardBody,
   CardContent,
   CardTitle,
-} from '../components/pucoui/Card'
-import ButtonBase from '../components/html/button/ButtonBase'
-import { Switch } from '../components/pucoui/Switch'
+} from '@site/src/components/pucoui/Card'
+import ButtonBase from '@site/src/components/html/button/ButtonBase'
+import { Switch } from '@site/src/components/pucoui/Switch'
 import {
   Alert,
   AlertBody,
   AlertHeader,
   AlertIcon,
-} from '../components/pucoui/Alert'
-import { Icon } from '../components/pucoui/Icon'
-import PreviewElement from '../components/PreviewElement'
+} from '@site/src/components/pucoui/Alert'
+import { Icon } from '@site/src/components/pucoui/Icon'
+import PreviewElement from '@site/src/components/PreviewElement'
 
 import CardImageStart from '@site/src/components/html/card/CardImageStart'
 import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
@@ -44,7 +45,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Documentación
+            Documentation
           </Link>
         </div>
       </div>
@@ -76,8 +77,8 @@ export default function Home() {
         <Alert className="w-100" color="primary" accentBorder>
           <AlertIcon icon="solar:cloud-check-outline" />
           <AlertBody>
-            <AlertHeader>¡Listo!</AlertHeader>
-            <AlertBody>Tus datos han sido sincronizados</AlertBody>
+            <AlertHeader>Ready!</AlertHeader>
+            <AlertBody>Your data has been synchronized</AlertBody>
           </AlertBody>
         </Alert>
       ),
@@ -91,19 +92,19 @@ export default function Home() {
       icon: 'solar:box-minimalistic-outline',
       title: 'Space',
       content:
-        'variable para definir los espaciados, usados para los margin, padding, etc',
+        'variable to define spacings, used for margins, padding, etc',
     },
     {
       icon: 'solar:waterdrops-outline',
       title: 'Color',
       content:
-        'Variable para definir la paleta de colores, usa los colores primary, info, warning, etc',
+        'Variable to define the color palette, uses primary, info, warning, etc',
     },
     {
       icon: 'solar:text-bold',
       title: 'Font',
       content:
-        'Variable para definir las caracteristicas de la fuente, usados para el tamaño, weight, etc',
+        'Variable to define font characteristics, used for size, weight, etc',
     },
   ]
 
@@ -112,31 +113,31 @@ export default function Home() {
       icon: 'solar:settings-linear',
       title: 'Helpers',
       content:
-        'Utilidades listas para usar que resuelven problemas comunes de maquetado, espaciado, tipografía y más.',
+        'Ready-to-use utilities that solve common layout, spacing, typography, and more.',
     },
     {
       icon: 'solar:menu-dots-square-outline',
       title: 'Elements',
       content:
-        'Elementos visuales básicos, listos para combinar y personalizar con clases CSS.',
+        'Basic visual elements, ready to combine and customize with CSS classes.',
     },
     {
       icon: 'solar:widget-5-outline',
       title: 'Components',
       content:
-        'Conjunto de bloques visuales más complejos y consistentes, diseñados para acelerar tu desarrollo y mantener la coherencia de diseño.',
+        'Set of more complex and consistent visual blocks, designed to speed up your development and maintain design consistency.',
     },
   ]
 
   const features = [
     {
       icon: 'solar:pallete-2-linear',
-      title: <>Diseñado para adaptarse a ti</>,
+      title: <>Designed to adapt to you</>,
       content: (
         <>
           <div>
-            Cambia el diseño sin tocar las clases, personaliza colores, tamaños,
-            tipografía y espaciados usando variables CSS.
+            Change the design without touching the classes, customize colors, sizes,
+            typography, and spacing using CSS variables.
           </div>
           <ul className="mt-5 pt-2 is-stack">
             {tokenFeatures.map((item) => (
@@ -155,7 +156,7 @@ export default function Home() {
       ),
       cta: (
         <Link className="btn is-outlined" to="/docs/customize/color">
-          Empezar
+          Get Started
         </Link>
       ),
       extra: (
@@ -207,13 +208,13 @@ export default function Home() {
     },
     {
       icon: 'solar:bolt-outline',
-      title: 'Facil de usar',
+      title: 'Easy to use',
       content: (
         <>
           <div>
-            Accede a una amplia colección de clases para tipografía, layouts,
-            formularios, botones, estados interactivos y más. Todo diseñado para
-            escalar y adaptarse sin esfuerzo a cualquier proyecto.
+            Access a wide collection of classes for typography, layouts,
+            forms, buttons, interactive states, and more. Everything is designed to
+            scale and adapt effortlessly to any project.
           </div>
           <ul className="mt-5 pt-2 is-stack">
             {elementFeatures.map((item) => (
@@ -232,7 +233,7 @@ export default function Home() {
       ),
       cta: (
         <Link className="btn is-outlined" to="/docs/helper/typography">
-          Empezar
+          Get Started
         </Link>
       ),
       extra: (
@@ -270,21 +271,21 @@ export default function Home() {
             {/* HERO-CONTENT */}
             <div className="is-col-12 md:is-col-7 px-6 py-8">
               <div className="is-stack">
-                <h1>Construye tu web en segundos</h1>
+                <h1>
+                  Build your website in seconds
+                </h1>
                 <div>
-                  Un sistema de clases CSS listo para producción, fácil de
-                  adaptar y perfecto para construir tu propio diseño o design
-                  system. Personaliza, extiende y mantén tu estilo sin esfuerzo.
+                  A production-ready CSS class system, easy to adapt and perfect for building your own design or design system. Customize, extend, and maintain your style effortlessly.
                 </div>
                 <div className="is-hstack is-gap-4 mt-3">
                   <Link className="btn is-md" to="/docs/intro">
-                    Empezar
+                    Get Started
                   </Link>
                   <Link
                     className="btn is-md is-outlined"
                     to="/docs/showcase/register"
                   >
-                    Ejemplos
+                    Examples
                   </Link>
                 </div>
               </div>
@@ -341,13 +342,13 @@ export default function Home() {
               />
             </div>
             <h5 className="is-color-primary mt-3">
-              TODO LO QUE NECESITAS, SIN COMPLICACIONES
+              EVERYTHING YOU NEED, WITHOUT COMPLICATIONS
             </h5>
-            <h2>Diseñado para escalar, hecho para personalizar</h2>
+            <h2>
+              Designed to scale, made to customize
+            </h2>
             <div className="is-text-muted mt-3">
-              pucoui combina utilidades, elementos y componentes listos para
-              usar. Personaliza con variables CSS o aplica clases listas para
-              producción sin perder control ni velocidad.
+              pucoui combines ready-to-use utilities, elements, and components. Customize with CSS variables or apply production-ready classes without losing control or speed.
             </div>
           </div>
 

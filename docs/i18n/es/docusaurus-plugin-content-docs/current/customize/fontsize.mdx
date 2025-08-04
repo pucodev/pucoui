@@ -1,0 +1,38 @@
+import { textSizes, defaultDimen } from '@site/src/components/variables'
+import CodeBlock from '@theme/CodeBlock'
+import PreviewElement from '@site/src/components/PreviewElement'
+
+# Tamaño de textos
+
+## Tabla de tamaño de textos
+
+Los calculos de los pixeles están sobre la base de <code>{defaultDimen}px</code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Tamaño</th>
+      <th>Pixels</th>
+      <th>Variable</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {textSizes.map((dimen, idx) => (
+      <tr>
+        <td>{idx + 1}</td>
+        <td>{dimen}rem</td>
+        <td>{dimen * defaultDimen}px</td>
+        <td>
+          <CodeBlock>--pui-font-size-{idx + 1}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div className={`is-font-size-${idx + 1}`}>Lorem ipsum</div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

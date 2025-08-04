@@ -1,19 +1,19 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import BreadcrumbBasic from '../../src/components/html/breadcrumb/BreadcrumbBasic'
+import BreadcrumbBasic from '@site/src/components/html/breadcrumb/BreadcrumbBasic'
 import BreadcrumbBasicCode from '@site/src/components/generated/breadcrumb/BreadcrumbBasic.html?raw'
 
-import BreadcrumbIcon from '../../src/components/html/breadcrumb/BreadcrumbIcon'
+import BreadcrumbIcon from '@site/src/components/html/breadcrumb/BreadcrumbIcon'
 import BreadcrumbIconCode from '@site/src/components/generated/breadcrumb/BreadcrumbIcon.html?raw'
 
 # Breadcrumb
 
-Muestra la ruta de navegación jerárquica de una página, facilitando al usuario volver a niveles anteriores del sitio.
+Displays the hierarchical navigation path of a page, making it easier for the user to return to previous levels of the site.
 
-## Uso básico
+## Basic Usage
 
 <PreviewElement>
   <BreadcrumbBasic />
@@ -21,9 +21,9 @@ Muestra la ruta de navegación jerárquica de una página, facilitando al usuari
 
 <CodeBlock language="html">{BreadcrumbBasicCode}</CodeBlock>
 
-## Íconos
+## Icons
 
-Muestra íconos en los elementos del breadcrumb
+Displays icons in the breadcrumb items.
 
 <Tabs>
   <TabItem value="preview" label="Preview">

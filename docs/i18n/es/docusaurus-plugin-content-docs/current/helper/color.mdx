@@ -1,0 +1,70 @@
+import { colors } from '@site/src/components/variables'
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+
+# Colores
+
+Configura el color de los textos y backgrounds de los elementos de tu aplicación.
+
+:::info
+
+Para ver los colores disponibles visitar la [documentacion de personalizar colores](../customize/color)
+
+:::
+
+## Color de texto
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Clase</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {colors.map((color, idx) => (
+      <tr>
+        <td>{color}</td>
+        <td>
+          <CodeBlock>is-color-{color}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div className={`is-color-${color}`}>Texto</div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Color de fondo
+
+<table>
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>Clase</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {colors.map((color, idx) => (
+      <tr>
+        <td>{color}</td>
+        <td>
+          <CodeBlock>is-bg-{color}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div
+              className={`is-bg-${color}`}
+              style={{ width: '80px', height: '80px', borderRadius: '4px' }}
+            ></div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>

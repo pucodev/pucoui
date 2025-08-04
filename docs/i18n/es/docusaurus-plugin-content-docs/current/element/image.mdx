@@ -1,0 +1,126 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import { imageAspectRatios, imageSizes } from '@site/src/components/variables'
+import ImageBase from '@site/src/components/docs/ImageBase'
+
+import ImageExample from '@site/src/components/html/image/ImageExample'
+import ImageExampleCode from '@site/src/components/generated/image/ImageExample.html?raw'
+
+import ImageRounded from '@site/src/components/html/image/ImageRounded'
+import ImageRoundedCode from '@site/src/components/generated/image/ImageRounded.html?raw'
+
+import ImageFallback from '@site/src/components/html/image/ImageFallback'
+import ImageFallbackCode from '@site/src/components/generated/image/ImageFallback.html?raw'
+
+# Imagen
+
+Configura tamaños y aspect-ratio de tus imágenes
+
+## Uso básico
+
+<PreviewElement>
+  <ImageExample />
+</PreviewElement>
+
+<CodeBlock language="html">{ImageExampleCode}</CodeBlock>
+
+## Tamaños
+
+Tamaños disponibles
+
+<table>
+  <thead>
+    <tr>
+      <th>Clase</th>
+      <th>Tamaño</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {imageSizes.map(size => (
+      <tr>
+        <td><CodeBlock>is-size-{size}</CodeBlock></td>
+        <td>
+          {size}px x {size}px
+        </td>
+        <td>
+          <PreviewElement>
+            <ImageBase image={2} size={size} />
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+
+  </tbody>
+</table>
+
+## Redondeado
+
+Para redondear las imágenes puedes usar el helper de dimensiones para ello usa las clases `is-rounded-*`
+
+Donde `*` puede ser del 0 al 6
+
+En caso se requiera que este completamente redondeado puedes usar la clase `is-rounded`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ImageRounded />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ImageRoundedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Fallback
+
+Muestra un texto debajo de tu imágen mientras se descarga, por ejemplo lo puedes usar para colocar las iniciales del usuario
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ImageFallback />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ImageFallbackCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Relación de aspecto
+
+Usa estas clases para configurar la relación de aspecto de una imágen, estas clases son responsivas es decir siempre van a mantener la relación de aspecto aunque la pantalla sea pequeña o grande
+
+<table>
+  <thead>
+    <tr>
+      <th>Clase</th>
+      <th>Tamaño</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {imageAspectRatios.map(ar => (
+      <tr>
+        <td><CodeBlock>is-{ar[0]}by{ar[1]}</CodeBlock></td>
+        <td>
+          {ar[0]} / {ar[1]}
+        </td>
+        <td>
+          <PreviewElement>
+            <ImageBase image={4} ratio={ar.join(' ')} style={{maxWidth: '200px'}} />
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+
+  </tbody>
+</table>

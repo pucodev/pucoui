@@ -1,21 +1,21 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import SwitchBasic from '../../src/components/html/form/switch/SwitchBasic'
+import SwitchBasic from '@site/src/components/html/form/switch/SwitchBasic'
 import SwitchBasicCode from '@site/src/components/generated/form/switch/SwitchBasic.html?raw'
 
-import SwitchText from '../../src/components/html/form/switch/SwitchText'
+import SwitchText from '@site/src/components/html/form/switch/SwitchText'
 import SwitchTextCode from '@site/src/components/generated/form/switch/SwitchText.html?raw'
 
 # Switch
 
-Variante del checkbox que representa una acción activada o desactivada con un estilo visual tipo interruptor. Útil para configuraciones binarias como activar/desactivar notificaciones o modos del sistema.
+A variant of the checkbox that represents an on or off action with a visual switch-style. Useful for binary settings like enabling/disabling notifications or system modes.
 
-## Uso básico
+## Basic Usage
 
-Para implementar checkbox usar la clase `input` y tipo `checkbox` además se debe utilizar `field switch` como clase contenedora.
+To implement a switch, use the `input` class with type `checkbox`. Additionally, `field switch` should be used as the container class.
 
 <PreviewElement>
   <SwitchBasic />
@@ -23,9 +23,9 @@ Para implementar checkbox usar la clase `input` y tipo `checkbox` además se deb
 
 <CodeBlock language="html">{SwitchBasicCode}</CodeBlock>
 
-## Switch con texto
+## Switch with Text
 
-Agrega un nuevo label con el atributo `for` con el valor del `id` asignado al switch
+Add a new label with the `for` attribute set to the value of the switch's `id`.
 
 <PreviewElement>
   <SwitchText />

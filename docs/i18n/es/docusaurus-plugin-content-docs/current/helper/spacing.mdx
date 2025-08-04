@@ -1,0 +1,54 @@
+import { spaces, defaultDimen } from '@site/src/components/variables'
+import BreakpointSpace from '@site/docs/helper/_breakpoint-space.mdx'
+
+# Espaciado
+
+Configura los espacios entre los elementos de tu aplicación.
+
+:::info
+
+Para ver los tamaños disponibles visitar la [documentacion de personalizar espacios](../customize/spacing)
+
+:::
+
+## Paddings y margins
+
+Usando los valores de la tabla anterior se pueden usar para agregar **padding** y **margins** usando la clase `p*` y `m*` respectivamente.
+
+Además se puden personalizar con las siguientes direcciones
+
+| Clase | Dirección      |
+| ----- | -------------- |
+| `*t`  | top            |
+| `*r`  | right          |
+| `*b`  | bottom         |
+| `*l`  | left           |
+| `*x`  | left and right |
+| `*y`  | top and bottom |
+
+Seguidamente se debe agregar el tamaño del espaciado que puede ser del `0` al `7`
+
+### Ejemplos
+
+| Ejemplo | Style                                                                  |
+| ------- | ---------------------------------------------------------------------- |
+| `pt-0`  | <code>padding-top: {spaces[0]}rem </code>                              |
+| `mb-3`  | <code>margin-bottom: {spaces[3]}rem</code>                             |
+| `mx-2`  | <code>margin-left: {spaces[2]}rem; margin-right: {spaces[2]}rem</code> |
+
+### Adicionales
+
+Tambien se pueden usar los atributos `*auto` lo cual asignará el **padding** o **margin** a `auto`
+
+#### Ejemplo de adicionales
+
+- `px-auto`
+- `mx-auto`
+
+## Responsive
+
+:::tip
+Para más detalle visita la documentación de [ breakpoints ](/docs/helper/breakpoint)
+:::
+
+<BreakpointSpace />

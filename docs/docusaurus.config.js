@@ -37,12 +37,36 @@ const config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'es',
-    locales: ['es'],
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      es: {
+        label: 'Español',
+        direction: 'ltr',
+        htmlLang: 'es-ES',
+      },
+    },
   },
 
   plugins: [
     'docusaurus-plugin-sass',
+    () => ({
+      name: 'resolve-alias-plugin',
+      configureWebpack() {
+        return {
+          resolve: {
+            alias: {
+              '@site': '/home/jorge/develop/pucoui/docs',
+            },
+          },
+        }
+      },
+    }),
     () => ({
       name: 'post-build-plugin',
       configureWebpack() {
@@ -105,6 +129,10 @@ const config = {
             sidebarId: 'tutorialSidebar',
             position: 'left',
             label: 'Documentación',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
           },
           {
             href: 'https://github.com/pucodev/pucoui',

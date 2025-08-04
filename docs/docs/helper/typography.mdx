@@ -1,47 +1,47 @@
-import { fontWeights, fontAlignments } from '../../src/components/variables'
-import PreviewElement from '../../src/components/PreviewElement'
+import { fontWeights, fontAlignments } from '@site/src/components/variables'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 
-# Textos
+# Typography
 
-Configura los tamaños, alineaciones y otras propiedades de los textos
+Configure the sizes, alignments, and other properties of texts.
 
 ## Headings
 
-Se tienen disponible los siguientes elementos:
+The following elements are available:
 
-- `<h1>` al `<h7>`
-- Clase de `.h1` al `.h7`
-- Clase de `is-font-size-1` al `is-font-size-7`
+- `<h1>` to `<h6>`
+- `.h1` to `.h6` classes
+- `is-font-size-1` to `is-font-size-7` classes
 
 :::info
 
-Para ver los tamaños disponibles visitar la [documentacion de personalizar textos](../customize/fontsize)
+To see the available sizes, visit the [customize font sizes documentation](../customize/fontsize).
 
 :::
 
-### Ejemplos
+### Examples
 
 <PreviewElement>
-  <h1>Título 1</h1>
-  <h2>Título 2</h2>
-  <div className="h3">Título 3</div>
-  <div className="is-font-size-4">Título 4</div>
+  <h1>Title 1</h1>
+  <h2>Title 2</h2>
+  <div className="h3">Title 3</div>
+  <div className="is-font-size-4">Title 4</div>
 </PreviewElement>
 ```html
-<h1>Título 1</h1>
-<h2>Título 2</h2>
-<div className="h3">Título 3</div>
-<div className="is-font-size-4">Título 4</div>
+<h1>Title 1</h1>
+<h2>Title 2</h2>
+<div className="h3">Title 3</div>
+<div className="is-font-size-4">Title 4</div>
 ```
 
-## Font weight
+## Font Weight
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Clase</th>
+      <th>Name</th>
+      <th>Class</th>
       <th>Preview</th>
     </tr>
   </thead>
@@ -62,13 +62,13 @@ Para ver los tamaños disponibles visitar la [documentacion de personalizar text
   </tbody>
 </table>
 
-## Text align
+## Text Align
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Clase</th>
+      <th>Name</th>
+      <th>Class</th>
     </tr>
   </thead>
   <tbody>
@@ -83,16 +83,16 @@ Para ver los tamaños disponibles visitar la [documentacion de personalizar text
   </tbody>
 </table>
 
-### Ejemplo
+### Example
 
 <PreviewElement>
-  <div className="is-text-center">Texto centrado</div>
-  <div className="is-text-right">Texto izquierda</div>
-  <div className="is-text-left">Texto derecha</div>
+  <div className="is-text-center">Centered text</div>
+  <div className="is-text-right">Right-aligned text</div>
+  <div className="is-text-left">Left-aligned text</div>
 </PreviewElement>
 
 ```html
 <div class="is-text-center">Centered text</div>
-<div class="is-text-right">Texto izquierda</div>
-<div class="is-text-left">Texto derecha</div>
+<div class="is-text-right">Right-aligned text</div>
+<div class="is-text-left">Left-aligned text</div>
 ```

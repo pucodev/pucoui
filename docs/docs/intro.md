@@ -1,9 +1,9 @@
-# Introducción
+# Introduction
 
 :::warning
 
-Esta librería se encuentra en desarrollo
+This library is under development.
 
 :::
 
-En esta documentación encontrarás todos los detalles de pucoui.
+In this documentation, you will find all the details of pucoui.

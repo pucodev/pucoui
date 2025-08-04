@@ -1,0 +1,58 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import { breakpoints, defaultDimen } from '@site/src/components/variables'
+import BreakpointDisplay from './_breakpoint-display.mdx'
+import BreakpointSpace from './_breakpoint-space.mdx'
+import BreakpointFlex from './_breakpoint-flex.mdx'
+
+# Breakpoints - Responsive
+
+Los **breakpoints** definen los puntos a partir de los cuales tu interfaz debe adaptarse a diferentes tamaños de pantalla. Son esenciales para lograr una experiencia realmente responsiva en todos los dispositivos.
+
+- Los breakpoints te permiten ajustar el diseño en función del ancho disponible, activando estilos específicos a medida que el viewport crece. Son la base para construir interfaces que se vean bien en móviles, tablets y escritorios.
+- **Mobile first**: Usamos `@media` queries con `min-width` para aplicar estilos condicionales desde un tamaño mínimo hacia arriba. Esto sigue la filosofía `mobile-first`, donde se parte de una base simple para móviles y se mejora progresivamente.
+
+## Breakpoints disponibles
+
+<table>
+  <thead>
+    <tr>
+      <th>Breakpoint</th>
+      <th>Prefijo</th>
+      <th>Dimension</th>
+      <th>px</th>
+    </tr>
+  </thead>
+  <tbody>
+    {breakpoints.map((item) => (
+      <tr>
+        <td>{item.name}</td>
+        <td>{item.prefix}</td>
+        <td>
+          {item.dimension_prefix} {item.dimension_rem} rem
+        </td>
+        <td>
+          {item.dimension_prefix} {item.dimension_rem * defaultDimen} px
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+## Responsive
+
+Los helpers que usan los breakpoints son los siguientes
+
+### Display
+
+<BreakpointDisplay />
+
+### Spaces
+
+<BreakpointSpace />
+
+### Flex columns
+
+<BreakpointFlex />

@@ -1,44 +1,44 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import DialogBasic from '../../src/components/html/dialog/DialogBasic'
+import DialogBasic from '@site/src/components/html/dialog/DialogBasic'
 import DialogBasicCode from '@site/src/components/generated/dialog/DialogBasic.html?raw'
 
-import DialogScroll from '../../src/components/html/dialog/DialogScroll'
+import DialogScroll from '@site/src/components/html/dialog/DialogScroll'
 import DialogScrollCode from '@site/src/components/generated/dialog/DialogScroll.html?raw'
 
-import DialogCentered from '../../src/components/html/dialog/DialogCentered'
+import DialogCentered from '@site/src/components/html/dialog/DialogCentered'
 import DialogCenteredCode from '@site/src/components/generated/dialog/DialogCentered.html?raw'
 
-import DialogOutlined from '../../src/components/html/dialog/DialogOutlined'
+import DialogOutlined from '@site/src/components/html/dialog/DialogOutlined'
 import DialogOutlinedCode from '@site/src/components/generated/dialog/DialogOutlined.html?raw'
 
-import DialogImage from '../../src/components/html/dialog/DialogImage'
+import DialogImage from '@site/src/components/html/dialog/DialogImage'
 import DialogImageCode from '@site/src/components/generated/dialog/DialogImage.html?raw'
 
 # Dialog
 
-Muestra contenido superpuesto como formularios, mensajes o confirmaciones.
+Displays overlay content such as forms, messages, or confirmations.
 
-## Estructura
+## Structure
 
-Un dialog está constituido por:
+A dialog consists of:
 
-- `dialog`: Contenedor
-  - `dialog-content`: Contenedor del dialog
-    - `dialog-card`: Card contenedor, puedes usar las clases de `card`. [Más info aquí](./card)
-      - `dialog-header`: Cabecera del dialog, donde va el título y el botón de cerrar
-      - `dialog-body`: Contenido del dialog
-      - `dialog-footer`: Zona de accion del dialog, puedes agregar botones
+- `dialog`: Container
+  - `dialog-content`: Dialog content container
+    - `dialog-card`: Card container, you can use `card` classes. [More info here](./card)
+      - `dialog-header`: Dialog header, where the title and close button go
+      - `dialog-body`: Dialog content
+      - `dialog-footer`: Dialog action area, you can add buttons
 
-## Uso básico
+## Basic Usage
 
-Por defecto el dialog se muestra alineado a la parte superior
+By default, the dialog is aligned to the top.
 
 :::info
-Para que el dialog se muestre se debe usar la clase `is-active`
+To display the dialog, the `is-active` class must be used.
 :::
 
 <PreviewElement>
@@ -49,9 +49,9 @@ Para que el dialog se muestre se debe usar la clase `is-active`
 
 <CodeBlock language="html">{DialogBasicCode}</CodeBlock>
 
-## Centrado
+## Centered
 
-Para centrar el dialog a la pantalla usar la clase `dialog-centered` en conjunto con la clase `dialog`
+To center the dialog on the screen, use the `dialog-centered` class along with the `dialog` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -67,9 +67,9 @@ Para centrar el dialog a la pantalla usar la clase `dialog-centered` en conjunto
   </TabItem>
 </Tabs>
 
-## Cuerpo escrolleable
+## Scrollable Body
 
-Para convertir el cuerpo de un dialog en scrollable usar la clase `dialog-scrollable` en conjunto con la clase `dialog`
+To make the body of a dialog scrollable, use the `dialog-scrollable` class along with the `dialog` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -85,15 +85,15 @@ Para convertir el cuerpo de un dialog en scrollable usar la clase `dialog-scroll
   </TabItem>
 </Tabs>
 
-## Clases del card
+## Card Classes
 
-Puedes usar todas las clases del componente `card` en el `dialog-card` por ejemplo
+You can use all the classes of the `card` component in the `dialog-card`, for example:
 
-- `is-outlined`: Para que no tenga elevación y solo maneje bordeado
-- `elevation-{number}`: Para dar un efecto de elevación
+- `is-outlined`: To have no elevation and only a border.
+- `elevation-{number}`: To give an elevation effect.
 
 :::info
-Mas información visita el [componente card](./card)
+For more information, visit the [card component](./card) documentation.
 :::
 
 ### Outlined

@@ -1,18 +1,18 @@
-import { spaces, defaultDimen } from '../../src/components/variables'
+import { spaces, defaultDimen } from '@site/src/components/variables'
 import CodeBlock from '@theme/CodeBlock'
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 
-# Espaciados
+# Spacing
 
-## Tabla de espacios
+## Spacing Table
 
-Los calculos de los pixeles están sobre la base de <code>{defaultDimen}px</code>
+Pixel calculations are based on <code>{defaultDimen}px</code>.
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
-      <th>Tamaño</th>
+      <th>Name</th>
+      <th>Size</th>
       <th>Pixels</th>
       <th>Variable</th>
       <th></th>
@@ -31,7 +31,11 @@ Los calculos de los pixeles están sobre la base de <code>{defaultDimen}px</code
           <PreviewElement>
             <div
               className={`is-bg-primary`}
-              style={{ height: '1rem', borderRadius: '2px', width: `${dimen * defaultDimen}px` }}
+              style={{
+                height: '1rem',
+                borderRadius: '2px',
+                width: `${dimen * defaultDimen}px`,
+              }}
             ></div>
           </PreviewElement>
         </td>

@@ -1,0 +1,120 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import BadgeBase from '@site/src/components/html/badge/BadgeBase'
+import BadgeBaseCode from '@site/src/components/generated/badge/BadgeBase.html?raw'
+
+import BadgeColors from '@site/src/components/html/badge/BadgeColors'
+import BadgeColorsCode from '@site/src/components/generated/badge/BadgeColors.html?raw'
+
+import BadgeTonals from '@site/src/components/html/badge/BadgeTonals'
+import BadgeTonalsCode from '@site/src/components/generated/badge/BadgeTonals.html?raw'
+
+import BadgeOutlined from '@site/src/components/html/badge/BadgeOutlined'
+import BadgeOutlinedCode from '@site/src/components/generated/badge/BadgeOutlined.html?raw'
+
+import BadgeIcons from '@site/src/components/html/badge/BadgeIcons'
+import BadgeIconsCode from '@site/src/components/generated/badge/BadgeIcons.html?raw'
+
+import BadgeSizes from '@site/src/components/html/badge/BadgeSizes'
+import BadgeSizesCode from '@site/src/components/generated/badge/BadgeSizes.html?raw'
+
+# Badge
+
+Elemento visual pequeño usado para mostrar estados, categorías o alertas de forma rápida y clara. Ideal para resaltar información como "Nuevo", "Error" o "Beta".
+
+## Base
+
+<PreviewElement>
+  <BadgeBase />
+</PreviewElement>
+
+<CodeBlock language="html">{BadgeBaseCode}</CodeBlock>
+
+## Colores
+
+Configura el color del badge usando la clase `is-{color}`
+
+:::info
+Para ver los colores disponibles, revisa la sección de [Colores](/docs/customize/color).
+:::
+
+<PreviewElement>
+  <BadgeColors />
+</PreviewElement>
+
+<CodeBlock language="html">{BadgeColorsCode}</CodeBlock>
+
+## Tonal
+
+Agrega un fondo tonal al badge usando la clase `is-tonal`.
+
+:::tip
+Puedes combinarlo con colores, por ejemplo: `is-tonal is-primary`, `is-tonal is-warning`, etc.
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <BadgeTonals />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{BadgeTonalsCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Outlined
+
+Puedes configurar el badge con bordes y fondo blanco usando la clase `is-outlined`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <BadgeOutlined />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{BadgeOutlinedCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Íconos
+
+Puedes agregar íconos al botón usando el componente `<iconify-icon>`.
+
+:::tip
+Para más información sobre cómo usar íconos, revisa la sección de [Iconos](/docs/element/icon).
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <BadgeIcons />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{BadgeIconsCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Tamaños
+
+Puedes configurar el tamaño del badge usando las clases `is-md`, `is-lg`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <BadgeSizes />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{BadgeSizesCode}</CodeBlock>
+  </TabItem>
+</Tabs>

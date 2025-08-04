@@ -1,0 +1,104 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import CardBasic from '@site/src/components/html/card/CardBasic'
+import CardBasicCode from '@site/src/components/generated/card/CardBasic.html?raw'
+
+import CardImageStart from '@site/src/components/html/card/CardImageStart'
+import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
+
+import CardImageEnd from '@site/src/components/html/card/CardImageEnd'
+import CardImageEndCode from '@site/src/components/generated/card/CardImageEnd.html?raw'
+
+import CardElevation from '@site/src/components/html/card/CardElevation'
+import CardElevationCode from '@site/src/components/generated/card/CardElevation.html?raw'
+
+import CardOutlined from '@site/src/components/html/card/CardOutlined'
+import CardOutlinedCode from '@site/src/components/generated/card/CardOutlined.html?raw'
+
+# Card
+
+Muestra información con estilo de tarjetas con diferentes tipos de contenido y diseños.
+
+## Estructura
+
+- card
+  - image
+  - card-body
+    - card-title
+    - card-content
+  - card-actions
+
+## Uso básico
+
+<PreviewElement>
+  <CardBasic />
+</PreviewElement>
+
+<CodeBlock language="html">{CardBasicCode}</CodeBlock>
+
+## Imágen
+
+Puedes agregar una imagen a la tarjeta utilizando la etiqueta `img` posicionandola al inicio o al final de la tarjeta
+
+### Imágen inicio
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <CardImageStart />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{CardImageStartCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Imágen final
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <CardImageEnd />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{CardImageEndCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Elevación
+
+Puedes configurar el efecto de elevación usando la clase `elevation-{number}`, donde `number` es un valor de `1` al `5`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <CardElevation />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{CardElevationCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Con borde
+
+Para usar la variante con bordes usar la clase `is-outlined`
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <CardOutlined />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{CardOutlinedCode}</CodeBlock>
+  </TabItem>
+</Tabs>

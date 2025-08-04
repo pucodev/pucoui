@@ -1,0 +1,113 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import AlertBase from '@site/src/components/html/alert/AlertBase'
+import AlertBaseCode from '@site/src/components/generated/alert/AlertBase.html?raw'
+
+import AlertColors from '@site/src/components/html/alert/AlertColors'
+import AlertColorsCode from '@site/src/components/generated/alert/AlertColors.html?raw'
+
+import AlertTonals from '@site/src/components/html/alert/AlertTonals'
+import AlertTonalsCode from '@site/src/components/generated/alert/AlertTonals.html?raw'
+
+import AlertBorderAccents from '@site/src/components/html/alert/AlertBorderAccents'
+import AlertBorderAccentsCode from '@site/src/components/generated/alert/AlertBorderAccents.html?raw'
+
+import AlertBorderless from '@site/src/components/html/alert/AlertBorderless'
+import AlertBorderlessCode from '@site/src/components/generated/alert/AlertBorderless.html?raw'
+
+# Alert
+
+Muestra un mensaje de alerta
+
+## Estructura
+
+- alert
+  - alert-icon
+  - alert-content
+    - alert-header
+    - alert-body
+
+### Ejemplo
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <AlertBase />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{AlertBaseCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Colores
+
+Para cambiar el color de la alerta, puedes usar patron de clase `is-{color}`
+
+:::info
+Para ver los colores disponibles, revisa la sección de [Colores](/docs/customize/color).
+:::
+
+### Ejemplo
+
+<PreviewElement>
+  <AlertColors />
+</PreviewElement>
+
+<CodeBlock language="html">{AlertColorsCode}</CodeBlock>
+
+## Tonal
+
+Agrega un fondo tonal a la alerta, puedes usar patron de clase `is-tonal`.
+
+:::tip
+Puedes combinarlo con los colores de alerta, por ejemplo: `is-tonal is-primary`, `is-tonal is-warning`, etc.
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <AlertTonals />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{AlertTonalsCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Borde
+
+Puedes agregar un borde a la alerta usando el patron de clase `is-accent-border`.
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <AlertBorderAccents />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{AlertBorderAccentsCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Sin bordes
+
+Puedes eliminar el borde de la alerta usando el patron de clase `is-borderless`.
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <AlertBorderless />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{AlertBorderlessCode}</CodeBlock>
+  </TabItem>
+</Tabs>

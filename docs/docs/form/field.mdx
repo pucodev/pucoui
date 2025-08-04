@@ -1,35 +1,35 @@
-import PreviewElement from '../../src/components/PreviewElement'
+import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
 import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
 
-import FieldInputBasic from '../../src/components/html/form/field/FieldInputBasic'
+import FieldInputBasic from '@site/src/components/html/form/field/FieldInputBasic'
 import FieldInputBasicCode from '@site/src/components/generated/form/field/FieldInputBasic.html?raw'
 
-import FieldTextareaBasic from '../../src/components/html/form/field/FieldTextareaBasic'
+import FieldTextareaBasic from '@site/src/components/html/form/field/FieldTextareaBasic'
 import FieldTextareaBasicCode from '@site/src/components/generated/form/field/FieldTextareaBasic.html?raw'
 
-import InputValid from '../../src/components/html/form/input/InputValid'
+import InputValid from '@site/src/components/html/form/input/InputValid'
 import InputValidCode from '@site/src/components/generated/form/input/InputValid.html?raw'
 
-import InputInvalid from '../../src/components/html/form/input/InputInvalid'
+import InputInvalid from '@site/src/components/html/form/input/InputInvalid'
 import InputInvalidCode from '@site/src/components/generated/form/input/InputInvalid.html?raw'
 
-import SelectField from '../../src/components/html/form/select/SelectField'
+import SelectField from '@site/src/components/html/form/select/SelectField'
 import SelectFieldCode from '@site/src/components/generated/form/select/SelectField.html?raw'
 
 # Field
 
-Usa el componente Field para componer un elemento de formulario con una etiqueta, texto de ayuda y mensaje de error
+Use the Field component to compose a form element with a label, help text, and error message.
 
-## Estructura
+## Structure
 
-- `.field`: Elemento contenedor
-  - `.label`: Etiqueta label para la entrada de formulario
-  - `<input>, <textarea>, <select>`: Elemento de formulario
-  - `.help`: Texto de ayuda
+- `.field`: Container element
+  - `.label`: Label tag for the form input
+  - `<input>, <textarea>, <select>`: Form element
+  - `.help`: Help text
 
-## Uso básico
+## Basic Usage
 
 ### Input
 
@@ -55,22 +55,22 @@ Usa el componente Field para componer un elemento de formulario con una etiqueta
 
 <CodeBlock language="html">{SelectFieldCode}</CodeBlock>
 
-## Colores
+## Colors
 
-Para agregar color al field puedes usar las clases
+To add color to the field, you can use the following classes:
 
-| Clase                             | Color | Variable                                   |
+| Class                             | Color | Variable                                   |
 | --------------------------------- | ----- | ------------------------------------------ |
-| <CodeBlock>is-valid</CodeBlock>   | Verde | <CodeBlock>--pui-color-success</CodeBlock> |
-| <CodeBlock>is-invalid</CodeBlock> | Rojo  | <CodeBlock>--pui-color-error</CodeBlock>   |
+| <CodeBlock>is-valid</CodeBlock>   | Green | <CodeBlock>--pui-color-success</CodeBlock> |
+| <CodeBlock>is-invalid</CodeBlock> | Red   | <CodeBlock>--pui-color-error</CodeBlock>   |
 
 :::info
-Para más información de los valores de los colores visitar la [documentación de personalización de colores](../customize/color)
+For more information on color values, visit the [color customization documentation](../customize/color).
 :::
 
 ### is-valid
 
-Usa la clase `is-valid` en conjunto con la clase `field`
+Use the `is-valid` class along with the `field` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">
@@ -86,7 +86,7 @@ Usa la clase `is-valid` en conjunto con la clase `field`
 
 ### is-invalid
 
-Usa la clase `is-invalid` en conjunto con la clase `field`
+Use the `is-invalid` class along with the `field` class.
 
 <Tabs>
   <TabItem value="preview" label="Preview">

@@ -1,0 +1,98 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+
+import { spaces } from '@site/src/components/variables'
+
+import StackBasic from '@site/src/components/html/stack/StackBasic'
+import StackBasicCode from '@site/src/components/generated/stack/StackBasic.html?raw'
+
+import StackVertical from '@site/src/components/html/stack/StackVertical'
+import StackVerticalCode from '@site/src/components/generated/stack/StackVertical.html?raw'
+
+import StackHorizontal from '@site/src/components/html/stack/StackHorizontal'
+import StackHorizontalCode from '@site/src/components/generated/stack/StackHorizontal.html?raw'
+
+import StackGap from '@site/src/components/html/stack/StackGap'
+import StackGapCode from '@site/src/components/generated/stack/StackGap.html?raw'
+
+# Stack
+
+Stack es un componente de layout que facilita la organización vertical u horizontal de elementos aplicando un espacio consistente entre ellos. Su objetivo principal es simplificar la alineación de elementos en fila o columna sin necesidad de escribir estilos adicionales para el espaciado.
+
+## Uso básico
+
+Usar la clase `is-stack`. Automáticamente genera una organización vertical y espaciado de **_{spaces[2]} rem_**
+
+<PreviewElement>
+  <StackBasic />
+</PreviewElement>
+
+```html
+<div class="is-stack">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+## Direcciones
+
+Usa las siguientes clases para definir la dirección y los elementos siempre se alinean al centro.
+
+:::tip
+Si necesitas que los elementos se alineen al inicio o al final puedes usar las clases [helper de flex](/docs/helper/flexbox#align-items)
+:::
+
+### Vertical
+
+Usa la clase `is-vstack` para organizar los elementos verticalmente
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <StackVertical />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{StackVerticalCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+### Horizontal
+
+Usa la clase `is-hstack` para organizar los elementos horizontalmente
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <StackHorizontal />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{StackHorizontalCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Espaciado
+
+Usa `is-gap-{size}` para agregar espacio entre los elementos flexibles. El size es un valor entre `0` a `6`
+
+:::info
+Para más información de los valores de espaciado visita la documentación de [personalizar espaciados](../customize/spacing)
+:::
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <StackGap />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{StackGapCode}</CodeBlock>
+  </TabItem>
+</Tabs>
