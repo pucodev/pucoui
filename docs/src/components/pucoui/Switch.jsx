@@ -4,6 +4,8 @@
  * @property {React.ReactNode} props.children - Child elements.
  */
 
+import { useState } from 'react'
+
 /**
  * Switch field component.
  * @param {React.HTMLAttributes<HTMLDivElement> & SwitchFieldProps} props
@@ -20,6 +22,8 @@ export function SwitchField({ children, className, ...props }) {
 /**
  * @typedef {object} SwitchInputProps
  * @property {string} [props.className] - Additional CSS classes.
+ * @property {boolean} [checked]
+ * @property {function} [onCheckedChange]
  */
 
 /**
@@ -27,8 +31,25 @@ export function SwitchField({ children, className, ...props }) {
  * @param {React.InputHTMLAttributes<HTMLInputElement> & SwitchInputProps} props
  * @returns {import("react").JSX.Element}
  */
-export function SwitchInput({ ...props }) {
-  return <input type="checkbox" role="switch" {...props} />
+export function SwitchInput({
+  checked: initialChecked,
+  onCheckedChange,
+  ...props
+}) {
+  const [checked, setChecked] = useState(initialChecked ?? false)
+  const handleChange = (e) => {
+    setChecked(e.target.checked)
+    onCheckedChange?.(e)
+  }
+  return (
+    <input
+      type="checkbox"
+      role="switch"
+      {...props}
+      checked={checked}
+      onChange={handleChange}
+    />
+  )
 }
 
 /**
@@ -48,6 +69,7 @@ export function SwitchControl({ ...props }) {
  * @typedef {object} SwitchProps
  * @property {string} [props.className] - Additional CSS classes.
  * @property {string} props.id - id
+ * @property {boolean} [checked]
  */
 
 /**
@@ -55,10 +77,10 @@ export function SwitchControl({ ...props }) {
  * @param {React.HTMLAttributes<HTMLDivElement> & SwitchProps} props
  * @returns {import("react").JSX.Element}
  */
-export function Switch({ id, className, ...props }) {
+export function Switch({ id, className, checked, ...props }) {
   return (
     <SwitchField className={className}>
-      <SwitchInput id={id} />
+      <SwitchInput id={id} checked={checked} />
       <SwitchControl htmlFor={id} />
     </SwitchField>
   )

@@ -1,13 +1,19 @@
 /**
  *
- * @param {Object} props
- * @param {string} [props.color] - The color of the alert.
- * @param {boolean} [props.tonal] - Whether the alert is tonal.
- * @param {boolean} [props.borderless] - Whether the alert has no border.
- * @param {boolean} [props.accentBorder] - Whether the alert has an accent border.
- * @param {string} [props.icon] - The icon to display in the alert.
- * @param {React.ReactNode} [props.children] - The content of the alert.
- * @returns
+ * @typedef {Object} AlertProps
+ * @property {string} [props.color] - The color of the alert.
+ * @property {boolean} [props.tonal] - Whether the alert is tonal.
+ * @property {boolean} [props.borderless] - Whether the alert has no border.
+ * @property {boolean} [props.accentBorder] - Whether the alert has an accent border.
+ * @property {string} [props.icon] - The icon to display in the alert.
+ * @property {string} [props.className] - Additional CSS classes.
+ * @property {React.ReactNode} [props.children] - The content of the alert.
+ */
+
+/**
+ * Card body component.
+ * @param {React.HTMLAttributes<HTMLDivElement> & AlertProps} props
+ * @returns {import("react").JSX.Element}
  */
 export function Alert({
   children,
@@ -15,11 +21,12 @@ export function Alert({
   tonal,
   borderless,
   accentBorder,
+  className,
   ...props
 }) {
   return (
     <div
-      className={`alert ${color ? `is-${color}` : ''} ${tonal ? `is-tonal` : ''} ${borderless ? `is-borderless` : ''} ${accentBorder ? 'is-accent-border' : ''}`}
+      className={`alert ${color ? `is-${color}` : ''} ${tonal ? `is-tonal` : ''} ${borderless ? `is-borderless` : ''} ${accentBorder ? 'is-accent-border' : ''} ${className || ''}`}
       {...props}
     >
       {children}

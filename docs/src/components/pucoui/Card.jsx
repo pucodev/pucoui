@@ -2,6 +2,7 @@
  * @typedef {object} CardProps
  * @property {React.ReactNode} props.children - Child elements.
  * @property {string} [props.className] - Additional CSS classes.
+ * @property {boolean} [props.outlined]
  */
 
 /**
@@ -9,9 +10,12 @@
  * @param {React.HTMLAttributes<HTMLDivElement> & CardProps} props
  * @returns {import("react").JSX.Element}
  */
-export function Card({ children, className, ...props }) {
+export function Card({ children, className, outlined, ...props }) {
   return (
-    <div className={`card ${className || ''}`} {...props}>
+    <div
+      className={`card ${className || ''} ${outlined ? 'is-outlined' : ''}`}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -44,7 +48,7 @@ export function CardImage({ src, alt, className, ...props }) {
  */
 
 /**
- * Card body component.
+ * Card body component. It contains title and body
  * @param {React.HTMLAttributes<HTMLDivElement> & CardBodyProps} props
  * @returns {import("react").JSX.Element}
  */
