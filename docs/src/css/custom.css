@@ -33,3 +33,103 @@
   position: relative !important;
   padding: 40px;
 }
+
+.pucoui {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* LANDING */
+
+.pucoui-dot-bg {
+  background-image: url(/img/pucoui-dot.svg);
+  background-size: 36px;
+  width: 25%;
+  height: 180px;
+  opacity: 0.08;
+  position: absolute;
+  bottom: 60px;
+  right: 0px;
+  z-index: -1;
+}
+
+.pucoui-wave-bg {
+  background-image: url(/img/pucoui-wave.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 64%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.pucoui-example__item {
+  min-height: auto;
+}
+
+.pucoui-feature__icon-container {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pucoui-feature__icon {
+  --pui-icon-size: 32px !important;
+}
+
+.pucoui-feature__code {
+  max-height: 480px;
+  overflow: auto;
+
+  pre {
+    background-color: #fff !important;
+  }
+}
+
+@media (min-width: 48rem) {
+  .pucoui-example__item {
+    min-height: 180px;
+  }
+
+  .pucoui-wave-bg {
+    width: 50%;
+  }
+}
+
+@media (min-width: 62rem) {
+  .pucoui-wave-bg {
+    width: 32%;
+  }
+}
+
+/* REGRESA LAS CLASES DE DOCUSAURUS */
+.pucoui .tabs__item {
+  border-bottom: 3px solid #0000;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-radius: var(--ifm-global-radius);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--ifm-tabs-padding-vertical) var(--ifm-tabs-padding-horizontal);
+  transition: background-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.pucoui .tabs__item--active {
+  border-bottom-color: var(--ifm-tabs-color-active-border);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: var(--ifm-tabs-color-active);
+}
+
+.pucoui .theme-code-block code {
+  padding: var(--ifm-pre-padding);
+}
+
+.pucoui-features__header__icon {
+  --pui-icon-size: 32px !important;
+}
