@@ -76,3 +76,42 @@ export const imageAspectRatios = [
   [1, 2],
   [1, 3],
 ]
+
+export const breakpoints = [
+  {
+    name: 'Mobile',
+    prefix: '',
+    dimension_prefix: '<',
+    dimension_rem: 30,
+  },
+  {
+    name: 'Small',
+    dimension_prefix: '>',
+    prefix: 'sm',
+    dimension_rem: 30,
+  },
+  {
+    name: 'Medium',
+    prefix: 'md',
+    dimension_prefix: '>',
+    dimension_rem: 48,
+  },
+  {
+    name: 'Large',
+    prefix: 'lg',
+    dimension_prefix: '>',
+    dimension_rem: 62,
+  },
+  {
+    name: 'Extra large',
+    dimension_prefix: '>',
+    prefix: 'xl',
+    dimension_rem: 80,
+  },
+  {
+    name: 'Extra extra large',
+    prefix: 'xxl',
+    dimension_prefix: '>',
+    dimension_rem: 96,
+  },
+]
