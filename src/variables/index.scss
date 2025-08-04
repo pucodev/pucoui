@@ -3,3 +3,8 @@
 :root {
   @include mixins.generateRoot();
 }
+
+html,
+body {
+  color: var(--pui-ui-color-text);
+}

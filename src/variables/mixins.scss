@@ -41,4 +41,7 @@
   @each $name, $value in fonts.$font-weight {
     --pui-font-weight-#{$name}: #{$value};
   }
+
+  // GAP
+  --pui-gap: 0;
 }

@@ -2,7 +2,7 @@
 
 .alert {
   --pui-alert-color-border: var(--pui-ui-color-muted);
-  --pui-alert-border-radius: var(--pui-space-1);
+  --pui-alert-border-radius: var(--pui-space-2);
   --pui-alert-color: hsl(--pui-ui-color-text);
   --pui-alert-gap: var(--pui-space-3);
   --pui-alert-px: var(--pui-space-3);
@@ -43,7 +43,7 @@
   }
 
   &.is-accent-border {
-    --pui-alert-accent-border-width: 4px;
+    --pui-alert-accent-border-width: 6px;
     --pui-alert-accent-border-color: var(--pui-alert-color-border);
 
     border-inline-start-width: var(--pui-alert-accent-border-width);

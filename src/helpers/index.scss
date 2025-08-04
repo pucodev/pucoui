@@ -60,7 +60,7 @@ a,
     text-decoration: none;
   }
 
-  &:not(.is-plain),
+  &:not(.is-plain):not(.btn),
   &:hover {
     text-decoration-line: underline;
     text-decoration-style: solid;

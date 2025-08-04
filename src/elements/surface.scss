@@ -6,14 +6,19 @@
 
   position: relative;
 
-  &::after {
+  &::before {
     content: " ";
     inset: 0;
     position: absolute;
     opacity: var(--pui-surface-bg-opacity);
     background-color: var(--pui-surface-color);
     border-radius: inherit;
-    z-index: -999;
+    z-index: 0;
+  }
+
+  & > * {
+    position: relative;
+    z-index: 1;
   }
 
   @each $name, $value in colors.$colors {
