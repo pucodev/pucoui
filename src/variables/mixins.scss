@@ -44,4 +44,16 @@
 
   // GAP
   --pui-gap: 0;
+
+  // Other colors
+  --pui-color-base: var(--pui-color-white);
+}
+
+@mixin generateDarkRoot() {
+  // UI colors
+  @each $name, $value in colors.$ui-colors-dark {
+    --pui-ui-color-#{$name}: #{$value};
+  }
+  // Other colors
+  --pui-color-base: #1d232a;
 }

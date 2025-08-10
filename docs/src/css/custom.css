@@ -91,6 +91,10 @@
   }
 }
 
+[data-theme="dark"] .pucoui-feature__code pre {
+  background-color: #282a36 !important;
+}
+
 @media (min-width: 48rem) {
   .pucoui-example__item {
     min-height: 180px;

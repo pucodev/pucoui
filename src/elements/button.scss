@@ -3,7 +3,7 @@
 .btn {
   // Variables
   --pui-btn-bg: var(--pui-color-primary);
-  --pui-btn-color: var(--pui-color-white);
+  --pui-btn-color: var(--pui-color-base);
   --pui-btn-px: var(--pui-space-4);
   --pui-btn-py: var(--pui-space-2);
   --pui-btn-border-color: transparent;
@@ -75,13 +75,13 @@
   // Ghost
   // ********
   &.is-ghost {
-    --pui-btn-bg: #fff;
+    --pui-btn-bg: var(--pui-color-base);
     --pui-btn-color: var(--pui-color-primary);
     --pui-btn-hover-bg: var(--pui-color-primary);
 
     @each $name, $value in colors.$colors {
       &.is-#{$name} {
-        --pui-btn-bg: #fff;
+        --pui-btn-bg: var(--pui-color-base);
         --pui-btn-hover-bg: var(--pui-color-#{$name});
         --pui-btn-color: var(--pui-color-#{$name});
       }
@@ -92,7 +92,7 @@
   // Outlined
   // ********
   &.is-outlined {
-    --pui-btn-outlined-bg: var(--pui-color-white);
+    --pui-btn-outlined-bg: var(--pui-color-base);
     --pui-btn-bg: var(--pui-btn-outlined-bg);
     --pui-btn-color: var(--pui-color-primary);
     --pui-btn-border-color: var(--pui-color-primary);
@@ -117,7 +117,7 @@
   // Tonal
   // *****
   &.is-tonal {
-    --pui-btn-bg: var(--pui-color-white);
+    --pui-btn-bg: var(--pui-color-base);
     --pui-btn-color: var(--pui-color-primary);
     --pui-btn-border-color: transparent;
     --pui-btn-tonal-bg: var(--pui-color-primary);

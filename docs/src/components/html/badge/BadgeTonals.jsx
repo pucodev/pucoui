@@ -2,7 +2,7 @@ import { Badge } from '../../pucoui/Badge'
 
 export default function BadgeTonals() {
   return (
-    <div className="is-flex is-gap-3 px-3 py-4 is-bg-white is-rounded-2">
+    <div className="is-flex is-gap-3 px-3 py-4 is-bg-base is-rounded-2">
       <Badge tonal color="primary">
         Primary
       </Badge>

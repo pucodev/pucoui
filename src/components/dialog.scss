@@ -68,7 +68,7 @@
 
     .btn.is-close {
       --pui-btn-font-size: var(--pui-font-size-7);
-      --pui-btn-bg: #fff;
+      --pui-btn-bg: var(--pui-color-base);
       --pui-btn-color: var(--pui-color-primary);
       --pui-btn-hover-bg: var(--pui-color-primary);
       --pui-btn-border-radius: 9999px;

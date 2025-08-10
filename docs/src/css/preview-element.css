@@ -1,5 +1,8 @@
 .docu-preview {
-  background-color: rgb(245, 247, 249);
+  --pui-preview-bg: rgb(245, 247, 249);
+  --pui-preview-pattern-color: #ecf1f5;
+
+  background-color: var(--pui-preview-bg);
   border-radius: 12px;
   position: relative;
   margin-bottom: 12px;
@@ -8,8 +11,16 @@
 
 .docu-preview__bg {
   background-image:
-    linear-gradient(to right, #ecf1f5 1px, transparent 1px),
-    linear-gradient(to bottom, #ecf1f5 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      var(--pui-preview-pattern-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--pui-preview-pattern-color) 1px,
+      transparent 1px
+    );
   background-size: 24px 24px;
   position: absolute;
   inset: 0;
@@ -19,4 +30,11 @@
   padding: 32px !important;
   border-radius: 12px;
   position: relative;
+}
+
+[data-theme="dark"] {
+  .docu-preview {
+    --pui-preview-bg: #0f131e;
+    --pui-preview-pattern-color: #2e313a;
+  }
 }

@@ -7,6 +7,7 @@
   --pui-alert-gap: var(--pui-space-3);
   --pui-alert-px: var(--pui-space-3);
   --pui-alert-py: var(--pui-space-3);
+  --pui-alert-bg: var(--pui-color-base);
 
   display: flex;
   gap: var(--pui-alert-gap);
@@ -15,7 +16,7 @@
   border-radius: var(--pui-alert-border-radius);
   padding: var(--pui-alert-py) var(--pui-alert-px);
   box-shadow: none;
-  background-color: #fff;
+  background-color: var(--pui-alert-bg);
   position: relative;
   z-index: 1;
 

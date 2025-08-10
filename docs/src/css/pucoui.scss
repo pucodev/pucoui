@@ -8,3 +8,8 @@
 .is-pui-initial-vars {
   @include mixins.generateRoot();
 }
+
+// Dark
+[data-theme="dark"] .is-pui-initial-vars {
+  @include mixins.generateDarkRoot();
+}

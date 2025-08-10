@@ -30,7 +30,8 @@ $spacing-sizes: (
   @include pui-table-spacing();
   --pui-table-border: 1px;
   --pui-table-border-header: 2px;
-  --pui-table-theader-bg-color: inherit;
+  --pui-table-theader-bg-color: var(--pui-color-base);
+  --pui-table-tbody-bg-color: var(--pui-color-base);
   --pui-table-border-color: var(--pui-ui-color-muted);
   --pui-table-bg-active: #3c3c3c;
 
@@ -42,8 +43,12 @@ $spacing-sizes: (
     background-color: var(--pui-table-theader-bg-color);
   }
 
+  tr {
+    background-color: var(--pui-table-tbody-bg-color);
+  }
+
   tr:nth-child(2n) {
-    background-color: inherit;
+    background-color: var(--pui-table-tbody-bg-color);
   }
 
   th,

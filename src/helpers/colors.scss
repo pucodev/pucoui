@@ -10,6 +10,13 @@
     color: var(--pui-color-#{$name}) !important;
   }
 }
+.is-bg-base {
+  background-color: var(--pui-color-base) !important;
+}
+
+.is-color-base {
+  color: var(--pui-color-base) !important;
+}
 
 .is-color-text {
   color: var(--pui-ui-color-text);

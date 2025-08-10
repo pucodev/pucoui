@@ -6,7 +6,7 @@
   --pui-badge-px: var(--pui-space-2);
   --pui-badge-font-size: var(--pui-font-size-7);
   --pui-badge-bg: var(--pui-color-primary);
-  --pui-badge-color: var(--pui-color-white);
+  --pui-badge-color: var(--pui-color-base);
 
   display: inline-flex;
   justify-content: center;
@@ -32,7 +32,7 @@
   // Tonal
   // ******
   &.is-tonal {
-    --pui-badge-bg: var(--pui-color-white);
+    --pui-badge-bg: var(--pui-color-base);
     --pui-badge-color: var(--pui-color-primary);
     --pui-badge-tonal-bg: var(--pui-color-primary);
 
@@ -57,7 +57,7 @@
   // Outlined
   // *********
   &.is-outlined {
-    --pui-badge-bg: var(--pui-color-white);
+    --pui-badge-bg: var(--pui-color-base);
     --pui-badge-color: var(--pui-color-primary);
     --pui-badge-outlined-border-size: 1px;
     --pui-badge-outlined-border-color: var(--pui-color-primary);

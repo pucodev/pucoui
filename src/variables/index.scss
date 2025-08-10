@@ -4,6 +4,11 @@
   @include mixins.generateRoot();
 }
 
+// Dark
+[data-theme="dark"] {
+  @include mixins.generateDarkRoot();
+}
+
 html,
 body {
   color: var(--pui-ui-color-text);
