@@ -216,6 +216,16 @@ summary {
   --pui-font-weight-extra-bold: 800;
   --pui-font-weight-black: 900;
   --pui-gap: 0;
+  --pui-color-base: var(--pui-color-white);
+}
+
+[data-theme=dark] {
+  --pui-ui-color-muted: #495057;
+  --pui-ui-color-text: #ecf9ff;
+  --pui-ui-color-text-muted: #4a5565;
+  --pui-ui-color-text-muted-2: #babdbf;
+  --pui-ui-color-disabled: #343a40;
+  --pui-color-base: #1d232a;
 }
 
 html,
@@ -269,6 +279,14 @@ body {
 
 .is-color-white {
   color: var(--pui-color-white) !important;
+}
+
+.is-bg-base {
+  background-color: var(--pui-color-base) !important;
+}
+
+.is-color-base {
+  color: var(--pui-color-base) !important;
 }
 
 .is-color-text {
@@ -4845,7 +4863,7 @@ a:not(.is-plain):not(.btn), a:hover,
 
 .btn {
   --pui-btn-bg: var(--pui-color-primary);
-  --pui-btn-color: var(--pui-color-white);
+  --pui-btn-color: var(--pui-color-base);
   --pui-btn-px: var(--pui-space-4);
   --pui-btn-py: var(--pui-space-2);
   --pui-btn-border-color: transparent;
@@ -4900,42 +4918,42 @@ a:not(.is-plain):not(.btn), a:hover,
   --pui-btn-font-size: var(--pui-font-size-4);
 }
 .btn.is-ghost {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-color: var(--pui-color-primary);
   --pui-btn-hover-bg: var(--pui-color-primary);
 }
 .btn.is-ghost.is-primary {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-primary);
   --pui-btn-color: var(--pui-color-primary);
 }
 .btn.is-ghost.is-info {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-info);
   --pui-btn-color: var(--pui-color-info);
 }
 .btn.is-ghost.is-success {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-success);
   --pui-btn-color: var(--pui-color-success);
 }
 .btn.is-ghost.is-warning {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-warning);
   --pui-btn-color: var(--pui-color-warning);
 }
 .btn.is-ghost.is-error {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-error);
   --pui-btn-color: var(--pui-color-error);
 }
 .btn.is-ghost.is-white {
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-hover-bg: var(--pui-color-white);
   --pui-btn-color: var(--pui-color-white);
 }
 .btn.is-outlined {
-  --pui-btn-outlined-bg: var(--pui-color-white);
+  --pui-btn-outlined-bg: var(--pui-color-base);
   --pui-btn-bg: var(--pui-btn-outlined-bg);
   --pui-btn-color: var(--pui-color-primary);
   --pui-btn-border-color: var(--pui-color-primary);
@@ -4997,7 +5015,7 @@ a:not(.is-plain):not(.btn), a:hover,
   --pui-btn-hover-bg: var(--pui-color-white);
 }
 .btn.is-tonal {
-  --pui-btn-bg: var(--pui-color-white);
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-color: var(--pui-color-primary);
   --pui-btn-border-color: transparent;
   --pui-btn-tonal-bg: var(--pui-color-primary);
@@ -5233,7 +5251,7 @@ a.btn:hover {
   --pui-badge-px: var(--pui-space-2);
   --pui-badge-font-size: var(--pui-font-size-7);
   --pui-badge-bg: var(--pui-color-primary);
-  --pui-badge-color: var(--pui-color-white);
+  --pui-badge-color: var(--pui-color-base);
   display: inline-flex;
   justify-content: center;
   padding: var(--pui-badge-py) var(--pui-badge-px);
@@ -5267,7 +5285,7 @@ a.btn:hover {
   --pui-badge-bg: var(--pui-color-white);
 }
 .badge.is-tonal {
-  --pui-badge-bg: var(--pui-color-white);
+  --pui-badge-bg: var(--pui-color-base);
   --pui-badge-color: var(--pui-color-primary);
   --pui-badge-tonal-bg: var(--pui-color-primary);
 }
@@ -5304,7 +5322,7 @@ a.btn:hover {
   --pui-badge-tonal-bg: var(--pui-color-white);
 }
 .badge.is-outlined {
-  --pui-badge-bg: var(--pui-color-white);
+  --pui-badge-bg: var(--pui-color-base);
   --pui-badge-color: var(--pui-color-primary);
   --pui-badge-outlined-border-size: 1px;
   --pui-badge-outlined-border-color: var(--pui-color-primary);
@@ -5581,7 +5599,8 @@ a.btn:hover {
   --pui-table-py: var(--pui-space-3);
   --pui-table-border: 1px;
   --pui-table-border-header: 2px;
-  --pui-table-theader-bg-color: inherit;
+  --pui-table-theader-bg-color: var(--pui-color-base);
+  --pui-table-tbody-bg-color: var(--pui-color-base);
   --pui-table-border-color: var(--pui-ui-color-muted);
   --pui-table-bg-active: #3c3c3c;
   display: table;
@@ -5591,8 +5610,11 @@ a.btn:hover {
 .table thead {
   background-color: var(--pui-table-theader-bg-color);
 }
+.table tr {
+  background-color: var(--pui-table-tbody-bg-color);
+}
 .table tr:nth-child(2n) {
-  background-color: inherit;
+  background-color: var(--pui-table-tbody-bg-color);
 }
 .table th,
 .table td {
@@ -5735,7 +5757,7 @@ a.btn:hover {
 }
 .dialog .dialog-header .btn.is-close {
   --pui-btn-font-size: var(--pui-font-size-7);
-  --pui-btn-bg: #fff;
+  --pui-btn-bg: var(--pui-color-base);
   --pui-btn-color: var(--pui-color-primary);
   --pui-btn-hover-bg: var(--pui-color-primary);
   --pui-btn-border-radius: 9999px;
@@ -5775,6 +5797,7 @@ a.btn:hover {
   --pui-alert-gap: var(--pui-space-3);
   --pui-alert-px: var(--pui-space-3);
   --pui-alert-py: var(--pui-space-3);
+  --pui-alert-bg: var(--pui-color-base);
   display: flex;
   gap: var(--pui-alert-gap);
   border: solid 1px var(--pui-alert-color-border);
@@ -5782,7 +5805,7 @@ a.btn:hover {
   border-radius: var(--pui-alert-border-radius);
   padding: var(--pui-alert-py) var(--pui-alert-px);
   box-shadow: none;
-  background-color: #fff;
+  background-color: var(--pui-alert-bg);
   position: relative;
   z-index: 1;
 }
@@ -5918,7 +5941,7 @@ a.btn:hover {
   --pui-card-body-py: var(--pui-space-5);
   --pui-card-body-gap: var(--pui-space-2);
   --pui-card-actions-gap: var(--pui-space-2);
-  --pui-card-background-color: #fff;
+  --pui-card-background-color: var(--pui-color-base);
   width: 100%;
   border-radius: var(--pui-card-border-radius);
   background-color: var(--pui-card-background-color);
@@ -6043,7 +6066,7 @@ a.btn:hover {
   --pui-input-py: var(--pui-space-2);
   --pui-input-border-color: var(--pui-ui-color-muted);
   --pui-input-border-radius: var(--pui-space-1);
-  --pui-input-bg: var(--pui-color-white);
+  --pui-input-bg: var(--pui-color-base);
   display: block;
   width: 100%;
   padding: var(--pui-input-py) var(--pui-input-px);
@@ -6095,7 +6118,7 @@ a.btn:hover {
 .field.checkbox,
 .field.radio {
   --pui-choice-border-color: var(--pui-ui-color-muted);
-  --pui-choice-bg: var(--pui-color-white);
+  --pui-choice-bg: var(--pui-color-base);
   --pui-choice-selected-color: var(--pui-color-primary);
   --pui-checkbox-border-radius: var(--pui-space-1);
   display: inline-grid;
