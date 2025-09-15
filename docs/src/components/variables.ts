@@ -1,9 +1,6 @@
-/**
- * Available colors
- * @typedef {'primary' | 'info' | 'success' | 'warning' | 'error' | 'white'} Color
- */
+import { Color } from './pucoui/types'
 
-export const colors = [
+export const colors: Color[] = [
   'primary',
   'info',
   'success',
@@ -17,7 +14,7 @@ export const spaces = [0, 0.25, 0.5, 0.75, 1, 1.5, 3]
 
 export const textSizes = [3, 2.5, 2, 1.5, 1.25, 1, 0.75]
 
-export const fontWeights = [
+export const fontWeights: { key: string; value: number }[] = [
   {
     key: 'thin',
     value: 100,
@@ -77,7 +74,12 @@ export const imageAspectRatios = [
   [1, 3],
 ]
 
-export const breakpoints = [
+export const breakpoints: {
+  name: string
+  prefix: string
+  dimension_prefix: string
+  dimension_rem: number
+}[] = [
   {
     name: 'Mobile',
     prefix: '',
