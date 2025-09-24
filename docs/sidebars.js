@@ -1,15 +1,14 @@
 // @ts-check
-
 const sidebars = {
-  tutorialSidebar: [
+  docSidebar: [
     {
       type: 'doc',
       id: 'intro',
-      label: 'Introducción',
+      label: 'Introduction',
     },
     {
       type: 'category',
-      label: 'Personalización',
+      label: 'Customize',
       link: { type: 'doc', id: 'customize/index' },
       items: ['customize/color', 'customize/spacing', 'customize/fontsize'],
     },
@@ -27,7 +26,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Elementos',
+      label: 'Elements',
       link: { type: 'doc', id: 'element/index' },
       items: [
         'element/badge',
@@ -39,7 +38,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Componentes',
+      label: 'Components',
       link: { type: 'doc', id: 'component/index' },
       items: [
         'component/alert',
@@ -51,7 +50,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Formularios',
+      label: 'Forms',
       link: { type: 'doc', id: 'form/index' },
       items: [
         'form/field',
@@ -65,7 +64,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Demostraciones',
+      label: 'Showcases',
       link: { type: 'doc', id: 'showcase/index' },
       items: ['showcase/register'],
     },

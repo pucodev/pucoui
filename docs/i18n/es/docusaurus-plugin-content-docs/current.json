@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Siguiente",
+    "description": "The label for version current"
+  },
+  "sidebar.docSidebar.category.Customize": {
+    "message": "Personalización",
+    "description": "The label for category Customize in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Helpers": {
+    "message": "Helpers",
+    "description": "The label for category Helpers in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Elements": {
+    "message": "Elements",
+    "description": "The label for category Elements in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Components": {
+    "message": "Components",
+    "description": "The label for category Components in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Forms": {
+    "message": "Forms",
+    "description": "The label for category Forms in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.category.Showcases": {
+    "message": "Demostraciones",
+    "description": "The label for category Showcases in sidebar docSidebar"
+  },
+  "sidebar.docSidebar.doc.Introduction": {
+    "message": "Introducción",
+    "description": "The label for the doc item Introduction in sidebar docSidebar, linking to the doc intro"
+  }
+}

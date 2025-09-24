@@ -31,28 +31,6 @@ import PreviewElement from '@site/src/components/PreviewElement'
 import CardImageStart from '@site/src/components/html/card/CardImageStart'
 import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
 
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext()
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Documentation
-          </Link>
-        </div>
-      </div>
-    </header>
-  )
-}
-
 export default function Home() {
   const { siteConfig } = useDocusaurusContext()
 
@@ -77,8 +55,14 @@ export default function Home() {
         <Alert className="w-100" color="primary" accentBorder>
           <AlertIcon icon="solar:cloud-check-outline" />
           <AlertBody>
-            <AlertHeader>Ready!</AlertHeader>
-            <AlertBody>Your data has been synchronized</AlertBody>
+            <AlertHeader>
+              <Translate id="homepage.examples.alert.title">Ready!</Translate>
+            </AlertHeader>
+            <AlertBody>
+              <Translate id="homepage.examples.alert.body">
+                Your data has been synchronized
+              </Translate>
+            </AlertBody>
           </AlertBody>
         </Alert>
       ),
@@ -90,54 +74,95 @@ export default function Home() {
   const tokenFeatures = [
     {
       icon: 'solar:box-minimalistic-outline',
-      title: 'Space',
-      content:
-        'variable to define spacings, used for margins, padding, etc',
+      title: translate({
+        id: 'homepage.features.token.space.title',
+        message: 'Space',
+      }),
+      content: translate({
+        id: 'homepage.features.token.space.body',
+        message: 'variable to define spacings, used for margins, padding, etc',
+      }),
     },
     {
       icon: 'solar:waterdrops-outline',
-      title: 'Color',
-      content:
-        'Variable to define the color palette, uses primary, info, warning, etc',
+      title: translate({
+        id: 'homepage.features.token.color.title',
+        message: 'Color',
+      }),
+      content: translate({
+        id: 'homepage.features.token.color.body',
+        message:
+          'Variable to define the color palette, uses primary, info, warning, etc',
+      }),
     },
     {
       icon: 'solar:text-bold',
-      title: 'Font',
-      content:
-        'Variable to define font characteristics, used for size, weight, etc',
+      title: translate({
+        id: 'homepage.features.token.font.title',
+        message: 'Font',
+      }),
+      content: translate({
+        id: 'homepage.features.token.font.body',
+        message:
+          'Variable to define font characteristics, used for size, weight, etc',
+      }),
     },
   ]
 
   const elementFeatures = [
     {
       icon: 'solar:settings-linear',
-      title: 'Helpers',
-      content:
-        'Ready-to-use utilities that solve common layout, spacing, typography, and more.',
+      title: translate({
+        id: 'homepage.features.element.helper.title',
+        message: 'Helpers',
+      }),
+      content: translate({
+        id: 'homepage.features.element.helper.body',
+        message:
+          'Ready-to-use utilities that solve common layout, spacing, typography, and more.',
+      }),
     },
     {
       icon: 'solar:menu-dots-square-outline',
-      title: 'Elements',
-      content:
-        'Basic visual elements, ready to combine and customize with CSS classes.',
+      title: translate({
+        message: 'Elements',
+        id: 'homepage.features.element.element.title',
+      }),
+      content: translate({
+        id: 'homepage.features.element.element.body',
+        message:
+          'Basic visual elements, ready to combine and customize with CSS classes.',
+      }),
     },
     {
       icon: 'solar:widget-5-outline',
-      title: 'Components',
-      content:
-        'Set of more complex and consistent visual blocks, designed to speed up your development and maintain design consistency.',
+      title: translate({
+        id: 'homepage.features.element.component.title',
+        message: 'Components',
+      }),
+      content: translate({
+        id: 'homepage.features.element.component.body',
+        message:
+          'Set of more complex and consistent visual blocks, designed to speed up your development and maintain design consistency.',
+      }),
     },
   ]
 
   const features = [
     {
       icon: 'solar:pallete-2-linear',
-      title: <>Designed to adapt to you</>,
+      title: (
+        <Translate id="homepage.features.design.title">
+          Designed to adapt to you
+        </Translate>
+      ),
       content: (
         <>
           <div>
-            Change the design without touching the classes, customize colors, sizes,
-            typography, and spacing using CSS variables.
+            <Translate id="homepage.features.design.body">
+              Change the design without touching the classes, customize colors,
+              sizes, typography, and spacing using CSS variables.
+            </Translate>
           </div>
           <ul className="mt-5 pt-2 is-stack">
             {tokenFeatures.map((item) => (
@@ -156,7 +181,7 @@ export default function Home() {
       ),
       cta: (
         <Link className="btn is-outlined" to="/docs/customize/color">
-          Get Started
+          <Translate id="homepage.features.design.cta">Get Started</Translate>
         </Link>
       ),
       extra: (
@@ -208,13 +233,17 @@ export default function Home() {
     },
     {
       icon: 'solar:bolt-outline',
-      title: 'Easy to use',
+      title: (
+        <Translate id="homepage.features.use.title">Easy to use,</Translate>
+      ),
       content: (
         <>
           <div>
-            Access a wide collection of classes for typography, layouts,
-            forms, buttons, interactive states, and more. Everything is designed to
-            scale and adapt effortlessly to any project.
+            <Translate id="homepage.features.use.body">
+              Access a wide collection of classes for typography, layouts,
+              forms, buttons, interactive states, and more. Everything is
+              designed to scale and adapt effortlessly to any project.
+            </Translate>
           </div>
           <ul className="mt-5 pt-2 is-stack">
             {elementFeatures.map((item) => (
@@ -233,7 +262,7 @@ export default function Home() {
       ),
       cta: (
         <Link className="btn is-outlined" to="/docs/helper/typography">
-          Get Started
+          <Translate id="homepage.features.use.cta">Get Started</Translate>
         </Link>
       ),
       extra: (
@@ -272,20 +301,30 @@ export default function Home() {
             <div className="is-col-12 md:is-col-7 px-6 py-8">
               <div className="is-stack">
                 <h1>
-                  Build your website in seconds
+                  <Translate id="homepage.hero.title">
+                    Build your website in seconds
+                  </Translate>
                 </h1>
                 <div>
-                  A production-ready CSS class system, easy to adapt and perfect for building your own design or design system. Customize, extend, and maintain your style effortlessly.
+                  <Translate id="homepage.hero.subtitle">
+                    A production-ready CSS class system, easy to adapt and
+                    perfect for building your own design or design system.
+                    Customize, extend, and maintain your style effortlessly.
+                  </Translate>
                 </div>
                 <div className="is-hstack is-gap-4 mt-3">
                   <Link className="btn is-md" to="/docs/intro">
-                    Get Started
+                    <Translate id="homepage.hero.ctaStart">
+                      Get Started
+                    </Translate>
                   </Link>
                   <Link
                     className="btn is-md is-outlined"
                     to="/docs/showcase/register"
                   >
-                    Examples
+                    <Translate id="homepage.hero.ctaExamples">
+                      Examples
+                    </Translate>
                   </Link>
                 </div>
               </div>
@@ -342,13 +381,21 @@ export default function Home() {
               />
             </div>
             <h5 className="is-color-primary mt-3">
-              EVERYTHING YOU NEED, WITHOUT COMPLICATIONS
+              <Translate id="homepage.features.hero.intro">
+                EVERYTHING YOU NEED, WITHOUT COMPLICATIONS
+              </Translate>
             </h5>
             <h2>
-              Designed to scale, made to customize
+              <Translate id="homepage.feature.hero.title">
+                Designed to scale, made to customize
+              </Translate>
             </h2>
             <div className="is-text-muted mt-3">
-              pucoui combines ready-to-use utilities, elements, and components. Customize with CSS variables or apply production-ready classes without losing control or speed.
+              <Translate id="homepage.features.hero.subtitle">
+                pucoui combines ready-to-use utilities, elements, and
+                components. Customize with CSS variables or apply
+                production-ready classes without losing control or speed.
+              </Translate>
             </div>
           </div>
 
