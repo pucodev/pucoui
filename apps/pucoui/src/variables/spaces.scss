@@ -1,0 +1,62 @@
+$spaces: (
+  '0': 0rem,
+  '1': 0.25rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '5': 1.5rem,
+  '6': 3rem,
+  '7': 4rem,
+  '8': 4.5rem,
+  '9': 5rem,
+  '10': 5.5rem,
+);
+$elevations: (
+  1: (
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 5%) 0px 1px 2px 0px,
+  ),
+  2: (
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 3px 0px,
+    rgb(0 0 0 / 10%) 0px 1px 2px -1px,
+  ),
+  3: (
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 4px 6px -1px,
+    rgb(0 0 0 / 10%) 0px 2px 4px -2px,
+  ),
+  4: (
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 10%) 0px 4px 6px -4px,
+  ),
+  5: (
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+    rgb(0 0 0 / 10%) 0px 20px 25px -5px,
+    rgb(0 0 0 / 10%) 0px 8px 10px -6px,
+  ),
+);
+
+$breakpoints: (
+  'sm': '30rem',
+  'md': '48rem',
+  'lg': '62rem',
+  'xl': '80rem',
+  'xxl': '96rem',
+);

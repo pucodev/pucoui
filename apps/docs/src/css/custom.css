@@ -1,0 +1,139 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.dialog-preview .dialog {
+  position: relative !important;
+  padding: 40px;
+}
+
+.pucoui {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* LANDING */
+
+.pucoui-dot-bg {
+  background-image: url(/img/pucoui-dot.svg);
+  background-size: 36px;
+  width: 25%;
+  height: 180px;
+  opacity: 0.08;
+  position: absolute;
+  bottom: 60px;
+  right: 0px;
+  z-index: -1;
+}
+
+.pucoui-wave-bg {
+  background-image: url(/img/pucoui-wave.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 64%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.pucoui-example__item {
+  min-height: auto;
+}
+
+.pucoui-feature__icon-container {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pucoui-feature__icon {
+  --pui-icon-size: 32px !important;
+}
+
+.pucoui-feature__code {
+  max-height: 480px;
+  overflow: auto;
+
+  pre {
+    background-color: #fff !important;
+  }
+}
+
+[data-theme='dark'] .pucoui-feature__code pre {
+  background-color: #282a36 !important;
+}
+
+@media (min-width: 48rem) {
+  .pucoui-example__item {
+    min-height: 180px;
+  }
+
+  .pucoui-wave-bg {
+    width: 50%;
+  }
+}
+
+@media (min-width: 62rem) {
+  .pucoui-wave-bg {
+    width: 32%;
+  }
+}
+
+/* REGRESA LAS CLASES DE DOCUSAURUS */
+.pucoui .tabs__item {
+  border-bottom: 3px solid #0000;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-radius: var(--ifm-global-radius);
+  cursor: pointer;
+  display: inline-flex;
+  padding: var(--ifm-tabs-padding-vertical) var(--ifm-tabs-padding-horizontal);
+  transition: background-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.pucoui .tabs__item--active {
+  border-bottom-color: var(--ifm-tabs-color-active-border);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: var(--ifm-tabs-color-active);
+}
+
+.pucoui .theme-code-block code {
+  padding: var(--ifm-pre-padding);
+}
+
+.pucoui-features__header__icon {
+  --pui-icon-size: 32px !important;
+}

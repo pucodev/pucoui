@@ -1,0 +1,27 @@
+@use '../variables/spaces.scss' as spaces;
+$displays: ('hidden', 'block', 'inline', 'inline-block', 'flex');
+
+@mixin render-display($display) {
+  @if $display == 'hidden' {
+    display: none !important;
+  } @else {
+    display: #{$display} !important;
+  }
+}
+
+@each $display in $displays {
+  .is-#{$display} {
+    @include render-display($display);
+  }
+}
+
+// Responsive
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @each $display in $displays {
+      .#{$breakpoint}\:is-#{$display} {
+        @include render-display($display);
+      }
+    }
+  }
+}

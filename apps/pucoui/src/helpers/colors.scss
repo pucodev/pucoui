@@ -1,0 +1,31 @@
+@use '../variables/colors.scss' as colors;
+
+// Colors
+@each $name, $value in colors.$colors {
+  .is-bg-#{$name} {
+    background-color: var(--pui-color-#{$name}) !important;
+  }
+
+  .is-color-#{$name} {
+    color: var(--pui-color-#{$name}) !important;
+  }
+}
+.is-bg-base {
+  background-color: var(--pui-color-base) !important;
+}
+
+.is-color-base {
+  color: var(--pui-color-base) !important;
+}
+
+.is-color-text {
+  color: var(--pui-ui-color-text);
+}
+
+.is-text-muted {
+  color: var(--pui-ui-color-text-muted);
+}
+
+.is-text-muted-2 {
+  color: var(--pui-ui-color-text-muted-2);
+}

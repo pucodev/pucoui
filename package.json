@@ -13,30 +13,29 @@
   },
   "license": "MIT",
   "author": "",
-  "main": "dist/pucoui.css",
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
+    "dev": "npm run plugins:dev:components && npm run plugins:dev:showcases && npm run dev:concurrently",
+    "dev:concurrently": "concurrently -k -n Styles,Plugins:Components,Plugins:Showcases,Docs -p [{name}] --prefix-colors blue 'npm:pucoui:dev' 'npm:plugins:dev:components:watch' 'npm:plugins:dev:showcases:watch' 'npm:docs:dev'",
+    "docs:dev": "npm run start --workspace=@pucoui/docs",
+    "plugins:dev": "npm run start --workspace=@pucoui/plugins",
+    "plugins:dev:components": "npm run dev:components --workspace=@pucoui/plugins",
+    "plugins:dev:components:watch": "npm run dev:components:watch --workspace=@pucoui/plugins",
+    "plugins:dev:showcases": "npm run dev:showcases --workspace=@pucoui/plugins",
+    "plugins:dev:showcases:watch": "npm run dev:showcases:watch --workspace=@pucoui/plugins",
     "prepare": "husky",
-    "build:css": "sass src/index.scss dist/pucoui.css && postcss dist/pucoui.css --use autoprefixer cssnano --no-map -o dist/pucoui.min.css",
-    "watch:css": "sass --watch src/index.scss:dist/pucoui.css src/index-docs.scss:docs/static/styles/pucoui.min.css",
-    "lint:css": "stylelint 'src/**/*.scss'"
+    "pucoui:dev": "npm run dev --workspace=@pucoui/pucoui"
   },
   "lint-staged": {
     "*.{js,ts,json,css,md,scss}": "prettier --write"
   },
-  "dependencies": {
-    "modern-normalize": "^3.0.1"
-  },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "cssnano": "^7.0.7",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.0",
-    "postcss": "^8.5.6",
-    "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
-    "sass": "^1.89.1",
-    "stylelint": "^16.21.1",
-    "stylelint-config-standard-scss": "^15.0.1"
-  },
-  "packageManager": "pnpm@10.17.1+sha512.17c560fca4867ae9473a3899ad84a88334914f379be46d455cbf92e5cf4b39d34985d452d2583baf19967fa76cb5c17bc9e245529d0b98745721aa7200ecaf7a"
+    "prettier-plugin-packagejson": "^2.5.19"
+  }
 }

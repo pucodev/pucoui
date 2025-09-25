@@ -1,0 +1,61 @@
+@use './../variables/colors.scss' as colors;
+
+.details {
+  --pui-details-border-color: var(--pui-color-primary);
+  --pui-details-border-radius: var(--pui-space-2);
+  --pui-details-px: var(--pui-space-4);
+  --pui-details-py: var(--pui-space-3);
+  --pui-details-bg: var(--pui-color-primary);
+  --pui-details-summary-arrow-size: 0.4rem;
+
+  border: 1px solid var(--pui-details-border-color);
+  padding: var(--pui-details-py) var(--pui-details-px);
+  border-radius: var(--pui-details-border-radius);
+  position: relative;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    inset: 0;
+    background-color: var(--pui-details-bg);
+    opacity: 0.25;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  & > * {
+    z-index: 1;
+    position: relative;
+  }
+
+  summary {
+    cursor: pointer;
+    list-style: none;
+    padding-left: 1rem;
+    position: relative;
+
+    &:before {
+      border-color: #0000 #0000 #0000 var(--pui-details-border-color);
+      border-style: solid;
+      border-width: var(--pui-details-summary-arrow-size);
+      content: '';
+      left: 0;
+      position: absolute;
+      top: 0.25rem;
+      transform: rotate(0deg);
+      transform-origin: calc(var(--pui-details-summary-arrow-size) / 2) 50%;
+    }
+  }
+
+  &.is-borderless {
+    border-style: none;
+  }
+
+  // COLORS
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-details-border-color: var(--pui-color-#{$name});
+      --pui-details-bg: var(--pui-color-#{$name});
+    }
+  }
+}

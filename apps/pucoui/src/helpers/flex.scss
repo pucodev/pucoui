@@ -1,0 +1,127 @@
+@use '../variables/spaces.scss' as spaces;
+@use 'sass:math';
+@use 'sass:list';
+
+.is-flex-row {
+  flex-direction: row !important;
+}
+
+.is-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.is-flex-column {
+  flex-direction: column !important;
+}
+
+.is-flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+// *****************
+// justify-content
+// *****************
+$justify-content-vars:
+  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
+  'space-evenly';
+
+@each $value in $justify-content-vars {
+  .is-justify-content-#{$value} {
+    justify-content: #{$value} !important;
+  }
+}
+
+// *****************
+// align-content
+// *****************
+$align-content-vars:
+  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
+  'space-evenly', 'stretch';
+
+@each $value in $align-content-vars {
+  .is-align-content-#{$value} {
+    align-content: #{$value} !important;
+  }
+}
+
+// *****************
+// align-items
+// *****************
+$align-items-vars: 'stretch', 'flex-start', 'flex-end', 'center', 'baseline';
+
+@each $value in $align-items-vars {
+  .is-align-items-#{$value} {
+    align-items: #{$value} !important;
+  }
+}
+
+// *****************
+// wrap
+// *****************
+$flex-wrap: 'nowrap', 'wrap', 'wrap-reverse';
+
+@each $value in $flex-wrap {
+  .is-flex-wrap-#{$value} {
+    flex-wrap: #{$value} !important;
+  }
+}
+
+$total-flexs: 6;
+@for $i from 1 through $total-flexs {
+  .is-flex-#{$i} {
+    flex: #{$i};
+  }
+
+  .is-flex-grow-#{$i} {
+    flex-grow: #{$i};
+  }
+
+  .is-flex-shrink-#{$i} {
+    flex-shrink: #{$i};
+  }
+}
+
+.is-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+$flex-columns: 12;
+@function flex-column-size($value) {
+  $percentage: math.div(100%, $flex-columns) * $value;
+  $gap-multiplier: list.slash(var(--pui-gap), 2);
+  @if $value == $flex-columns {
+    @return $percentage;
+  } @else {
+    @return calc($percentage - #{$gap-multiplier});
+  }
+}
+
+@for $i from 1 through $flex-columns {
+  .is-flex,
+  .is-stack,
+  .is-row {
+    .is-col-#{$i} {
+      flex: 0 0 flex-column-size($i);
+      max-width: flex-column-size($i);
+    }
+  }
+}
+
+// Responsive
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @for $i from 1 through $flex-columns {
+      .is-flex,
+      .is-stack,
+      .is-row {
+        .#{$breakpoint}\:is-col-#{$i} {
+          flex: 0 0 flex-column-size($i);
+          max-width: flex-column-size($i);
+        }
+      }
+    }
+  }
+}

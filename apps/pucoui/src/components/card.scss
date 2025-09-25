@@ -1,0 +1,75 @@
+@use './../variables/mixins.scss' as mixins;
+
+.card,
+.dialog-card {
+  --pui-card-border-color: var(--pui-ui-color-muted);
+  --pui-card-border-width: 1px;
+  --pui-card-border-radius: var(--pui-space-2);
+  --pui-card-body-px: var(--pui-space-5);
+  --pui-card-body-py: var(--pui-space-5);
+  --pui-card-body-gap: var(--pui-space-2);
+  --pui-card-actions-gap: var(--pui-space-2);
+  --pui-card-background-color: var(--pui-color-base);
+
+  width: 100%;
+  border-radius: var(--pui-card-border-radius);
+  background-color: var(--pui-card-background-color);
+  border-style: none;
+  border-width: var(--pui-card-border-width);
+  border-color: var(--pui-card-border-color);
+
+  &:not(.is-outlined) {
+    @include mixins.elevation(3);
+  }
+
+  &.is-outlined {
+    border-style: solid;
+    box-shadow: none;
+  }
+
+  &,
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card-body {
+    padding: var(--pui-card-body-py) var(--pui-card-body-px);
+    gap: var(--pui-card-body-gap);
+  }
+
+  figure,
+  img {
+    width: 100%;
+
+    &:first-child {
+      border-start-start-radius: inherit;
+      border-start-end-radius: inherit;
+      border-end-end-radius: unset;
+      border-end-start-radius: unset;
+    }
+
+    &:last-child {
+      border-start-start-radius: unset;
+      border-start-end-radius: unset;
+      border-end-end-radius: inherit;
+      border-end-start-radius: inherit;
+    }
+  }
+
+  .card-title {
+    font-weight: var(--pui-font-weight-bold);
+  }
+
+  .card-actions {
+    padding: var(--pui-card-body-py) var(--pui-card-body-px);
+    justify-content: flex-end;
+    gap: var(--pui-card-actions-gap);
+    display: flex;
+  }
+
+  .card-body + .card-actions {
+    padding-top: var(--pui-space-2);
+  }
+}

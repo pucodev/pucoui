@@ -1,0 +1,83 @@
+@use '../variables/spaces.scss' as spaces;
+
+@mixin box-models($name, $screen-size: '') {
+  $screen-prefix: '';
+  @if $screen-size != '' {
+    $screen-prefix: #{$screen-size}\:;
+  }
+
+  // Margins
+  .#{$screen-prefix}m-#{$name} {
+    margin: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}mt-#{$name} {
+    margin-top: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}mr-#{$name} {
+    margin-right: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}mb-#{$name} {
+    margin-bottom: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}ml-#{$name} {
+    margin-left: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}mx-#{$name} {
+    margin-left: var(--pui-space-#{$name}) !important;
+    margin-right: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}my-#{$name} {
+    margin-top: var(--pui-space-#{$name}) !important;
+    margin-bottom: var(--pui-space-#{$name}) !important;
+  }
+
+  // Paddings
+  .#{$screen-prefix}p-#{$name} {
+    padding: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}pt-#{$name} {
+    padding-top: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}pr-#{$name} {
+    padding-right: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}pb-#{$name} {
+    padding-bottom: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}pl-#{$name} {
+    padding-left: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}px-#{$name} {
+    padding-left: var(--pui-space-#{$name}) !important;
+    padding-right: var(--pui-space-#{$name}) !important;
+  }
+  .#{$screen-prefix}py-#{$name} {
+    padding-top: var(--pui-space-#{$name}) !important;
+    padding-bottom: var(--pui-space-#{$name}) !important;
+  }
+}
+
+@each $name, $value in spaces.$spaces {
+  @include box-models($name);
+}
+
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @each $name, $value in spaces.$spaces {
+      @include box-models($name, $breakpoint);
+    }
+  }
+}
+
+.ml-auto {
+  margin-left: auto !important;
+}
+
+.mr-auto {
+  margin-right: auto !important;
+}
+
+.mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}

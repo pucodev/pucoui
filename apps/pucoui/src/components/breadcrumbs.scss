@@ -1,0 +1,48 @@
+.breadcrumbs {
+  --pui-breadcrumbs-size: 0.4rem;
+
+  ul,
+  ol {
+    white-space: nowrap;
+    align-items: center;
+    min-height: min-content;
+    display: flex;
+
+    & > li {
+      &,
+      & a,
+      & .a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+
+      a,
+      .a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .icon {
+        margin-inline-end: var(--pui-space-1);
+      }
+
+      & + ::before {
+        content: '';
+        display: block;
+        height: var(--pui-breadcrumbs-size);
+        width: var(--pui-breadcrumbs-size);
+        rotate: 45deg;
+        background-color: transparent;
+        border-top: 1px solid;
+        border-right: 1px solid;
+        border-color: var(--pui-ui-color-muted);
+        margin-left: var(--pui-space-2);
+        margin-right: var(--pui-space-3);
+      }
+    }
+  }
+}

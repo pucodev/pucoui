@@ -1,8 +1,0 @@
-@use "./../variables/spaces.scss" as spaces;
-@use "./../variables/mixins.scss" as mixins;
-
-@each $name, $value in spaces.$elevations {
-  .elevation-#{$name} {
-    @include mixins.elevation($name, true);
-  }
-}

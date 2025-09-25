@@ -1,0 +1,190 @@
+@use '../variables/colors.scss' as colors;
+
+.btn {
+  // Variables
+  --pui-btn-bg: var(--pui-color-primary);
+  --pui-btn-color: var(--pui-color-base);
+  --pui-btn-px: var(--pui-space-4);
+  --pui-btn-py: var(--pui-space-2);
+  --pui-btn-border-color: transparent;
+  --pui-btn-hover-bg: #fff;
+  --pui-btn-border-radius: 5px;
+  --pui-btn-font-size: var(--pui-font-size-6);
+  --pui-btn-size: calc(var(--pui-btn-font-size) * 2.5);
+  --pui-btn-border-size: 0px;
+
+  position: relative;
+  background-color: var(--pui-btn-bg);
+  color: var(--pui-btn-color);
+  border-radius: var(--pui-btn-border-radius);
+  border: solid var(--pui-btn-border-size) var(--pui-btn-border-color);
+  cursor: pointer;
+  justify-content: center;
+  padding: var(--pui-btn-py) var(--pui-btn-px) var(--pui-btn-py)
+    var(--pui-btn-px);
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease-in-out;
+  line-height: inherit;
+  font-size: var(--pui-btn-font-size);
+  height: var(--pui-btn-size);
+  width: fit-content;
+
+  // *****
+  // Hover
+  // *****
+  // To generate hover effect
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--pui-btn-hover-bg);
+    opacity: 0;
+    z-index: -1;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+  }
+
+  &:not([disabled]):hover::before {
+    opacity: 0.1;
+  }
+
+  // ******
+  // Sizes
+  // ******
+  &.is-sm {
+    --pui-btn-font-size: var(--pui-font-size-7);
+  }
+
+  &.is-md {
+    --pui-btn-font-size: var(--pui-font-size-5);
+  }
+
+  &.is-lg {
+    --pui-btn-font-size: var(--pui-font-size-4);
+  }
+
+  // ********
+  // Ghost
+  // ********
+  &.is-ghost {
+    --pui-btn-bg: var(--pui-color-base);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-hover-bg: var(--pui-color-primary);
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-btn-bg: var(--pui-color-base);
+        --pui-btn-hover-bg: var(--pui-color-#{$name});
+        --pui-btn-color: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  // ********
+  // Outlined
+  // ********
+  &.is-outlined {
+    --pui-btn-outlined-bg: var(--pui-color-base);
+    --pui-btn-bg: var(--pui-btn-outlined-bg);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-border-color: var(--pui-color-primary);
+    --pui-btn-hover-bg: var(--pui-color-primary);
+    --pui-btn-border-size: 1px;
+  }
+
+  @each $name, $value in colors.$colors {
+    &.is-#{$name} {
+      --pui-btn-bg: var(--pui-color-#{$name});
+    }
+
+    &.is-outlined.is-#{$name} {
+      --pui-btn-bg: var(--pui-btn-outlined-bg);
+      --pui-btn-color: var(--pui-color-#{$name});
+      --pui-btn-border-color: var(--pui-color-#{$name});
+      --pui-btn-hover-bg: var(--pui-color-#{$name});
+    }
+  }
+
+  // *****
+  // Tonal
+  // *****
+  &.is-tonal {
+    --pui-btn-bg: var(--pui-color-base);
+    --pui-btn-color: var(--pui-color-primary);
+    --pui-btn-border-color: transparent;
+    --pui-btn-tonal-bg: var(--pui-color-primary);
+
+    &::before {
+      background-color: var(--pui-btn-tonal-bg);
+      opacity: 0.15;
+    }
+
+    &:hover::before {
+      opacity: 0.2;
+    }
+
+    @each $name, $value in colors.$colors {
+      &.is-#{$name} {
+        --pui-btn-color: var(--pui-color-#{$name});
+        --pui-btn-tonal-bg: var(--pui-color-#{$name});
+      }
+    }
+  }
+
+  &.is-rounded {
+    --pui-btn-border-radius: 99999px;
+  }
+
+  // ************
+  // Icon & badge
+  // ************
+  .icon,
+  .badge {
+    --pui-icon-size: var(--pui-btn-font-size);
+    --pui-btn-icon-margin-wrapper: calc(var(--pui-btn-px) * -0.4);
+
+    // Icon left
+    &:first-child:not(:last-child) {
+      margin-inline: var(--pui-btn-icon-margin-wrapper) var(--pui-space-1);
+    }
+
+    // Icon right
+    &:last-child:not(:first-child) {
+      margin-inline: var(--pui-space-1) var(--pui-btn-icon-margin-wrapper);
+    }
+
+    // Icon only, square button
+    &:first-child:last-child {
+      --pui-btn-icon-margin-wrapper: calc(
+        (
+            var(--pui-btn-border-size) + var(--pui-btn-px) -
+              ((var(--pui-btn-size) - var(--pui-icon-size)) / 2)
+          ) *
+          -1
+      );
+
+      margin-inline: var(--pui-btn-icon-margin-wrapper)
+        var(--pui-btn-icon-margin-wrapper);
+    }
+  }
+
+  // *********
+  // Disabled
+  // **********
+  &[disabled] {
+    box-shadow: none;
+    opacity: 0.5;
+  }
+}
+
+a.btn:hover {
+  text-decoration: none;
+}
