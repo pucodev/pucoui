@@ -22,6 +22,7 @@ const sidebars = {
         'helper/spacing',
         'helper/flexbox',
         'helper/elevation',
+        'helper/border',
         'helper/breakpoint',
       ],
     },

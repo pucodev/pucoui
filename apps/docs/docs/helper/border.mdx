@@ -1,0 +1,49 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import { roundeds } from '@site/src/components/variables'
+import CodeBlock from '@theme/CodeBlock'
+
+# Border
+
+Quickly and flexibly control the border styles of your elements.
+
+## Radius
+
+Round the corners of your elements with the `is-rounded-{value}` utilities.
+These classes let you apply different levels of curvature, from subtle corners to fully circular shapes.
+
+<table>
+  <thead>
+    <tr>
+      <th>Radius</th>
+      <th>Class</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {roundeds.map(space => (
+      <tr>
+        <td>{space}</td>
+        <td>
+          <CodeBlock>is-rounded-{space}</CodeBlock>
+        </td>
+        <td>
+          <div style={{ display: 'flex' }}>
+            <PreviewElement>
+              <div
+                className={`is-color-white is-bg-primary px-${space < 5 ? '5' : '10'} py-${space < 5 ? '5' : '10'} is-rounded-${space}`}
+              >
+                Lorem ipsum
+              </div>
+            </PreviewElement>
+          </div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+:::tip
+
+💡 Tip: Use `is-rounded` for circular elements such as avatars or icons.
+
+:::
