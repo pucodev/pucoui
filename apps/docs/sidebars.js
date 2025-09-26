@@ -21,6 +21,7 @@ const sidebars = {
         'helper/color',
         'helper/spacing',
         'helper/flexbox',
+        'helper/elevation',
         'helper/breakpoint',
       ],
     },

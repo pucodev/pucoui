@@ -1,0 +1,44 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import { elevations } from '@site/src/components/variables'
+import CodeBlock from '@theme/CodeBlock'
+
+# Elevation
+
+Apply predefined shadows to your elements to simulate different depth levels. This feature is ideal for highlighting components in the interface, such as cards, menus, or floating action buttons.
+
+## Basic usage
+
+Usage with the card component
+
+<table>
+  <thead>
+    <tr>
+      <th>Elevation</th>
+      <th>Class</th>
+      <th>Preview</th>
+    </tr>
+  </thead>
+  <tbody>
+    {elevations.map(elevation => (
+      <tr>
+        <td>{elevation}</td>
+        <td>
+          <CodeBlock>elevation-{elevation}</CodeBlock>
+        </td>
+        <td>
+          <PreviewElement>
+            <div className={`card p-3 elevation-${elevation}`}>Text</div>
+          </PreviewElement>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+Apply the helper directly as a utility class:
+
+```html
+<div class="elevation-1">Elevation level 1</div>
+<div class="elevation-3">Elevation level 3</div>
+<div class="elevation-5">Elevation level 5</div>
+```
