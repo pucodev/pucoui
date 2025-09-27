@@ -83,7 +83,11 @@ $total-flexs: 6;
   }
 }
 
+// *****************
+// COLUMNS
+// *****************
 .is-row {
+  --pui-gap: 0%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -91,12 +95,8 @@ $total-flexs: 6;
 $flex-columns: 12;
 @function flex-column-size($value) {
   $percentage: math.div(100%, $flex-columns) * $value;
-  $gap-multiplier: list.slash(var(--pui-gap), 2);
-  @if $value == $flex-columns {
-    @return $percentage;
-  } @else {
-    @return calc($percentage - #{$gap-multiplier});
-  }
+  $gap-multiplier: math.div($value, $flex-columns);
+  @return calc($percentage - var(--pui-gap) + $gap-multiplier * var(--pui-gap));
 }
 
 @for $i from 1 through $flex-columns {
