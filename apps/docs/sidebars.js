@@ -33,6 +33,7 @@ const sidebars = {
       items: [
         'element/badge',
         'element/button',
+        'element/columns',
         'element/icon',
         'element/image',
         'element/stack',
