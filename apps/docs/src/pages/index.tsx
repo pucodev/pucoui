@@ -1,35 +1,33 @@
-import Translate, { translate } from '@docusaurus/Translate'
-import clsx from 'clsx'
 import Link from '@docusaurus/Link'
+import Translate, { translate } from '@docusaurus/Translate'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import Layout from '@theme/Layout'
-import CodeBlock from '@theme/CodeBlock'
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
-
-import Heading from '@theme/Heading'
-import styles from '@site/src/css/index.module.css'
-import { Button } from '@site/src/components/pucoui/Button'
-import { Image } from '@site/src/components/pucoui/Image'
-import {
-  Card,
-  CardBody,
-  CardContent,
-  CardTitle,
-} from '@site/src/components/pucoui/Card'
+import PreviewElement from '@site/src/components/PreviewElement'
+import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
 import ButtonBase from '@site/src/components/html/button/ButtonBase'
-import { Switch } from '@site/src/components/pucoui/Switch'
+import CardImageStart from '@site/src/components/html/card/CardImageStart'
 import {
   Alert,
   AlertBody,
   AlertHeader,
   AlertIcon,
 } from '@site/src/components/pucoui/Alert'
+import { Button } from '@site/src/components/pucoui/Button'
+import {
+  Card,
+  CardBody,
+  CardContent,
+  CardTitle,
+} from '@site/src/components/pucoui/Card'
 import { Icon } from '@site/src/components/pucoui/Icon'
-import PreviewElement from '@site/src/components/PreviewElement'
-
-import CardImageStart from '@site/src/components/html/card/CardImageStart'
-import CardImageStartCode from '@site/src/components/generated/card/CardImageStart.html?raw'
+import { Image } from '@site/src/components/pucoui/Image'
+import { Switch } from '@site/src/components/pucoui/Switch'
+import styles from '@site/src/css/index.module.css'
+import CodeBlock from '@theme/CodeBlock'
+import Heading from '@theme/Heading'
+import Layout from '@theme/Layout'
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
+import clsx from 'clsx'
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext()
@@ -165,7 +163,7 @@ export default function Home() {
             </Translate>
           </div>
           <ul className="mt-5 pt-2 is-stack">
-            {tokenFeatures.map((item) => (
+            {tokenFeatures.map(item => (
               <li className="is-flex is-gap-4">
                 <Icon icon={item.icon} className="mt-2" />
                 <div className="h6">
@@ -246,7 +244,7 @@ export default function Home() {
             </Translate>
           </div>
           <ul className="mt-5 pt-2 is-stack">
-            {elementFeatures.map((item) => (
+            {elementFeatures.map(item => (
               <li className="is-flex is-gap-4">
                 <Icon icon={item.icon} className="mt-2" />
                 <div className="h6">
@@ -345,7 +343,7 @@ export default function Home() {
 
         {/* COMPONENTS */}
         <div className="container is-grid is-gap-3 px-6 mt-5">
-          {examples.map((item) => (
+          {examples.map(item => (
             <Card className="is-col-12 md:is-col-4" outlined>
               <CardBody className="is-vstack">
                 <div className="py-5 px-3 is-hstack pucoui-example__item">
@@ -401,7 +399,7 @@ export default function Home() {
 
           {/* FEATURE-CARDS */}
           <div className="is-stack is-gap-6 py-4">
-            {features.map((item) => (
+            {features.map(item => (
               <Card outlined>
                 <CardBody>
                   <CardContent className="is-row is-gap-6">

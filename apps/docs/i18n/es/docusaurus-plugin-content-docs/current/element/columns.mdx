@@ -1,0 +1,57 @@
+import PreviewElement from '@site/src/components/PreviewElement'
+import CodeBlock from '@theme/CodeBlock'
+import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
+
+import ColumnsBaseCode from '@site/src/components/generated/columns/ColumnsBase.html?raw'
+import ColumnsBase from '@site/src/components/html/columns/ColumnsBase'
+
+import ColumnsGapCode from '@site/src/components/generated/columns/ColumnsGap.html?raw'
+import ColumnsGap from '@site/src/components/html/columns/ColumnsGap'
+
+import BreakpointFlex from '@site/docs/helper/_breakpoint-flex.mdx'
+
+# Columns
+
+Organiza tus elementos en filas y columnas usando el sistema de utilidades `is-row` e `is-col-{n}`.
+Este sistema está basado en **12 columnas**, lo que te permite construir layouts flexibles y consistentes.
+
+## Uso básico
+
+Envuelve tus columnas dentro de un contenedor con la clase `is-row` y define el ancho de cada elemento usando `is-col-{n}`, donde `{n}` es un número de `1` a `12`.
+
+| Clase       | Descripción                    |
+| ----------- | ------------------------------ |
+| `is-col-1`  | Ocupa 1/12 del ancho (≈ 8.33%) |
+| `is-col-6`  | Ocupa 6/12 del ancho (50%)     |
+| `is-col-12` | Ocupa 12/12 del ancho (100%)   |
+
+<PreviewElement>
+  <ColumnsBase />
+</PreviewElement>
+
+<CodeBlock language="html">{ColumnsBaseCode}</CodeBlock>
+
+## Espaciado entre columnas
+
+El espaciado entre las columnas se controla con la clase `is-gap-{n}` donde `{n}` es un número de `0` a `10`.
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <ColumnsGap />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{ColumnsGapCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Responsive
+
+:::tip
+For more detail visit the documentation of [ breakpoints ](/docs/helper/breakpoint)
+:::
+
+<BreakpointFlex />
