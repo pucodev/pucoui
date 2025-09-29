@@ -19,6 +19,7 @@
   "scripts": {
     "dev": "npm run plugins:dev:components && npm run plugins:dev:showcases && npm run dev:concurrently",
     "dev:concurrently": "concurrently -k -n Styles,Plugins:Components,Plugins:Showcases,Docs -p [{name}] --prefix-colors blue 'npm:pucoui:dev' 'npm:plugins:dev:components:watch' 'npm:plugins:dev:showcases:watch' 'npm:docs:dev'",
+    "docs:deploy": "npm run deploy --workspace=@pucoui/docs",
     "docs:dev": "npm run start --workspace=@pucoui/docs",
     "plugins:dev": "npm run start --workspace=@pucoui/plugins",
     "plugins:dev:components": "npm run dev:components --workspace=@pucoui/plugins",
