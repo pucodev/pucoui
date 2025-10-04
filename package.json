@@ -27,7 +27,9 @@
     "plugins:dev:showcases": "npm run dev:showcases --workspace=@pucoui/plugins",
     "plugins:dev:showcases:watch": "npm run dev:showcases:watch --workspace=@pucoui/plugins",
     "prepare": "husky",
-    "pucoui:dev": "npm run dev --workspace=@pucoui/pucoui"
+    "publish": "npm publish --workspace=pucoui",
+    "pucoui:build": "npm run build --workspace=pucoui",
+    "pucoui:dev": "npm run dev --workspace=pucoui"
   },
   "lint-staged": {
     "*.{js,ts,json,css,md,scss}": "prettier --write"
