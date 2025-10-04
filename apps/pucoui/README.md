@@ -3,7 +3,7 @@
 A lightweight CSS styleguide library to build consistent and modern UIs with utilities and components.
 Minimal, flexible, and easy to integrate into any project.
 
-![pucoui-showcase](./assets/pucoui-showcase.png)
+![pucoui-showcase](https://github.com/pucodev/pucoui/blob/develop/assets/pucoui-showcase.png?raw=true)
 
 ---
 
@@ -77,4 +77,3 @@ Help me keep building new features and maintaining this tool:
 ## 📜 License
 
 This project is licensed under the **MIT License**.
-See [LICENSE](./LICENSE) for details.
