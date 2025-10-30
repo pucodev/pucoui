@@ -18,10 +18,25 @@
   overflow-y: auto;
   outline: 0;
   background-color: var(--pui-dialog-overlay-bg-color);
-  display: none;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0s linear 0.25s;
 
   &.is-active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition-delay: 0s;
+
+    .dialog-card {
+      transform: scale(1);
+      opacity: 1;
+    }
   }
 
   .dialog-overlay {
@@ -37,6 +52,11 @@
 
   .dialog-card {
     pointer-events: auto;
+    transform: scale(0.97);
+    opacity: 0;
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
   }
 
   &.dialog-centered .dialog-overlay {
