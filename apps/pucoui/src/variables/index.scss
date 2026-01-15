@@ -11,5 +11,26 @@
 
 html,
 body {
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   color: var(--pui-ui-color-text);
+
+  font: var(--pui-font-size-base) / var(--pui-line-height-base)
+    var(--pui-font-family-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: var(--pui-heading-line-height);
 }

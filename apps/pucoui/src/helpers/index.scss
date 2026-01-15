@@ -60,11 +60,23 @@ a,
     text-decoration: none;
   }
 
+  &.btn {
+    text-decoration: none;
+  }
+
   &:not(.is-plain):not(.btn),
   &:hover {
     text-decoration-line: underline;
     text-decoration-style: solid;
     text-decoration-thickness: auto;
     text-underline-offset: 3px;
+  }
+
+  &.link-dark {
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

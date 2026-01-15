@@ -47,6 +47,12 @@
 
   // Other colors
   --pui-color-base: var(--pui-color-white);
+
+  // FONT
+  --pui-font-family-base: sans-serif;
+  --pui-line-height-base: 1.65;
+  --pui-heading-line-height: 1.25;
+  --pui-font-size-base: 16px;
 }
 
 @mixin generateDarkRoot() {
