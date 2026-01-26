@@ -1,0 +1,77 @@
+@use '../variables/spaces.scss' as spaces;
+@use '../variables/flex.scss' as flex;
+@use '../variables/fonts.scss' as fonts;
+
+$flex-columns: flex.$flex-columns;
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    // *****************
+    // FONTS
+    // *****************
+    $text-aligns: fonts.$text-aligns;
+
+    @each $align in $text-aligns {
+      .#{$breakpoint}\:is-text-#{$align} {
+        text-align: #{$align} !important;
+      }
+    }
+
+    // *****************
+    // COLUMNS
+    // *****************
+    @for $i from 1 through $flex-columns {
+      .is-flex,
+      .is-stack,
+      .is-row {
+        .#{$breakpoint}\:is-col-#{$i} {
+          flex: 0 0 flex.flex-column-size($i);
+          max-width: flex.flex-column-size($i);
+        }
+      }
+    }
+
+    // *****************
+    // flex
+    // *****************
+    .#{$breakpoint}\:is-flex-row {
+      flex-direction: row !important;
+    }
+
+    .#{$breakpoint}\:is-flex-column {
+      flex-direction: column !important;
+    }
+
+    // *****************
+    // justify-content
+    // *****************
+    $justify-content-vars: flex.$justify-content-vars;
+
+    @each $value in $justify-content-vars {
+      .#{$breakpoint}\:is-justify-content-#{$value} {
+        justify-content: #{$value} !important;
+      }
+    }
+
+    // *****************
+    // align-content
+    // *****************
+    $align-content-vars: flex.$align-content-vars;
+
+    @each $value in $align-content-vars {
+      .#{$breakpoint}\:is-align-content-#{$value} {
+        align-content: #{$value} !important;
+      }
+    }
+
+    // *****************
+    // align-items
+    // *****************
+    $align-items-vars: flex.$justify-content-vars;
+
+    @each $value in $align-items-vars {
+      .#{$breakpoint}\:is-align-items-#{$value} {
+        align-items: #{$value} !important;
+      }
+    }
+  }
+}

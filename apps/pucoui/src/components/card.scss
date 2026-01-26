@@ -39,8 +39,7 @@
     gap: var(--pui-card-body-gap);
   }
 
-  figure,
-  img {
+  .card__image {
     width: 100%;
 
     &:first-child {

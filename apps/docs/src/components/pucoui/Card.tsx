@@ -79,7 +79,7 @@ interface CardImageProps extends React.HTMLAttributes<HTMLDivElement> {
  */
 export function CardImage({ src, alt, className, ...props }: CardImageProps) {
   return (
-    <figure className={`image ${className || ''}`} {...props}>
+    <figure className={`image card__image ${className || ''}`} {...props}>
       <img src={src} alt={alt} />
     </figure>
   )

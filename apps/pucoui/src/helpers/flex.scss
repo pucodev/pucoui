@@ -1,6 +1,4 @@
-@use '../variables/spaces.scss' as spaces;
-@use 'sass:math';
-@use 'sass:list';
+@use '../variables/flex.scss' as flex;
 
 .is-flex-row {
   flex-direction: row !important;
@@ -23,9 +21,7 @@
 // *****************
 // justify-content
 // *****************
-$justify-content-vars:
-  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
-  'space-evenly';
+$justify-content-vars: flex.$justify-content-vars;
 
 @each $value in $justify-content-vars {
   .is-justify-content-#{$value} {
@@ -36,9 +32,7 @@ $justify-content-vars:
 // *****************
 // align-content
 // *****************
-$align-content-vars:
-  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
-  'space-evenly', 'stretch';
+$align-content-vars: flex.$align-content-vars;
 
 @each $value in $align-content-vars {
   .is-align-content-#{$value} {
@@ -49,7 +43,7 @@ $align-content-vars:
 // *****************
 // align-items
 // *****************
-$align-items-vars: 'stretch', 'flex-start', 'flex-end', 'center', 'baseline';
+$align-items-vars: flex.$justify-content-vars;
 
 @each $value in $align-items-vars {
   .is-align-items-#{$value} {
@@ -92,36 +86,15 @@ $total-flexs: 6;
   flex-wrap: wrap;
 }
 
-$flex-columns: 12;
-@function flex-column-size($value) {
-  $percentage: math.div(100%, $flex-columns) * $value;
-  $gap-multiplier: math.div($value, $flex-columns);
-  @return calc($percentage - var(--pui-gap) + $gap-multiplier * var(--pui-gap));
-}
+$flex-columns: flex.$flex-columns;
 
 @for $i from 1 through $flex-columns {
   .is-flex,
   .is-stack,
   .is-row {
     .is-col-#{$i} {
-      flex: 0 0 flex-column-size($i);
-      max-width: flex-column-size($i);
-    }
-  }
-}
-
-// Responsive
-@each $breakpoint, $size in spaces.$breakpoints {
-  @media (min-width: #{$size}) {
-    @for $i from 1 through $flex-columns {
-      .is-flex,
-      .is-stack,
-      .is-row {
-        .#{$breakpoint}\:is-col-#{$i} {
-          flex: 0 0 flex-column-size($i);
-          max-width: flex-column-size($i);
-        }
-      }
+      flex: 0 0 flex.flex-column-size($i);
+      max-width: flex.flex-column-size($i);
     }
   }
 }

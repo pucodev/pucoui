@@ -1,0 +1,20 @@
+@use 'sass:math';
+@use 'sass:list';
+
+$flex-columns: 12;
+
+$justify-content-vars:
+  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
+  'space-evenly';
+
+$align-content-vars:
+  'flex-start', 'flex-end', 'center', 'space-between', 'space-around',
+  'space-evenly', 'stretch';
+
+$align-items-vars: 'stretch', 'flex-start', 'flex-end', 'center', 'baseline';
+
+@function flex-column-size($value) {
+  $percentage: math.div(100%, $flex-columns) * $value;
+  $gap-multiplier: math.div($value, $flex-columns);
+  @return calc($percentage - var(--pui-gap) + $gap-multiplier * var(--pui-gap));
+}

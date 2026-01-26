@@ -1,0 +1,53 @@
+.tabs {
+  --pui-tabs-font-size: var(--pui-font-size-6);
+  --pui-tabs-border-width: 1px;
+  --pui-tabs-border-color: #d6d9e0;
+  --pui-tabs-color: var(--pui-ui-color-text);
+  --pui-tabs-color-active: var(--pui-color-primary);
+
+  align-items: stretch;
+  display: flex;
+  font-size: var(--pui-tabs-font-size);
+  justify-content: space-between;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  ul {
+    align-items: center;
+    border-bottom: solid var(--pui-tabs-border-width)
+      var(--pui-tabs-border-color);
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
+
+  .tabs__item {
+    align-items: center;
+    border-radius: 0;
+    border-bottom: solid var(--pui-tabs-border-width)
+      var(--pui-tabs-border-color);
+    color: color-mix(in oklab, var(--pui-tabs-color) 50%, transparent);
+    display: flex;
+    justify-content: center;
+    padding: var(--pui-space-2) var(--pui-space-4);
+    transition-duration: 250ms;
+    transition-property: background-color, border-color, color;
+    vertical-align: top;
+    cursor: pointer;
+    text-decoration: none !important;
+  }
+
+  .tabs__item:hover {
+    color: var(--pui-tabs-color);
+    --pui-tabs-border-color: var(--pui-tabs-color);
+  }
+
+  .is-active {
+    border-bottom-color: var(--pui-color-primary);
+    color: var(--pui-tabs-color-active);
+    font-weight: var(--pui-font-weight-bold);
+  }
+}

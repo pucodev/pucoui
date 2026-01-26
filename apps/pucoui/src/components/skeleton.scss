@@ -1,0 +1,29 @@
+.skeleton {
+  --pui-skeleton-bg-gradient: #fff;
+  --pui-skeleton-bg: #eeeeee;
+
+  animation: 1.8s ease-in-out infinite skeleton;
+
+  will-change: background-position;
+  background-image: linear-gradient(
+    105deg,
+    #0000 0% 40%,
+    var(--pui-skeleton-bg-gradient) 50%,
+    #0000 60% 100%
+  );
+  background-position-x: -50%;
+  background-size: 200%;
+
+  border-radius: 0.5rem;
+  background-color: var(--pui-skeleton-bg);
+}
+
+@keyframes skeleton {
+  0% {
+    background-position: 150%;
+  }
+
+  to {
+    background-position: -50%;
+  }
+}

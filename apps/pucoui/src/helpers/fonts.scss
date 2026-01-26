@@ -19,7 +19,7 @@
 }
 
 // Text align
-$text-aligns: ('center', 'left', 'right', 'justify');
+$text-aligns: fonts.$text-aligns;
 
 @each $align in $text-aligns {
   .is-text-#{$align} {

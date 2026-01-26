@@ -1,5 +1,9 @@
 @use '../variables/spaces.scss' as spaces;
+@use '../variables/flex.scss' as flex;
 
+/* --------------------------------------------------
+ * Box model utilities (margin / padding)
+ * -------------------------------------------------- */
 @mixin box-models($name, $screen-size: '') {
   $screen-prefix: '';
   @if $screen-size != '' {
@@ -22,10 +26,12 @@
   .#{$screen-prefix}ml-#{$name} {
     margin-left: var(--pui-space-#{$name}) !important;
   }
+
   .#{$screen-prefix}mx-#{$name} {
     margin-left: var(--pui-space-#{$name}) !important;
     margin-right: var(--pui-space-#{$name}) !important;
   }
+
   .#{$screen-prefix}my-#{$name} {
     margin-top: var(--pui-space-#{$name}) !important;
     margin-bottom: var(--pui-space-#{$name}) !important;
@@ -47,32 +53,89 @@
   .#{$screen-prefix}pl-#{$name} {
     padding-left: var(--pui-space-#{$name}) !important;
   }
+
   .#{$screen-prefix}px-#{$name} {
     padding-left: var(--pui-space-#{$name}) !important;
     padding-right: var(--pui-space-#{$name}) !important;
   }
+
   .#{$screen-prefix}py-#{$name} {
     padding-top: var(--pui-space-#{$name}) !important;
     padding-bottom: var(--pui-space-#{$name}) !important;
   }
 }
 
+/* --------------------------------------------------
+ * Width / Height utilities (basadas en variables)
+ * -------------------------------------------------- */
+@mixin size-utils($name, $screen-size: '') {
+  $screen-prefix: '';
+  @if $screen-size != '' {
+    $screen-prefix: #{$screen-size}\:;
+  }
+
+  .#{$screen-prefix}is-w-#{$name} {
+    width: #{$name}px !important;
+  }
+
+  .#{$screen-prefix}is-h-#{$name} {
+    height: #{$name}px !important;
+  }
+
+  .#{$screen-prefix}is-min-w-#{$name} {
+    min-width: #{$name}px !important;
+  }
+
+  .#{$screen-prefix}is-max-w-#{$name} {
+    max-width: #{$name}px !important;
+  }
+
+  .#{$screen-prefix}is-min-h-#{$name} {
+    min-height: #{$name}px !important;
+  }
+
+  .#{$screen-prefix}is-max-h-#{$name} {
+    max-height: #{$name}px !important;
+  }
+}
+
+/* --------------------------------------------------
+ * Column width utilities (grid fractions)
+ * -------------------------------------------------- */
+$flex-columns: flex.$flex-columns;
+
+@mixin width-columns($value, $screen-size: '') {
+  $screen-prefix: '';
+  @if $screen-size != '' {
+    $screen-prefix: #{$screen-size}\:;
+  }
+
+  .#{$screen-prefix}is-w-#{$value}-#{$flex-columns} {
+    width: percentage($value / $flex-columns) !important;
+  }
+}
+
+/* --------------------------------------------------
+ * Base generation (no responsive)
+ * -------------------------------------------------- */
 @each $name, $value in spaces.$spaces {
   @include box-models($name);
 }
 
-@each $breakpoint, $size in spaces.$breakpoints {
-  @media (min-width: #{$size}) {
-    @each $name, $value in spaces.$spaces {
-      @include box-models($name, $breakpoint);
-    }
-  }
+@each $dimension in spaces.$dimensions {
+  @include size-utils($dimension);
 }
 
+@for $i from 1 through $flex-columns {
+  @include width-columns($i);
+}
+
+/* --------------------------------------------------
+ * Auto margins
+ * -------------------------------------------------- */
 .ml-auto {
   margin-left: auto !important;
 }
-
 .mr-auto {
   margin-right: auto !important;
 }
@@ -80,4 +143,23 @@
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+/* --------------------------------------------------
+ * Responsive utilities
+ * -------------------------------------------------- */
+@each $breakpoint, $size in spaces.$breakpoints {
+  @media (min-width: #{$size}) {
+    @each $name, $value in spaces.$spaces {
+      @include box-models($name, $breakpoint);
+    }
+
+    @each $dimension in spaces.$dimensions {
+      @include size-utils($dimension, $breakpoint);
+    }
+
+    @for $i from 1 through $flex-columns {
+      @include width-columns($i, $breakpoint);
+    }
+  }
 }

@@ -49,6 +49,8 @@ const sidebars = {
         'component/breadcrumb',
         'component/dialog',
         'component/table',
+        'component/skeleton',
+        'component/tab',
       ],
     },
     {

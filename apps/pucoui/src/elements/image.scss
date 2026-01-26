@@ -1,8 +1,9 @@
 @use 'sass:list';
+@use '../variables/spaces.scss' as spaces;
 
 .avatar,
 .image {
-  $image-dimensions: 16, 24, 32, 48, 64, 96, 128;
+  $image-dimensions: spaces.$dimensions;
 
   overflow: hidden;
   display: block;
