@@ -29,7 +29,8 @@
     "prepare": "husky",
     "publish": "npm publish --workspace=pucoui",
     "pucoui:build": "npm run build --workspace=pucoui",
-    "pucoui:dev": "npm run dev --workspace=pucoui"
+    "pucoui:dev": "npm run dev --workspace=pucoui",
+    "snippets:build": "npm run build --workspace=@pucoui/snippets"
   },
   "lint-staged": {
     "*.{js,ts,json,css,md,scss}": "prettier --write"

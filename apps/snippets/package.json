@@ -1,0 +1,11 @@
+{
+  "name": "@pucoui/snippets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node generator.js"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  }
+}
