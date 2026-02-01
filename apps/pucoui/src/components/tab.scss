@@ -1,7 +1,7 @@
 .tabs {
   --pui-tabs-font-size: var(--pui-font-size-6);
   --pui-tabs-border-width: 1px;
-  --pui-tabs-border-color: #d6d9e0;
+  --pui-tabs-border-color: var(--pui-color-base-400);
   --pui-tabs-color: var(--pui-ui-color-text);
   --pui-tabs-color-active: var(--pui-color-primary);
 
@@ -29,7 +29,7 @@
     border-radius: 0;
     border-bottom: solid var(--pui-tabs-border-width)
       var(--pui-tabs-border-color);
-    color: color-mix(in oklab, var(--pui-tabs-color) 50%, transparent);
+    color: color-mix(in oklab, var(--pui-tabs-color) 60%, transparent);
     display: flex;
     justify-content: center;
     padding: var(--pui-space-2) var(--pui-space-4);

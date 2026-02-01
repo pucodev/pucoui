@@ -24,6 +24,7 @@
     border-color,
     box-shadow 0.2s ease;
   outline: none;
+  color: inherit;
 
   &:active:not(:disabled),
   &:focus:not(:disabled) {

@@ -47,6 +47,9 @@
 
   // Other colors
   --pui-color-base: var(--pui-color-white);
+  @each $name, $value in colors.$ui-colors-base {
+    --pui-color-base-#{$name}: #{$value};
+  }
 
   // FONT
   --pui-font-family-base: sans-serif;
@@ -62,4 +65,7 @@
   }
   // Other colors
   --pui-color-base: #1d232a;
+  @each $name, $value in colors.$ui-colors-base-dark {
+    --pui-color-base-#{$name}: #{$value};
+  }
 }

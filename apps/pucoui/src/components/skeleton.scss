@@ -1,6 +1,6 @@
 .skeleton {
-  --pui-skeleton-bg-gradient: #fff;
-  --pui-skeleton-bg: #eeeeee;
+  --pui-skeleton-bg-gradient: var(--pui-color-base-100);
+  --pui-skeleton-bg: var(--pui-color-base-300);
 
   animation: 1.8s ease-in-out infinite skeleton;
 
