@@ -21,10 +21,13 @@ function M.in_class_attribute()
 
     -- JSX / TSX
     if t == "jsx_attribute" then
-      local name = node:field("name")[1]
-      if name then
-        local text = vim.treesitter.get_node_text(name, 0)
-        if text == "class" or text == "className" then
+      local name_node = node:child(0)
+      local value_node = node:child(1)
+
+      if name_node and value_node then
+        local attr_name = vim.treesitter.get_node_text(name_node, 0)
+
+        if attr_name == "class" or attr_name == "className" then
           return true
         end
       end

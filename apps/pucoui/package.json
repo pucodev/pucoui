@@ -1,6 +1,6 @@
 {
   "name": "pucoui",
-  "version": "1.0.4",
+  "version": "1.0.9",
   "description": "A lightweight and customizable SCSS style guide for modern web development.",
   "keywords": [
     "pucoui",
@@ -15,7 +15,8 @@
   "types": "index.d.ts",
   "style": "dist/pucoui.min.css",
   "files": [
-    "dist"
+    "dist",
+    "index.d.ts"
   ],
   "scripts": {
     "build": "rimraf dist && sass --load-path=../../node_modules src/index.scss dist/pucoui.css && postcss dist/pucoui.css --use autoprefixer cssnano --no-map -o dist/pucoui.min.css",

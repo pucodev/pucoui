@@ -1,22 +1,25 @@
 import PreviewElement from '@site/src/components/PreviewElement'
 import CodeBlock from '@theme/CodeBlock'
-import Tabs from '@theme/Tabs'
 import TabItem from '@theme/TabItem'
+import Tabs from '@theme/Tabs'
 
-import InputBasic from '@site/src/components/html/form/input/InputBasic'
 import InputBasicCode from '@site/src/components/generated/form/input/InputBasic.html?raw'
+import InputBasic from '@site/src/components/html/form/input/InputBasic'
 
-import InputDisabled from '@site/src/components/html/form/input/InputDisabled'
 import InputDisabledCode from '@site/src/components/generated/form/input/InputDisabled.html?raw'
+import InputDisabled from '@site/src/components/html/form/input/InputDisabled'
 
-import InputField from '@site/src/components/html/form/input/InputField'
 import InputFieldCode from '@site/src/components/generated/form/input/InputField.html?raw'
+import InputField from '@site/src/components/html/form/input/InputField'
 
-import InputValid from '@site/src/components/html/form/input/InputValid'
 import InputValidCode from '@site/src/components/generated/form/input/InputValid.html?raw'
+import InputValid from '@site/src/components/html/form/input/InputValid'
 
-import InputInvalid from '@site/src/components/html/form/input/InputInvalid'
 import InputInvalidCode from '@site/src/components/generated/form/input/InputInvalid.html?raw'
+import InputInvalid from '@site/src/components/html/form/input/InputInvalid'
+
+import InputIconCode from '@site/src/components/generated/form/input/InputIcon.html?raw'
+import InputIcon from '@site/src/components/html/form/input/InputIcon'
 
 # Input
 
@@ -91,5 +94,19 @@ For more information, visit the [field documentation](./field).
 
   <TabItem value="code" label="Code">
     <CodeBlock language="html">{InputInvalidCode}</CodeBlock>
+  </TabItem>
+</Tabs>
+
+## Icons
+
+<Tabs>
+  <TabItem value="preview" label="Preview">
+    <PreviewElement>
+      <InputIcon />
+    </PreviewElement>
+  </TabItem>
+
+  <TabItem value="code" label="Code">
+    <CodeBlock language="html">{InputIconCode}</CodeBlock>
   </TabItem>
 </Tabs>

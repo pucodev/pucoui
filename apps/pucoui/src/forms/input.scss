@@ -44,3 +44,39 @@
 .textarea:not([rows]) {
   min-height: 6rem;
 }
+
+.field .control {
+  --pui-icon-size: 1rem;
+  --pui-input-icon-px: var(--pui-space-2);
+  --pui-input-pr: calc(var(--pui-icon-size) + 2 * var(--pui-input-icon-px));
+
+  position: relative;
+
+  .input:has(~ .input__icon:last-child) {
+    padding-right: var(--pui-input-pr);
+  }
+
+  .input:has(~ .input__icon.btn:last-child) {
+    --pui-input-pr: calc(var(--pui-icon-size) + 5 * var(--pui-input-icon-px));
+  }
+
+  .btn.input__icon {
+    --pui-btn-px: var(--pui-space-1);
+    --pui-btn-py: var(--pui-space-1);
+    --pui-btn-bg: transparent;
+    --pui-btn-color: var(--pui-color-text);
+    --pui-btn-hover-bg: transparent;
+    height: auto;
+  }
+
+  .input__icon:last-child {
+    right: var(--pui-input-icon-px);
+  }
+}
+
+.input__icon {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
