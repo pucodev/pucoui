@@ -1,0 +1,83 @@
+{
+  // =====================
+  // Spacing scale
+  // =====================
+  "--pui-space-0": { "description": "Spacing scale 0 (0rem)" },
+  "--pui-space-1": { "description": "Spacing scale 1 (0.25rem)" },
+  "--pui-space-2": { "description": "Spacing scale 2 (0.5rem)" },
+  "--pui-space-3": { "description": "Spacing scale 3 (0.75rem)" },
+  "--pui-space-4": { "description": "Spacing scale 4 (1rem)" },
+  "--pui-space-5": { "description": "Spacing scale 5 (1.5rem)" },
+  "--pui-space-6": { "description": "Spacing scale 6 (3rem)" },
+  "--pui-space-7": { "description": "Spacing scale 7 (4rem)" },
+  "--pui-space-8": { "description": "Spacing scale 8 (4.5rem)" },
+  "--pui-space-9": { "description": "Spacing scale 9 (5rem)" },
+  "--pui-space-10": { "description": "Spacing scale 10 (5.5rem)" },
+
+  // =====================
+  // Brand colors
+  // =====================
+  "--pui-color-primary": { "description": "Primary brand color" },
+  "--pui-color-info": { "description": "Informational color" },
+  "--pui-color-success": { "description": "Success state color" },
+  "--pui-color-warning": { "description": "Warning state color" },
+  "--pui-color-error": { "description": "Error / danger color" },
+  "--pui-color-white": { "description": "Pure white color" },
+
+  // =====================
+  // UI colors
+  // =====================
+  "--pui-ui-color-muted": { "description": "Muted UI color" },
+  "--pui-ui-color-text": { "description": "Primary text color" },
+  "--pui-ui-color-text-muted": { "description": "Muted text color" },
+  "--pui-ui-color-text-muted-2": {
+    "description": "Secondary muted text color",
+  },
+  "--pui-ui-color-disabled": { "description": "Disabled UI color" },
+
+  // =====================
+  // Typography – font sizes
+  // =====================
+  "--pui-font-size-1": { "description": "Font size scale 1 (3rem)" },
+  "--pui-font-size-2": { "description": "Font size scale 2 (2.5rem)" },
+  "--pui-font-size-3": { "description": "Font size scale 3 (2rem)" },
+  "--pui-font-size-4": { "description": "Font size scale 4 (1.5rem)" },
+  "--pui-font-size-5": { "description": "Font size scale 5 (1.25rem)" },
+  "--pui-font-size-6": { "description": "Font size scale 6 (1rem)" },
+  "--pui-font-size-7": { "description": "Font size scale 7 (0.75rem)" },
+
+  // =====================
+  // Typography – font weights
+  // =====================
+  "--pui-font-weight-thin": { "description": "Font weight thin (100)" },
+  "--pui-font-weight-extra-light": {
+    "description": "Font weight extra light (200)",
+  },
+  "--pui-font-weight-light": { "description": "Font weight light (300)" },
+  "--pui-font-weight-normal": { "description": "Font weight normal (400)" },
+  "--pui-font-weight-medium": { "description": "Font weight medium (500)" },
+  "--pui-font-weight-semi-bold": {
+    "description": "Font weight semi bold (600)",
+  },
+  "--pui-font-weight-bold": { "description": "Font weight bold (700)" },
+  "--pui-font-weight-extra-bold": {
+    "description": "Font weight extra bold (800)",
+  },
+  "--pui-font-weight-black": { "description": "Font weight black (900)" },
+
+  // =====================
+  // Layout
+  // =====================
+  "--pui-gap": { "description": "Default layout gap" },
+
+  // =====================
+  // Base tokens
+  // =====================
+  "--pui-color-base": {
+    "description": "Base color token (default background)",
+  },
+  "--pui-font-family-base": { "description": "Base font family" },
+  "--pui-line-height-base": { "description": "Base line height" },
+  "--pui-heading-line-height": { "description": "Heading line height" },
+  "--pui-font-size-base": { "description": "Base font size (root)" },
+}

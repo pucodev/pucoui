@@ -6,6 +6,7 @@ function M.setup(opts)
 
   if opts.cmp ~= false then
     require("pucoui.cmp").setup(opts.cmp or {})
+    require("pucoui.cmp-variables").setup(opts.cmp or {})
   end
 end
 

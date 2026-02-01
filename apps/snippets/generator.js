@@ -3,6 +3,7 @@ import { parse } from 'jsonc-parser'
 import path from 'path'
 
 const SRC = './classes.jsonc'
+const SRC_VARIABLES = './variables.jsonc'
 const DIST = './dist'
 const NVIM_DIST = './nvim/lua/pucoui'
 
@@ -15,7 +16,9 @@ if (!fs.existsSync(NVIM_DIST)) {
 }
 
 const raw = fs.readFileSync(SRC, 'utf8')
+const rawVariables = fs.readFileSync(SRC_VARIABLES, 'utf8')
 const classes = parse(raw)
+const variables = parse(rawVariables)
 
 /* -----------------------------
  * Validación mínima
@@ -72,3 +75,19 @@ ${core
 
 fs.writeFileSync(path.join(DIST, 'nvim-classes.lua'), lua)
 fs.writeFileSync(path.join(NVIM_DIST, 'nvim-classes.lua'), lua)
+
+const coreVariables = Object.entries(variables).map(([name, meta]) => ({
+  name,
+  description: meta.description,
+}))
+const luaVariables = `
+-- Auto-generated. DO NOT EDIT.
+return {
+${coreVariables
+  .map(c => `  ["${c.name}"] = { description = "${c.description}" },`)
+  .join('\n')}
+}
+`
+
+fs.writeFileSync(path.join(DIST, 'nvim-variables.lua'), luaVariables)
+fs.writeFileSync(path.join(NVIM_DIST, 'nvim-variables.lua'), luaVariables)
