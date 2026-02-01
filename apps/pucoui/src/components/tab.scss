@@ -38,6 +38,7 @@
     vertical-align: top;
     cursor: pointer;
     text-decoration: none !important;
+    margin-bottom: calc(var(--pui-tabs-border-width) * -1);
   }
 
   .tabs__item:hover {
