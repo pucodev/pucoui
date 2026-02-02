@@ -1,8 +1,8 @@
 .skeleton {
   --pui-skeleton-bg-gradient: var(--pui-color-base-100);
-  --pui-skeleton-bg: var(--pui-color-base-300);
+  --pui-skeleton-bg: var(--pui-color-base-400);
 
-  animation: 1.8s ease-in-out infinite skeleton;
+  animation: 1.2s ease-in-out infinite skeleton;
 
   will-change: background-position;
   background-image: linear-gradient(
