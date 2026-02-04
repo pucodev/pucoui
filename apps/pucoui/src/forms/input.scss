@@ -46,6 +46,7 @@
   min-height: 6rem;
 }
 
+// INPUT ICONS
 .field .control {
   --pui-icon-size: 1rem;
   --pui-input-icon-px: var(--pui-space-2);
@@ -53,7 +54,11 @@
 
   position: relative;
 
-  .input:has(~ .input__icon:last-child) {
+  &:has(.input__icon:first-child) .input {
+    padding-left: var(--pui-input-pr);
+  }
+
+  &:has(~ .input__icon:last-child) .input {
     padding-right: var(--pui-input-pr);
   }
 
@@ -68,6 +73,10 @@
     --pui-btn-color: var(--pui-color-text);
     --pui-btn-hover-bg: transparent;
     height: auto;
+  }
+
+  .input__icon:first-child {
+    left: var(--pui-input-icon-px);
   }
 
   .input__icon:last-child {
